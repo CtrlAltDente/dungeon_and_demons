@@ -12,7 +12,7 @@ namespace ClansWars.Input
         [SerializeField]
         private InputActionReference _movementPlayerInputActionReference;
         [SerializeField]
-        private InputActionReference _firePlayerInputActionReference;
+        private InputActionReference _attackPlayerInputActionReference;
 
         [SerializeField]
         private List<GameObject> PlayerLogicGameObjects = new List<GameObject>();
@@ -47,9 +47,9 @@ namespace ClansWars.Input
         private void ApplyInputToThePlayerLogicParts()
         {
             Vector2 movementVector = _movementPlayerInputActionReference.action.ReadValue<Vector2>();
-            bool isFire = _firePlayerInputActionReference.action.IsPressed();
+            bool isAttack = _attackPlayerInputActionReference.action.IsPressed();
 
-            PlayerInputData playerInputData = new PlayerInputData(movementVector, isFire);
+            PlayerInputData playerInputData = new PlayerInputData(movementVector, isAttack);
 
             foreach (IPlayerLogicPart playerLogicPart in PlayerLogicParts)
             {

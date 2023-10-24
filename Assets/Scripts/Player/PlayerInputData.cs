@@ -7,12 +7,12 @@ namespace ClansWars.Player
     public struct PlayerInputData
     {
         public Vector2 MovementVector;
-        public bool IsFire;
+        public bool IsAttack;
 
-        public PlayerInputData(Vector2 movementVector, bool isFire)
+        public PlayerInputData(Vector2 movementVector, bool isAttack)
         {
             MovementVector = movementVector;
-            IsFire = isFire;
+            IsAttack = isAttack;
         }
     }
 }

@@ -166,11 +166,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82174f16cc10543b6c6e8b7726ac71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnPlayerInputDataReady:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 802103315}
+        m_TargetAssemblyTypeName: ClansWars.Player.PlayerMovement, Assembly-CSharp
+        m_MethodName: SetPlayerInputData
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2108836675}
+        m_TargetAssemblyTypeName: ClansWars.Player.PlayerAttack, Assembly-CSharp
+        m_MethodName: SetPlayerInputData
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _movementPlayerInputActionReference: {fileID: -1680190386980627800, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
   _attackPlayerInputActionReference: {fileID: 1120369429361536294, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  PlayerLogicGameObjects:
-  - {fileID: 802103313}
-  - {fileID: 2108836673}
 --- !u!1 &429256446
 GameObject:
   m_ObjectHideFlags: 0

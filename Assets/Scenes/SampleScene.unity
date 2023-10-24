@@ -218,9 +218,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 094517e2118cf9042961f854643a1d3e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rateOfAttack: 60
+  _rateOfAttack: 180
   _damage: 50
-  _spreadAngle: 3
+  _spreadAngle: 1
   _bulletSpawnPosition: {fileID: 757836765}
   _bulletPrefab: {fileID: 4171850213356483453, guid: 578c85f69fd323b41b378bb0ab7e3c04, type: 3}
 --- !u!65 &429256449
@@ -578,6 +578,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _movementSpeed: 3
+  _rotationSpeed: 360
   _playerTransform: {fileID: 542623583}
 --- !u!1 &962562156
 GameObject:

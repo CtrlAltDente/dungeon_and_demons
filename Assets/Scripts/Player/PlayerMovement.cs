@@ -9,6 +9,8 @@ namespace ClansWars.Player
     {
         [SerializeField]
         private float _movementSpeed;
+        [SerializeField]
+        private float _rotationSpeed;
 
         [SerializeField]
         private Transform _playerTransform;
@@ -33,7 +35,12 @@ namespace ClansWars.Player
 
         private void Move(PlayerInputData playerInputData)
         {
-            _playerTransform.position += new Vector3(playerInputData.MovementVector.x, 0f, playerInputData.MovementVector.y) * Time.deltaTime * _movementSpeed;
+            if (playerInputData.MovementVector != Vector2.zero)
+            {
+                Vector3 movementVector3 = new Vector3(playerInputData.MovementVector.x, 0f, playerInputData.MovementVector.y);
+                _playerTransform.rotation = Quaternion.RotateTowards(_playerTransform.rotation, Quaternion.LookRotation(movementVector3), _rotationSpeed * Time.deltaTime);
+                _playerTransform.position += _playerTransform.forward * _movementSpeed * Time.deltaTime;
+            }
         }
     }
 }

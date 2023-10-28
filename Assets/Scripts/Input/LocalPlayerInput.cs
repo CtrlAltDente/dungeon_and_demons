@@ -1,6 +1,7 @@
 using ClansWars.Player;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -16,6 +17,11 @@ namespace ClansWars.Input
         [SerializeField]
         private PlayerState _playerState;
 
+        private void Start()
+        {
+            DisableAtNetworkMode();
+        }
+
         private void Update()
         {
             UpdateInputAtPlayerState();
@@ -29,6 +35,25 @@ namespace ClansWars.Input
             PlayerInputData playerInputData = new PlayerInputData(movementVector, isAttack);
 
             _playerState.UpdateInput(playerInputData);
+        }
+
+        private void DisableAtNetworkMode()
+        {
+            try
+            {
+                if (NetworkManager.Singleton.IsHost || NetworkManager.Singleton.IsClient)
+                {
+                    Destroy(this);
+                }
+                else
+                {
+                    Debug.Log("Connection false, you are in local game");
+                }
+            }
+            catch
+            {
+                Debug.Log("NetworkManager is null, you are in local game");
+            }
         }
     }
 }

@@ -14,11 +14,6 @@ namespace ClansWars.Camera
         [SerializeField]
         private PlayerState _playerState;
 
-        private void Start()
-        {
-            SetPlayerTargetAndFollow(_playerState);
-        }
-
         public void SetPlayerTargetAndFollow(PlayerState playerState)
         {
             _cinemachineVirtualCamera.Follow = playerState.transform;

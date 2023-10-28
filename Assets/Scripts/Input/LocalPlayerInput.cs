@@ -6,21 +6,29 @@ using UnityEngine.InputSystem;
 
 namespace ClansWars.Input
 {
-    public class LocalPlayerInput : PlayerInput
+    public class LocalPlayerInput : MonoBehaviour
     {
         [SerializeField]
         private InputActionReference _movementPlayerInputActionReference;
         [SerializeField]
         private InputActionReference _attackPlayerInputActionReference;
 
-        protected override void ApplyInputToThePlayerLogicParts()
+        [SerializeField]
+        private PlayerState _playerState;
+
+        private void Update()
+        {
+            UpdateInputAtPlayerState();
+        }
+
+        private void UpdateInputAtPlayerState()
         {
             Vector2 movementVector = _movementPlayerInputActionReference.action.ReadValue<Vector2>();
             bool isAttack = _attackPlayerInputActionReference.action.IsPressed();
 
             PlayerInputData playerInputData = new PlayerInputData(movementVector, isAttack);
 
-            OnPlayerInputDataReady?.Invoke(playerInputData);
+            _playerState.UpdateInput(playerInputData);
         }
     }
 }

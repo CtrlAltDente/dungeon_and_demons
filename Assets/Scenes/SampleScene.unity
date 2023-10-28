@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 51117912}
   - component: {fileID: 51117913}
   m_Layer: 0
-  m_Name: --LocalPlayerInput--
+  m_Name: --PlayerInput--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -163,7 +163,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 51117911}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe82174f16cc10543b6c6e8b7726ac71, type: 3}
+  m_Script: {fileID: 11500000, guid: d1b7c9041340bbf4f9b3688164c0d72b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   OnPlayerInputDataReady:
@@ -193,8 +193,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _movementPlayerInputActionReference: {fileID: -1680190386980627800, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  _attackPlayerInputActionReference: {fileID: 1120369429361536294, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
 --- !u!1 &429256446
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,7 +377,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 542623583}
+  - component: {fileID: 542623585}
   - component: {fileID: 542623584}
+  - component: {fileID: 542623586}
   m_Layer: 0
   m_Name: ==Player==
   m_TagString: Untagged
@@ -416,8 +416,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 259e8b79617cc9447956dfd62b01e3b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerId: 0
+  _playerId:
+    m_InternalValue: 0
   _isAlive: 1
+  _playerInput: {fileID: 51117913}
+--- !u!114 &542623585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542623582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2814626825
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+--- !u!114 &542623586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 542623582}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe82174f16cc10543b6c6e8b7726ac71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _movementPlayerInputActionReference: {fileID: -1680190386980627800, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  _attackPlayerInputActionReference: {fileID: 1120369429361536294, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  _playerState: {fileID: 542623584}
 --- !u!1 &590935374
 GameObject:
   m_ObjectHideFlags: 0

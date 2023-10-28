@@ -1,4 +1,5 @@
 using ClansWars.Camera;
+using ClansWars.Input;
 using ClansWars.Player;
 using System.Collections;
 using System.Collections.Generic;
@@ -10,6 +11,9 @@ namespace ClansWars.Network
 {
     public class NetworkPlayerInitializer : MonoBehaviour
     {
+        [SerializeField]
+        private NetworkPlayersInput _networkPlayersInput;
+
         [SerializeField]
         private PlayerState _playerPrefab;
 
@@ -34,8 +38,9 @@ namespace ClansWars.Network
         {
             Debug.Log("Client connected");
             PlayerState _newPlayer = Instantiate(_playerPrefab, Vector3.zero, Quaternion.identity, null);
-            _newPlayer.NetworkObject.Spawn();
-            //_newPlayer.SetId(playerId);
+            _newPlayer.NetworkObject.SpawnWithOwnership(playerId);
+            _newPlayer.PlayerId.Value = playerId;
+            _networkPlayersInput.AddPlayersInputStates(_newPlayer);
         }
     }
 }

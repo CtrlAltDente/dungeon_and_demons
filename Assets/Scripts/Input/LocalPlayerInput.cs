@@ -32,7 +32,7 @@ namespace ClansWars.Input
             Vector2 movementVector = _movementPlayerInputActionReference.action.ReadValue<Vector2>();
             bool isAttack = _attackPlayerInputActionReference.action.IsPressed();
 
-            PlayerInputData playerInputData = new PlayerInputData(movementVector, isAttack);
+            PlayerInputData playerInputData = new PlayerInputData(0, movementVector, isAttack);
 
             _playerState.UpdateInput(playerInputData);
         }

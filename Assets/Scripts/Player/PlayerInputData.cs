@@ -1,18 +1,29 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace ClansWars.Player
 {
-    public struct PlayerInputData
+    [Serializable]
+    public struct PlayerInputData : INetworkSerializable
     {
+        public ulong PlayerId;
         public Vector2 MovementVector;
         public bool IsAttack;
 
-        public PlayerInputData(Vector2 movementVector, bool isAttack)
+        public PlayerInputData(ulong playerId ,Vector2 movementVector, bool isAttack)
         {
+            PlayerId = playerId;
             MovementVector = movementVector;
             IsAttack = isAttack;
+        }
+
+        public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+        {
+            serializer.SerializeValue(ref MovementVector);
+            serializer.SerializeValue(ref IsAttack);
         }
     }
 }

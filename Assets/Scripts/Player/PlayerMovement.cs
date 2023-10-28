@@ -16,12 +16,7 @@ namespace ClansWars.Player
         private Transform _playerTransform;
 
         [SerializeField]
-        private PlayerInputData _currentPlayerInput;
-
-        private void Awake()
-        {
-            _currentPlayerInput = new PlayerInputData(Vector2.zero, false);
-        }
+        private PlayerInputData _currentPlayerInput = new PlayerInputData(0, Vector2.zero, false);
 
         private void Update()
         {

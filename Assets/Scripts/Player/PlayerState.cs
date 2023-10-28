@@ -8,8 +8,9 @@ namespace ClansWars.Player
 {
     public class PlayerState : NetworkBehaviour
     {
-        [SerializeField]
-        private NetworkVariable<ulong> _playerId;
+        public NetworkVariable<ulong> PlayerId = new NetworkVariable<ulong>();
+
+        public NetworkVariable<PlayerInputData> PlayerInputData = new NetworkVariable<PlayerInputData>(default, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
         [SerializeField]
         private bool _isAlive = true;
@@ -17,9 +18,10 @@ namespace ClansWars.Player
         [SerializeField]
         private PlayerInput _playerInput;
 
-        public void SetId(ulong id)
+        public void SetNetworkInput(PlayerInputData playerInputData)
         {
-            _playerId.Value = id;
+
+            PlayerInputData.Value = playerInputData;
         }
 
         public void UpdateInput(PlayerInputData playerInputData)

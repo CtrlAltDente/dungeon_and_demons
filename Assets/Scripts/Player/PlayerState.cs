@@ -17,11 +17,6 @@ namespace ClansWars.Player
         [SerializeField]
         private PlayerInput _playerInput;
 
-        private void Start()
-        {
-            SpawnInNetwork();
-        }
-
         public void SetId(ulong id)
         {
             _playerId.Value = id;
@@ -30,21 +25,6 @@ namespace ClansWars.Player
         public void UpdateInput(PlayerInputData playerInputData)
         {
             _playerInput.SetPlayerInputData(playerInputData);
-        }
-
-        private void SpawnInNetwork()
-        {
-            try
-            {
-                if (NetworkManager.Singleton.IsHost)
-                {
-                    NetworkObject.Spawn(true);
-                }
-            }
-            catch
-            {
-                Debug.Log("Network manager issue");
-            }
         }
     }
 }

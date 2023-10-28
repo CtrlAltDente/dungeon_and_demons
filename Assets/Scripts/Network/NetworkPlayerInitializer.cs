@@ -32,8 +32,10 @@ namespace ClansWars.Network
 
         private void InitializePlayer(ulong playerId)
         {
+            Debug.Log("Client connected");
             PlayerState _newPlayer = Instantiate(_playerPrefab, Vector3.zero, Quaternion.identity, null);
-            _newPlayer.SetId(playerId);
+            _newPlayer.NetworkObject.Spawn();
+            //_newPlayer.SetId(playerId);
         }
     }
 }

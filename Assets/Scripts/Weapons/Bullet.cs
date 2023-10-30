@@ -1,17 +1,33 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 namespace ClansWars.Weapons
 {
-    public class Bullet : MonoBehaviour
+    public class Bullet : NetworkBehaviour
     {
         [SerializeField]
         private float _speed = 50f;
 
         private void Start()
         {
-            StartCoroutine(SelfKiller());
+            try
+            {
+                if (NetworkManager.Singleton.IsHost)
+                {
+                    GetComponent<NetworkObject>().Spawn();
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e.Message);
+            }
+            finally
+            {
+                StartCoroutine(SelfKiller());
+            }
         }
 
         private void Update()
@@ -22,7 +38,20 @@ namespace ClansWars.Weapons
         private IEnumerator SelfKiller()
         {
             yield return new WaitForSeconds(5f);
-            Destroy(gameObject);
+
+            try
+            {
+                if (NetworkManager.Singleton.IsHost)
+                {
+                    GetComponent<NetworkObject>().Despawn();
+                    Destroy(gameObject);
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.Log(e.Message);
+                Destroy(gameObject);
+            }
         }
     }
 }

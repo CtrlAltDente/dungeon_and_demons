@@ -31,7 +31,7 @@ namespace ClansWars.Network
 
         private void ChangeScene()
         {
-            SceneManager.LoadScene("GameScene");
+            NetworkManager.Singleton.SceneManager.LoadScene("Scene_Lobby", LoadSceneMode.Single);
         }
     }
 }

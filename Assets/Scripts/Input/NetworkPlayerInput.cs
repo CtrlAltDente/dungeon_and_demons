@@ -1,3 +1,4 @@
+using ClansWars.Network;
 using ClansWars.Player;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using UnityEngine.InputSystem;
 
 namespace ClansWars.Input
 {
-    public class LocalPlayerInput : MonoBehaviour
+    public class NetworkPlayerInput : MonoBehaviour
     {
         [SerializeField]
         private InputActionReference _movementPlayerInputActionReference;
@@ -17,14 +18,19 @@ namespace ClansWars.Input
         [SerializeField]
         private PlayerState _playerState;
 
+        public PlayerInputData PlayerInputData;
+
         private void Start()
         {
-            DisableAtNetworkMode();
+            DisableAtLocalMode();
         }
 
         private void Update()
         {
-            UpdateInputAtPlayerState();
+            if (_playerState.PlayerId.Value == NetworkManager.Singleton.LocalClientId)
+            {
+                UpdateInputAtPlayerState();
+            }
         }
 
         private void UpdateInputAtPlayerState()
@@ -32,26 +38,26 @@ namespace ClansWars.Input
             Vector2 movementVector = _movementPlayerInputActionReference.action.ReadValue<Vector2>();
             bool isAttack = _attackPlayerInputActionReference.action.IsPressed();
 
-            PlayerInputData playerInputData = new PlayerInputData(0, movementVector, isAttack);
-
-            _playerState.UpdateInput(playerInputData);
+            PlayerInputData = new PlayerInputData(NetworkManager.Singleton.LocalClientId, movementVector, isAttack);
+            _playerState.SetNetworkInput(PlayerInputData);
         }
 
-        private void DisableAtNetworkMode()
+        private void DisableAtLocalMode()
         {
             try
             {
                 if (NetworkManager.Singleton.IsHost || NetworkManager.Singleton.IsClient)
                 {
-                    Destroy(this);
+                    Debug.Log("Connection true, you are in network game");
                 }
                 else
                 {
-                    Debug.Log("Connection false, you are in local game");
+                    Destroy(this);
                 }
             }
             catch
             {
+                Destroy(this);
                 Debug.Log("NetworkManager is null, you are in local game");
             }
         }

@@ -6,15 +6,13 @@ using UnityEngine.Events;
 
 namespace ClansWars.Input
 {
-    public abstract class PlayerInput : MonoBehaviour
+    public class PlayerInput : MonoBehaviour
     {
         public UnityEvent<PlayerInputData> OnPlayerInputDataReady;
 
-        protected void Update()
+        public void SetPlayerInputData(PlayerInputData playerInputData)
         {
-            ApplyInputToThePlayerLogicParts();
+            OnPlayerInputDataReady?.Invoke(playerInputData);
         }
-
-        protected abstract void ApplyInputToThePlayerLogicParts();
     }
 }

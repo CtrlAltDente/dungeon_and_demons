@@ -11,7 +11,7 @@ namespace ClansWars.Player
         [SerializeField]
         private Weapon _currentWeapon;
 
-        private PlayerInputData _currentPlayerInputData;
+        private PlayerInputData _currentPlayerInputData = new PlayerInputData(0, Vector2.zero, false);
 
         private void Update()
         {

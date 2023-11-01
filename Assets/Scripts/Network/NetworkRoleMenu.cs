@@ -1,22 +1,18 @@
+using ClansWars.Game;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Zenject;
 
 namespace ClansWars.Network
 {
     public class NetworkRoleMenu : MonoBehaviour
     {
-        private void Start()
-        {
-        }
-
-        private void OnDestroy()
-        {
-            
-        }
+        [Inject]
+        private ScenesLoader _scenesLoader;
 
         public void InitializeHost()
         {
@@ -31,7 +27,7 @@ namespace ClansWars.Network
 
         private void ChangeScene()
         {
-            NetworkManager.Singleton.SceneManager.LoadScene("Scene_Lobby", LoadSceneMode.Single);
+            _scenesLoader.LoadNetworkScene("Scene_Lobby");
         }
     }
 }

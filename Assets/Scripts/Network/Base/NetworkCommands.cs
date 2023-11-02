@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace ClansWars.Network
 {
-    public class NetworkControl : MonoBehaviour
+    public class NetworkCommands : MonoBehaviour
     {
         public void StopNetworkAndExitToMainMenu()
         {

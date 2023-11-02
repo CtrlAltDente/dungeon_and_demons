@@ -26,10 +26,10 @@ namespace ClansWars.Network
 
         private void SubscribeOnNetworkEvents()
         {
-            if (!NetworkManager.Singleton.IsHost)
+            if (!NetworkManager.Singleton)
                 return;
 
-            if (NetworkManager.Singleton)
+            if (NetworkManager.Singleton.IsHost)
             {
                 NetworkManager.Singleton.OnClientConnectedCallback += ProcessConnectedClient;
                 NetworkManager.Singleton.OnClientDisconnectCallback += ProcessDisconnectedClient;
@@ -38,10 +38,10 @@ namespace ClansWars.Network
 
         private void UnsubscribeFromNetworkEvents()
         {
-            if (!NetworkManager.Singleton.IsHost)
+            if (!NetworkManager.Singleton)
                 return;
 
-            if (NetworkManager.Singleton)
+            if (NetworkManager.Singleton.IsHost)
             {
                 NetworkManager.Singleton.OnClientConnectedCallback -= ProcessConnectedClient;
                 NetworkManager.Singleton.OnClientDisconnectCallback -= ProcessDisconnectedClient;

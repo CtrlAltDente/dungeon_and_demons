@@ -20,7 +20,6 @@ namespace ClansWars.Player
 
         public void SetNetworkInput(PlayerInputData playerInputData)
         {
-
             PlayerInputData.Value = playerInputData;
         }
 

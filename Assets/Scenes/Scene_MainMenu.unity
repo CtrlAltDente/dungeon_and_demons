@@ -2986,6 +2986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 830344e1cc53a0543a8e9dfe0c96307b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _mapsContainer: {fileID: 11400000, guid: 6a6091662cdc4674cb861f659921517b, type: 2}
   _scenesLoader: {fileID: 1075796981}
 --- !u!114 &1712681172
 MonoBehaviour:
@@ -4249,10 +4250,6 @@ PrefabInstance:
     - target: {fileID: 8198378109775773608, guid: e1a910f398801874bb03d7796e13f9e6, type: 3}
       propertyPath: m_Name
       value: --ScenesLoader--
-      objectReference: {fileID: 0}
-    - target: {fileID: 8198378109775773608, guid: e1a910f398801874bb03d7796e13f9e6, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

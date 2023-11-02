@@ -16,7 +16,7 @@ namespace ClansWars.Network
         {
             SubscribeOnNetworkEvents();
             ResetClientsValues();
-            ApproveClient(NetworkManager.Singleton.LocalClientId);
+            ProcessAlreadyConnectedClients();
         }
 
         private void OnDestroy()
@@ -45,6 +45,20 @@ namespace ClansWars.Network
             {
                 NetworkManager.Singleton.OnClientConnectedCallback -= ProcessConnectedClient;
                 NetworkManager.Singleton.OnClientDisconnectCallback -= ProcessDisconnectedClient;
+            }
+        }
+
+        private void ProcessAlreadyConnectedClients()
+        {
+            if (!NetworkManager.Singleton)
+                return;
+
+            if (NetworkManager.Singleton.IsHost)
+            {
+                foreach (ulong id in NetworkManager.Singleton.ConnectedClientsIds)
+                {
+                    ProcessConnectedClient(id);
+                }
             }
         }
 

@@ -41,7 +41,6 @@ namespace ClansWars.Network
 
         private void ReturnToMainScene(bool value)
         {
-            Debug.Log("!");
             Destroy(NetworkManager.Singleton.gameObject);
             _scenesLoader.LoadLocalScene("Scene_MainMenu");
         }

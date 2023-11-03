@@ -1,4 +1,5 @@
 using ClansWars.Game;
+using ClansWars.Input;
 using ClansWars.Network;
 using ClansWars.Player;
 using ClansWars.ScriptableObjects;
@@ -12,6 +13,9 @@ public class GameplayManager : MonoBehaviour
 {
     [Inject]
     private MapsContainer _mapsContainer;
+
+    [SerializeField]
+    private PlayerInputDataBridge _playerInputDataBridge;
 
     [SerializeField]
     private Map _currentMap;
@@ -35,6 +39,11 @@ public class GameplayManager : MonoBehaviour
 
     private void InitializePlayers()
     {
+        if(NetworkManager.Singleton.IsHost || NetworkManager.Singleton.IsClient)
+        {
+            _playerInputDataBridge.SetNetworkPlayersInput(_networkPlayersInput);
+        }
+
         if (NetworkManager.Singleton.IsHost)
         {
             for (int i = 0; i < NetworkManager.Singleton.ConnectedClientsIds.Count; i++)
@@ -50,14 +59,14 @@ public class GameplayManager : MonoBehaviour
 
     private void InitializeNetworkPlayer(ulong playerId, Vector3 position)
     {
-        PlayerState _newPlayer = Instantiate(_playerPrefab, Vector3.zero, Quaternion.identity, null);
+        PlayerState _newPlayer = Instantiate(_playerPrefab, position, Quaternion.identity, null);
         _newPlayer.NetworkObject.SpawnWithOwnership(playerId);
-        _newPlayer.PlayerId.Value = playerId;
         _networkPlayersInput.AddPlayersInputStates(_newPlayer);
     }
 
     private void InitializeLocalPlayer()
     {
-        PlayerState _newPlayer = Instantiate(_playerPrefab, Vector3.zero, Quaternion.identity, null);
+        PlayerState newPlayer = Instantiate(_playerPrefab, Vector3.zero, Quaternion.identity, null);
+        _playerInputDataBridge.SetPlayerState(newPlayer);
     }
 }

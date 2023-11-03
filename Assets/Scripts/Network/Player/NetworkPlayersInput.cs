@@ -7,25 +7,29 @@ using UnityEngine;
 
 namespace ClansWars.Network
 {
-    public class NetworkPlayersInput : MonoBehaviour
+    public class NetworkPlayersInput : NetworkBehaviour
     {
         [SerializeField]
         private List<PlayerState> _playersStates = new List<PlayerState>();
 
+        private void Awake()
+        {
+            DestroyAtLocalMode();
+        }
+
         private void Start()
         {
-            if (NetworkManager.Singleton.IsHost || NetworkManager.Singleton.IsServer)
+            if (NetworkManager.Singleton.IsHost)
             {
                 NetworkManager.Singleton.OnClientDisconnectCallback += RemoveInputOfPlayer;
             }
         }
 
-        private void Update()
+        [ServerRpc]
+        public void SetInputToPlayerServerRpc(PlayerInputData playerInputData)
         {
-            if (NetworkManager.Singleton.IsHost || NetworkManager.Singleton.IsServer)
-            {
-                SetInputToPlayer();
-            }
+            PlayerState playerState = _playersStates.Find((player) => player.OwnerClientId == playerInputData.PlayerId);
+            playerState.UpdateInput(playerInputData);
         }
 
         public void AddPlayersInputStates(PlayerState playerState)
@@ -33,17 +37,17 @@ namespace ClansWars.Network
             _playersStates.Add(playerState);
         }
 
-        public void SetInputToPlayer()
+        private void DestroyAtLocalMode()
         {
-            foreach (PlayerState playerState in _playersStates)
+            if(!NetworkManager.Singleton.IsHost)
             {
-                playerState.UpdateInput(playerState.PlayerInputData.Value);
+                Destroy(gameObject);
             }
         }
 
         private void RemoveInputOfPlayer(ulong id)
         {
-            PlayerState playerNetworkInputState = _playersStates.Find((ps) => ps.PlayerId.Value == id);
+            PlayerState playerNetworkInputState = _playersStates.Find((ps) => ps.OwnerClientId == id);
             _playersStates.Remove(playerNetworkInputState);
         }
     }

@@ -22,6 +22,7 @@ namespace ClansWars.Player
 
         public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
         {
+            serializer.SerializeValue(ref PlayerId);
             serializer.SerializeValue(ref MovementVector);
             serializer.SerializeValue(ref IsAttack);
         }

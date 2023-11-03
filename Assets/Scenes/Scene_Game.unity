@@ -1031,7 +1031,7 @@ GameObject:
   - component: {fileID: 1298905680}
   - component: {fileID: 1298905681}
   m_Layer: 0
-  m_Name: --NetworkPlayerInput
+  m_Name: --NetworkPlayerInputBridge--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

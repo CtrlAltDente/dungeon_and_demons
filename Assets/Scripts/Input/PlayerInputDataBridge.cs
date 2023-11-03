@@ -44,7 +44,7 @@ namespace ClansWars.Input
 
         private void UpdateInputForPlayer()
         {
-            if(NetworkManager.Singleton.IsHost || NetworkManager.Singleton.IsClient)
+            if(NetworkManager.Singleton.IsClient)
             {
                 UpdateInputForNetworPlayersInput();
             }
@@ -58,6 +58,7 @@ namespace ClansWars.Input
         {
             if (_networkPlayersInput)
             {
+                Debug.Log(_currentInputType.GetPlayerInputData().PlayerId);
                 _networkPlayersInput.SetInputToPlayerServerRpc(_currentInputType.GetPlayerInputData());
             }
         }

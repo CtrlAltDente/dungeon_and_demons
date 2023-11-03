@@ -25,9 +25,10 @@ namespace ClansWars.Network
             }
         }
 
-        [ServerRpc]
+        [ServerRpc(RequireOwnership = false)]
         public void SetInputToPlayerServerRpc(PlayerInputData playerInputData)
         {
+            Debug.Log(playerInputData.PlayerId);
             PlayerState playerState = _playersStates.Find((player) => player.OwnerClientId == playerInputData.PlayerId);
             playerState.UpdateInput(playerInputData);
         }
@@ -39,7 +40,7 @@ namespace ClansWars.Network
 
         private void DestroyAtLocalMode()
         {
-            if(!NetworkManager.Singleton.IsHost)
+            if(!NetworkManager.Singleton.IsClient)
             {
                 Destroy(gameObject);
             }

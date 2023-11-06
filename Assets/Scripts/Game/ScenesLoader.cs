@@ -5,6 +5,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using UnityEngine.UI;
 
 namespace ClansWars.Game
 {
@@ -12,6 +13,8 @@ namespace ClansWars.Game
     {
         [SerializeField]
         private CanvasGroup _canvasGroup;
+        [SerializeField]
+        private Image _image;
 
         private const float _fadeSpeed = 1f;
 
@@ -32,11 +35,13 @@ namespace ClansWars.Game
 
         public void FadeIn(TweenCallback OnEndAction = null)
         {
+            _image.raycastTarget = false;
             _canvasGroup.DOFade(0, _fadeSpeed).OnComplete(OnEndAction);
         }
 
         public void FadeOut(TweenCallback OnEndAction = null)
         {
+            _image.raycastTarget = true;
             _canvasGroup.DOFade(1, _fadeSpeed).OnComplete(OnEndAction);
         }
     }

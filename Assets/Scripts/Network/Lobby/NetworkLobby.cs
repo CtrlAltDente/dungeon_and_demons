@@ -1,16 +1,25 @@
+using ClansWars.Game;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.UI;
+using Zenject;
 
 namespace ClansWars.Network
 {
-    public class NetworkLobby : MonoBehaviour
+    public class NetworkLobby : NetworkBehaviour
     {
         public bool HasLobbyPlaces => _lobbyUsers.Find((user) => !user.IsConnected) != null;
 
+        [Inject]
+        private ScenesLoader _scenesLoader;
+
         [SerializeField]
         private List<LobbyUser> _lobbyUsers = new List<LobbyUser>();
+
+        [SerializeField]
+        private Button _startLobbyButton;
 
         private void Start()
         {
@@ -33,6 +42,7 @@ namespace ClansWars.Network
             {
                 NetworkManager.Singleton.OnClientConnectedCallback += ProcessConnectedClient;
                 NetworkManager.Singleton.OnClientDisconnectCallback += ProcessDisconnectedClient;
+                _startLobbyButton.onClick.AddListener(StartLobbyGameClientRpc);
             }
         }
 
@@ -45,6 +55,7 @@ namespace ClansWars.Network
             {
                 NetworkManager.Singleton.OnClientConnectedCallback -= ProcessConnectedClient;
                 NetworkManager.Singleton.OnClientDisconnectCallback -= ProcessDisconnectedClient;
+                _startLobbyButton.onClick.RemoveListener(StartLobbyGameClientRpc);
             }
         }
 
@@ -121,6 +132,25 @@ namespace ClansWars.Network
                 {
                     lobbyUser.ClearClient();
                 }
+            }
+            else
+            {
+                _startLobbyButton.gameObject.SetActive(false);
+            }
+        }
+
+        [ClientRpc]
+        private void StartLobbyGameClientRpc()
+        {
+            _startLobbyButton.onClick.RemoveAllListeners();
+
+            if (NetworkManager.Singleton.IsHost)
+            {
+                _scenesLoader.LoadNetworkScene("Scene_Game");
+            }
+            else if (NetworkManager.Singleton.IsClient)
+            {
+                _scenesLoader.FadeOut();
             }
         }
     }

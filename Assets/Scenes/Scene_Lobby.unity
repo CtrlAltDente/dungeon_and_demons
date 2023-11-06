@@ -2538,7 +2538,7 @@ GameObject:
   - component: {fileID: 1131242866}
   - component: {fileID: 1131242865}
   m_Layer: 0
-  m_Name: GoButton
+  m_Name: StartButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2607,19 +2607,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1131242866}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1636340716}
-        m_TargetAssemblyTypeName: ClansWars.Game.ScenesLoader, Assembly-CSharp
-        m_MethodName: LoadNetworkScene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Scene_Game
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1131242866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3226,7 +3214,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: GO!
+  m_text: Start
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4736,15 +4724,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8377077028594859288, guid: eeb0424c30fc67b4fadea0d1398ec19f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 549.1345
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8377077028594859288, guid: eeb0424c30fc67b4fadea0d1398ec19f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 297.72073
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8377077028594859288, guid: eeb0424c30fc67b4fadea0d1398ec19f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 21.32912
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8377077028594859288, guid: eeb0424c30fc67b4fadea0d1398ec19f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4793,6 +4781,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4826031797946872802}
   - component: {fileID: 8735791064790677732}
+  - component: {fileID: 8735791064790677733}
   m_Layer: 0
   m_Name: --NetworkLobby--
   m_TagString: Untagged
@@ -4836,6 +4825,27 @@ MonoBehaviour:
   - {fileID: 1884924146}
   - {fileID: 1733681929}
   - {fileID: 1337452637}
+  _startLobbyButton: {fileID: 1131242865}
+--- !u!114 &8735791064790677733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2226370413028994673}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 4138084669
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

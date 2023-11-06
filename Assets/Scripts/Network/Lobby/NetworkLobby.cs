@@ -40,6 +40,7 @@ namespace ClansWars.Network
 
             if (NetworkManager.Singleton.IsHost)
             {
+                NetworkManager.Singleton.ConnectionApprovalCallback += ConnectionApproval;
                 NetworkManager.Singleton.OnClientConnectedCallback += ProcessConnectedClient;
                 NetworkManager.Singleton.OnClientDisconnectCallback += ProcessDisconnectedClient;
                 _startLobbyButton.onClick.AddListener(StartLobbyGameClientRpc);
@@ -53,6 +54,7 @@ namespace ClansWars.Network
 
             if (NetworkManager.Singleton.IsHost)
             {
+                NetworkManager.Singleton.ConnectionApprovalCallback -= ConnectionApproval;
                 NetworkManager.Singleton.OnClientConnectedCallback -= ProcessConnectedClient;
                 NetworkManager.Singleton.OnClientDisconnectCallback -= ProcessDisconnectedClient;
                 _startLobbyButton.onClick.RemoveListener(StartLobbyGameClientRpc);
@@ -73,19 +75,24 @@ namespace ClansWars.Network
             }
         }
 
-        private void ProcessConnectedClient(ulong clientId)
+        private void ConnectionApproval(NetworkManager.ConnectionApprovalRequest connectionApprovalRequest, NetworkManager.ConnectionApprovalResponse connectionApprovalResponse)
         {
             if (NetworkManager.Singleton.IsHost)
             {
                 if (HasLobbyPlaces)
                 {
-                    ApproveClient(clientId);
+                    connectionApprovalResponse.Approved = true;
                 }
                 else
                 {
-                    DisconnectClient(clientId);
+                    connectionApprovalResponse.Approved = false;
                 }
             }
+        }
+
+        private void ProcessConnectedClient(ulong clientId)
+        {
+            ApproveClient(clientId);
         }
 
         private void ProcessDisconnectedClient(ulong clientId)

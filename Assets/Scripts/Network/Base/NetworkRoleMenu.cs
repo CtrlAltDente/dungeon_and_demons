@@ -17,17 +17,25 @@ namespace ClansWars.Network
         public void InitializeHost()
         {
             NetworkManager.Singleton.StartHost();
-            ChangeScene();
+            _scenesLoader.LoadNetworkScene("Scene_Lobby");
         }
 
         public void InitializeClient()
         {
-            NetworkManager.Singleton.StartClient();
+            StartCoroutine(TryInitializeClientAndConnect());
         }
 
-        private void ChangeScene()
+        private IEnumerator TryInitializeClientAndConnect()
         {
-            _scenesLoader.LoadNetworkScene("Scene_Lobby");
+            _scenesLoader.FadeOut(() => NetworkManager.Singleton.StartClient());
+
+            yield return new WaitForSeconds(3f);
+
+            if(!NetworkManager.Singleton.IsConnectedClient)
+            {
+                NetworkManager.Singleton.Shutdown();
+                _scenesLoader.LoadLocalScene("Scene_MainMenu");
+            }
         }
     }
 }

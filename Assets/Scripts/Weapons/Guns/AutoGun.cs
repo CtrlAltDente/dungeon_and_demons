@@ -10,7 +10,7 @@ namespace ClansWars.Weapons
         private float _spreadAngle;
 
         [SerializeField]
-        private Transform _bulletSpawnPosition;
+        private List<Transform> _bulletSpawnPositions;
 
         [SerializeField]
         private Bullet _bulletPrefab;
@@ -22,9 +22,17 @@ namespace ClansWars.Weapons
             if(_canAttack)
             {
                 _canAttack = false;
-                Quaternion randomAngle = Quaternion.Euler(RandomAngleValue, RandomAngleValue, RandomAngleValue);
-                Instantiate(_bulletPrefab, _bulletSpawnPosition.position, _bulletSpawnPosition.rotation * randomAngle, null);
+                InstantiateBullets();
                 StartCoroutine(WaitForNextAttack());
+            }
+        }
+
+        private void InstantiateBullets()
+        {
+            foreach(Transform spawnPosition in _bulletSpawnPositions)
+            {
+                Quaternion randomAngle = Quaternion.Euler(RandomAngleValue, RandomAngleValue, RandomAngleValue);
+                Instantiate(_bulletPrefab, spawnPosition.position, spawnPosition.rotation * randomAngle, null);
             }
         }
     }

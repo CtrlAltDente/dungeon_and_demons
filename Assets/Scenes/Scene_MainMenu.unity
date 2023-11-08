@@ -3109,8 +3109,8 @@ RectTransform:
   - {fileID: 732818144}
   - {fileID: 180016513}
   - {fileID: 1841725379}
-  - {fileID: 1075796977}
   - {fileID: 1848412758}
+  - {fileID: 1075796977}
   m_Father: {fileID: 162914719}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3162,7 +3162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c96d85dd6831c44cbd96f6b9c95342f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HidePosition: {x: 3840, y: 0}
+  HidePosition: {x: 1600, y: 0}
   ShowPosition: {x: 0, y: 0}
   _menus:
   - {fileID: 1433414470}
@@ -4791,7 +4791,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1848412758
 RectTransform:
   m_ObjectHideFlags: 0

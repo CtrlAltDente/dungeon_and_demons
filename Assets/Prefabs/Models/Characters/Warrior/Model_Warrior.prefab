@@ -771,13 +771,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 151515ae157acc94a8d58b8337dc5888, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AttackAnimations:
-  - TimeForAttackMoment: 0.2
-    AnimationClip: {fileID: 7400000, guid: 4ea3e3071b4e3564cb2d8d7b3edcc120, type: 2}
-  - TimeForAttackMoment: 0.2
-    AnimationClip: {fileID: 7400000, guid: 5c6cbb6279a75414fba490be57844494, type: 2}
-  - TimeForAttackMoment: 0.2
-    AnimationClip: {fileID: 7400000, guid: e5466c5b07602384ab6d5a4d4bc5d7d4, type: 2}
+  OnAnimationAttackEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5828673664329824396
 GameObject:
   m_ObjectHideFlags: 0

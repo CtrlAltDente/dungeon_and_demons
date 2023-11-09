@@ -23,7 +23,7 @@ namespace ClansWars.Player
 
         private void Update()
         {
-            if (!_playerAttack.InAttack)
+            if (!_currentPlayerInput.IsAttack)
             {
                 Move(_currentPlayerInput);
             }

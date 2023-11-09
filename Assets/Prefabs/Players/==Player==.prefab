@@ -366,7 +366,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentWeapon: {fileID: 6749804211518346575}
-  _playerModel: {fileID: 2327581840849999627}
 --- !u!1 &3460752904507798534
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,7 +411,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7097851f22dd8394cb891cfabbcb3f93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerAttack: {fileID: 3460752904463109514}
   _animator: {fileID: 6755157120753418047}
   _modelAnimations: {fileID: 8173745705411870718}
 --- !u!1 &3460752904684803773
@@ -788,9 +786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efd02d12f3d758949a4e20c3334b9138, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rateOfAttack: 60
   _damage: 10
-  CanAttack: 0
 --- !u!1001 &1553271943846026985
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -842,6 +838,34 @@ PrefabInstance:
     - target: {fileID: 5476970335928575919, guid: b11782e6a590cf54eb6100c1e85d5f1b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7269002160832454935, guid: b11782e6a590cf54eb6100c1e85d5f1b, type: 3}
+      propertyPath: OnAnimationAttackEvent.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7269002160832454935, guid: b11782e6a590cf54eb6100c1e85d5f1b, type: 3}
+      propertyPath: OnAnimationAttackEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7269002160832454935, guid: b11782e6a590cf54eb6100c1e85d5f1b, type: 3}
+      propertyPath: OnAnimationAttackEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3460752904463109514}
+    - target: {fileID: 7269002160832454935, guid: b11782e6a590cf54eb6100c1e85d5f1b, type: 3}
+      propertyPath: OnAnimationAttackEvent.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7269002160832454935, guid: b11782e6a590cf54eb6100c1e85d5f1b, type: 3}
+      propertyPath: OnAnimationAttackEvent.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Attack
+      objectReference: {fileID: 0}
+    - target: {fileID: 7269002160832454935, guid: b11782e6a590cf54eb6100c1e85d5f1b, type: 3}
+      propertyPath: OnAnimationAttackEvent.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: ClansWars.Player.PlayerAttack, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7269002160832454935, guid: b11782e6a590cf54eb6100c1e85d5f1b, type: 3}
+      propertyPath: OnAnimationAttackEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

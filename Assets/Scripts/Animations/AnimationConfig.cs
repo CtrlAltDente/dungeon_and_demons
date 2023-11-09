@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 
 [Serializable]
-public struct AttackAnimationConfig 
+public struct AnimationConfig 
 {
     public float TimeForAttackMoment;
     public AnimationClip AnimationClip;

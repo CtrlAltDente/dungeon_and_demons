@@ -17,9 +17,8 @@ namespace ClansWars.Weapons
 
         private float RandomAngleValue => Random.Range(-_spreadAngle, _spreadAngle);
 
-        protected override IEnumerator DoAttackOperations(float timeToAttackMoment)
+        public override void Attack()
         {
-            yield return new WaitForSeconds(timeToAttackMoment);
             InstantiateBullets();
         }
 

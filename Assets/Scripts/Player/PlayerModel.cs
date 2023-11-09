@@ -10,9 +10,6 @@ namespace ClansWars.Player
     public class PlayerModel : MonoBehaviour, IPlayerLogicPart
     {
         [SerializeField]
-        private PlayerAttack _playerAttack;
-
-        [SerializeField]
         private Animator _animator;
         [SerializeField]
         private ModelAnimations _modelAnimations;
@@ -20,18 +17,12 @@ namespace ClansWars.Player
         public void SetPlayerInputData(PlayerInputData playerInputData)
         {
             SetMovementValue(playerInputData);
-        }
-
-        public AttackAnimationConfig PlayAttackAnimation()
-        {
-            AttackAnimationConfig attackAnimationConfig = _modelAnimations.RandomAttackAnimation;
-            _animator.Play(attackAnimationConfig.AnimationClip.name);
-            return attackAnimationConfig;
+            SetAttackValue(playerInputData);
         }
 
         private void SetMovementValue(PlayerInputData playerInputData)
         {
-            if (!_playerAttack.InAttack)
+            if (!playerInputData.IsAttack)
             {
                 _animator.SetBool("IsMoving", playerInputData.MovementVector.magnitude > 0.1f);
             }
@@ -39,6 +30,11 @@ namespace ClansWars.Player
             {
                 _animator.SetBool("IsMoving", false);
             }
+        }
+
+        private void SetAttackValue(PlayerInputData playerInputData)
+        {
+            _animator.SetBool("IsAttack", playerInputData.IsAttack);
         }
     }
 }

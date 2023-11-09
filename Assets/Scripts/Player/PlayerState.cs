@@ -8,25 +8,23 @@ namespace ClansWars.Player
 {
     public class PlayerState : NetworkBehaviour
     {
-        public NetworkVariable<ulong> PlayerId = new NetworkVariable<ulong>();
-
-        public NetworkVariable<PlayerInputData> PlayerInputData = new NetworkVariable<PlayerInputData>(default, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-
         [SerializeField]
         private bool _isAlive = true;
+        [SerializeField]
+        private bool _isMoving = false;
+
+        [SerializeField]
+        private Animator _animator;
 
         [SerializeField]
         private PlayerInput _playerInput;
 
-        public void SetNetworkInput(PlayerInputData playerInputData)
-        {
-
-            PlayerInputData.Value = playerInputData;
-        }
-
         public void UpdateInput(PlayerInputData playerInputData)
         {
             _playerInput.SetPlayerInputData(playerInputData);
+            _isMoving = playerInputData.MovementVector.magnitude > 0.1f;
+
+            _animator.SetBool("IsMoving", _isMoving);
         }
     }
 }

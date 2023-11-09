@@ -698,6 +698,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5476970335928575919}
   - component: {fileID: 5202069912728691158}
+  - component: {fileID: 4547670534527311822}
+  - component: {fileID: 7269002160832454935}
   m_Layer: 0
   m_Name: Model_Warrior
   m_TagString: Untagged
@@ -743,6 +745,39 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4547670534527311822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5414085759991016156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8d0727d5ae3244e3b569694d3912374, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TransitionStateInfoList: []
+  m_Animator: {fileID: 5202069912728691158}
+--- !u!114 &7269002160832454935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5414085759991016156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 151515ae157acc94a8d58b8337dc5888, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  AttackAnimations:
+  - TimeForAttackMoment: 0.2
+    AnimationClip: {fileID: 7400000, guid: 4ea3e3071b4e3564cb2d8d7b3edcc120, type: 2}
+  - TimeForAttackMoment: 0.2
+    AnimationClip: {fileID: 7400000, guid: 5c6cbb6279a75414fba490be57844494, type: 2}
+  - TimeForAttackMoment: 0.2
+    AnimationClip: {fileID: 7400000, guid: e5466c5b07602384ab6d5a4d4bc5d7d4, type: 2}
 --- !u!1 &5828673664329824396
 GameObject:
   m_ObjectHideFlags: 0

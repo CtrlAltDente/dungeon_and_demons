@@ -8,8 +8,13 @@ namespace ClansWars.Player
 {
     public class PlayerAttack : MonoBehaviour, IPlayerLogicPart
     {
+        public bool InAttack => !_currentWeapon.CanAttack;
+
         [SerializeField]
         private Weapon _currentWeapon;
+
+        [SerializeField]
+        protected PlayerModel _playerModel;
 
         private PlayerInputData _currentPlayerInputData = new PlayerInputData(0, Vector2.zero, false);
 
@@ -30,9 +35,10 @@ namespace ClansWars.Player
 
         private void Attack()
         {
-            if(_currentPlayerInputData.IsAttack)
+            if(_currentPlayerInputData.IsAttack && _currentWeapon.CanAttack)
             {
-                _currentWeapon.Attack();
+                AttackAnimationConfig attackAnimation = _playerModel.PlayAttackAnimation();
+                _currentWeapon.Attack(attackAnimation.TimeForAttackMoment, attackAnimation.AnimationClip.length);
             }
         }
     }

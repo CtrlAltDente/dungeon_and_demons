@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ClansWars.Weapons
 {
-    public class AutoGun : Weapon
+    public class RangedWeapon : Weapon
     {
         [SerializeField]
         private float _spreadAngle;
@@ -17,14 +17,10 @@ namespace ClansWars.Weapons
 
         private float RandomAngleValue => Random.Range(-_spreadAngle, _spreadAngle);
 
-        public override void Attack()
+        protected override IEnumerator DoAttackOperations(float timeToAttackMoment)
         {
-            if(_canAttack)
-            {
-                _canAttack = false;
-                InstantiateBullets();
-                StartCoroutine(WaitForNextAttack());
-            }
+            yield return new WaitForSeconds(timeToAttackMoment);
+            InstantiateBullets();
         }
 
         private void InstantiateBullets()

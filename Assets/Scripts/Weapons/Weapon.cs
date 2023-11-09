@@ -1,3 +1,4 @@
+using ClansWars.Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,19 +12,29 @@ namespace ClansWars.Weapons
         [SerializeField]
         protected int _damage;
          
-        protected bool _canAttack;
+        public bool CanAttack;
 
         public virtual void Start()
         {
-            _canAttack = true;
+            CanAttack = true;
         }
 
-        public abstract void Attack();
-
-        protected IEnumerator WaitForNextAttack()
+        public void Attack(float timeToAttackMoment, float timeOfAnimation)
         {
-            yield return new WaitForSeconds(60f / _rateOfAttack);
-            _canAttack = true;
+            if(CanAttack)
+            {
+                CanAttack = false;
+                StartCoroutine(DoAttackOperations(timeToAttackMoment));
+                StartCoroutine(WaitForNextAttack(timeOfAnimation));
+            }
+        }
+
+        protected abstract IEnumerator DoAttackOperations(float timeToAttackMoment);
+
+        protected IEnumerator WaitForNextAttack(float timeOfAnimation)
+        {
+            yield return new WaitForSeconds(timeOfAnimation);
+            CanAttack = true;
         }
     }
 }

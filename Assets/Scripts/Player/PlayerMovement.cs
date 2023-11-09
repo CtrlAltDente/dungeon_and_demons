@@ -16,11 +16,17 @@ namespace ClansWars.Player
         private Transform _playerTransform;
 
         [SerializeField]
+        private PlayerAttack _playerAttack;
+
+        [SerializeField]
         private PlayerInputData _currentPlayerInput = new PlayerInputData(0, Vector2.zero, false);
 
         private void Update()
         {
-            Move(_currentPlayerInput);
+            if (!_playerAttack.InAttack)
+            {
+                Move(_currentPlayerInput);
+            }
         }
 
         public void SetPlayerInputData(PlayerInputData playerInputData)

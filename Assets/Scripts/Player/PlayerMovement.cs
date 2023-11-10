@@ -8,22 +8,24 @@ namespace ClansWars.Player
     public class PlayerMovement : MonoBehaviour, IPlayerLogicPart
     {
         [SerializeField]
+        private Transform _playerTransform;
+        [SerializeField]
+        private PlayerAttack _playerAttack;
+
+        [SerializeField]
+        private PlayerInputData _currentPlayerInput = new PlayerInputData(0, Vector2.zero, false, false, false, 0);
+
+        [SerializeField]
         private float _movementSpeed;
         [SerializeField]
         private float _rotationSpeed;
 
         [SerializeField]
-        private Transform _playerTransform;
-
-        [SerializeField]
-        private PlayerAttack _playerAttack;
-
-        [SerializeField]
-        private PlayerInputData _currentPlayerInput = new PlayerInputData(0, Vector2.zero, false);
+        private bool _isRolling;
 
         private void Update()
         {
-            if (!_currentPlayerInput.IsAttack)
+            if (!_currentPlayerInput.IsPrimaryAttack)
             {
                 Move(_currentPlayerInput);
             }

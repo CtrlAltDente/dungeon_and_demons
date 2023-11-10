@@ -297,18 +297,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 3460752904463109514}
-        m_TargetAssemblyTypeName: ClansWars.Player.PlayerAttack, Assembly-CSharp
-        m_MethodName: SetPlayerInputData
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 2327581840849999627}
         m_TargetAssemblyTypeName: ClansWars.Player.PlayerModel, Assembly-CSharp
         m_MethodName: SetPlayerInputData
@@ -478,7 +466,7 @@ Transform:
   m_GameObject: {fileID: 6947888649938510842}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5257311, y: -0, z: -0, w: 0.85065085}
-  m_LocalPosition: {x: 6.093323, y: 18, z: 2.5399704}
+  m_LocalPosition: {x: 0, y: 18, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

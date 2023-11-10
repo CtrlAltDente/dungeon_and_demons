@@ -22,7 +22,7 @@ namespace ClansWars.Player
 
         private void SetMovementValue(PlayerInputData playerInputData)
         {
-            if (!playerInputData.IsAttack)
+            if (!playerInputData.IsPrimaryAttack)
             {
                 _animator.SetBool("IsMoving", playerInputData.MovementVector.magnitude > 0.1f);
             }
@@ -34,7 +34,7 @@ namespace ClansWars.Player
 
         private void SetAttackValue(PlayerInputData playerInputData)
         {
-            _animator.SetBool("IsAttack", playerInputData.IsAttack);
+            _animator.SetBool("IsAttack", playerInputData.IsPrimaryAttack);
         }
     }
 }

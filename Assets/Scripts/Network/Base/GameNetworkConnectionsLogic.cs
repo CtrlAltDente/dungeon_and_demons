@@ -13,6 +13,9 @@ namespace ClansWars.Network
         [Inject]
         private ScenesLoader _scenesLoader;
 
+        [SerializeField]
+        private List<string> _clientsPings;
+
         private void OnEnable()
         {
             SubscribeOnBasicEvents();
@@ -21,6 +24,14 @@ namespace ClansWars.Network
         private void OnDisable()
         {
             UnsubscribeOnBasicEvents();
+        }
+
+        private void Start()
+        {
+            if (NetworkManager.Singleton.IsHost)
+            {
+                StartCoroutine(ShowPing());
+            }
         }
 
         private void SubscribeOnBasicEvents()
@@ -43,6 +54,21 @@ namespace ClansWars.Network
         {
             Destroy(NetworkManager.Singleton.gameObject);
             _scenesLoader.LoadLocalScene("Scene_MainMenu");
+        }
+
+        private IEnumerator ShowPing()
+        {
+            while (true)
+            {
+                yield return new WaitForSeconds(2f);
+
+                _clientsPings.Clear();
+
+                foreach (ulong clientId in NetworkManager.Singleton.ConnectedClientsIds)
+                {
+                    _clientsPings.Add($"ID({clientId}), Ping({NetworkManager.Singleton.NetworkConfig.NetworkTransport.GetCurrentRtt(clientId)})");
+                }
+            }
         }
     }
 }

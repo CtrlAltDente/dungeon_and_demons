@@ -29,12 +29,13 @@ namespace ClansWars.Player
 
         public void SetPlayerInputData(PlayerInputData playerInputData)
         {
-            _isRolling = playerInputData.IsRoll;                        //roll has more priority because roll blocking input (usually in games)
-
             if (!_isRolling)
             {
                 _currentPlayerInput = playerInputData;
             }
+
+            //roll has more priority because roll blocking input (usually in games)
+            _isRolling = playerInputData.IsRoll;
         }
 
         private void Move(PlayerInputData playerInputData)

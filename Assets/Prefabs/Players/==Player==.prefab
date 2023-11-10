@@ -47,7 +47,6 @@ MonoBehaviour:
   _modelParentObject: {fileID: 3460752904507798553}
   _animator: {fileID: 6755157120753418047}
   _modelAnimations: {fileID: 8173745705411870718}
-  _playerMovement: {fileID: 3460752903685383898}
 --- !u!1 &3460752903685383896
 GameObject:
   m_ObjectHideFlags: 0
@@ -101,9 +100,8 @@ MonoBehaviour:
     IsSecondaryAttack: 0
     IsRoll: 0
     ScrollValue: 0
-  _movementSpeed: 3
+  _movementSpeed: 4
   _rotationSpeed: 360
-  _isRolling: 0
 --- !u!1 &3460752903693222295
 GameObject:
   m_ObjectHideFlags: 0
@@ -349,6 +347,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnFixedPlayerInputDataReady:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3460752903685383898}
+        m_TargetAssemblyTypeName: ClansWars.Player.PlayerMovement, Assembly-CSharp
+        m_MethodName: SetPlayerInputData
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _animator: {fileID: 6755157120753418047}
 --- !u!1 &3460752904463109512
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,7 +506,7 @@ Transform:
   m_GameObject: {fileID: 6947888649938510842}
   serializedVersion: 2
   m_LocalRotation: {x: 0.5257311, y: -0, z: -0, w: 0.85065085}
-  m_LocalPosition: {x: 0, y: 18, z: -10}
+  m_LocalPosition: {x: -2.0339282, y: 18, z: -6.6232963}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

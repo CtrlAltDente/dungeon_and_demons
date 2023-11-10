@@ -17,24 +17,12 @@ namespace ClansWars.Player
         [SerializeField]
         private ModelAnimations _modelAnimations;
 
-        [SerializeField]
-        private PlayerMovement _playerMovement;
-
         public void SetPlayerInputData(PlayerInputData playerInputData)
         {
-            _animator.SetBool("IsMoving", playerInputData.MovementVector.magnitude > 0.1f);
+            _animator.SetBool("IsMoving", playerInputData.MovementVector.magnitude > 0.5f);
             _animator.SetBool("IsPrimaryAttack", playerInputData.IsPrimaryAttack);
+            _animator.SetBool("IsSecondaryAttack", playerInputData.IsSecondaryAttack);
             _animator.SetBool("IsRoll", playerInputData.IsRoll);
-
-            SetFixedMovement(playerInputData);
-        }
-
-        private void SetFixedMovement(PlayerInputData playerInputData)
-        {
-            playerInputData.MovementVector = _animator.GetBool("InMovement") ? playerInputData.MovementVector : Vector2.zero;
-            playerInputData.IsRoll = _animator.GetBool("InRoll");
-
-            _playerMovement.SetPlayerInputData(playerInputData);
         }
     }
 }

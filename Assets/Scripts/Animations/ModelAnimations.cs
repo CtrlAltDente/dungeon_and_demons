@@ -7,11 +7,15 @@ namespace ClansWars.Animations
 {
     public class ModelAnimations : MonoBehaviour
     {
-        public UnityEvent OnAnimationAttackEvent;
-        
+        public UnityEvent OnPrimaryAttackEvent;
+
+        public UnityEvent OnSecondaryAttackEvent;
+
+        public UnityEvent<bool> OnRollEvent;
+
         public void RaiseAnimationAttacksEvents()
         {
-            OnAnimationAttackEvent?.Invoke();
+            OnPrimaryAttackEvent?.Invoke();
         }
     }
 }

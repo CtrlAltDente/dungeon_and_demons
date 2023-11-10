@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ClansWars.Weapons
 {
-    public class AutoGun : Weapon
+    public class RangedWeapon : Weapon
     {
         [SerializeField]
         private float _spreadAngle;
@@ -19,12 +19,7 @@ namespace ClansWars.Weapons
 
         public override void Attack()
         {
-            if(_canAttack)
-            {
-                _canAttack = false;
-                InstantiateBullets();
-                StartCoroutine(WaitForNextAttack());
-            }
+            InstantiateBullets();
         }
 
         private void InstantiateBullets()

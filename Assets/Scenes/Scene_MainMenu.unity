@@ -1486,7 +1486,7 @@ GameObject:
   - component: {fileID: 658293112}
   - component: {fileID: 658293113}
   m_Layer: 0
-  m_Name: --GameNetworkConnectionsLogic--
+  m_Name: --GameNetworkLogic--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

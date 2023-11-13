@@ -8,7 +8,7 @@ using Zenject;
 
 namespace ClansWars.Network
 {
-    public class GameNetworkConnectionsLogic : MonoBehaviour
+    public class GameNetworkLogic : MonoBehaviour
     {
         [Inject]
         private ScenesLoader _scenesLoader;

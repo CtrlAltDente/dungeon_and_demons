@@ -20,5 +20,10 @@ namespace ClansWars.Player
                 _playerInput.SetPlayerInputData(playerInputData);
             }
         }
+
+        public void SetModel(int index)
+        {
+
+        }
     }
 }

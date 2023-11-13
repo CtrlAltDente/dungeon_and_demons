@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3419178958206217025}
   - component: {fileID: 7698104985748039950}
   m_Layer: 0
-  m_Name: --PlayerModel--
+  m_Name: --PlayerAnimatorLogic--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 3460752903685383899}
   - component: {fileID: 3460752903685383898}
   m_Layer: 0
-  m_Name: --PlayerMovement--
+  m_Name: --PlayerMovementLogic--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 3460752904463109515}
   - component: {fileID: 3460752904463109514}
   m_Layer: 0
-  m_Name: --PlayerAttack--
+  m_Name: --PlayerAttackLogic--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

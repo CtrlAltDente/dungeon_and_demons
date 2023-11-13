@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace ClansWars.Player
 {
-    public class PlayerMovement : MonoBehaviour, IPlayerLogicPart
+    public class PlayerMovementLogic : MonoBehaviour, IPlayerLogicPart
     {
         [SerializeField]
         private Transform _playerTransform;
         [SerializeField]
-        private PlayerAttack _playerAttack;
+        private PlayerAttackLogic _playerAttack;
 
         [SerializeField]
         private PlayerInputData _currentPlayerInput = new PlayerInputData(0, Vector2.zero, false, false, false, 0);

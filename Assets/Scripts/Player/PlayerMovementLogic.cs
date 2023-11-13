@@ -9,8 +9,6 @@ namespace ClansWars.Player
     {
         [SerializeField]
         private Transform _playerTransform;
-        [SerializeField]
-        private PlayerAttackLogic _playerAttack;
 
         [SerializeField]
         private PlayerInputData _currentPlayerInput = new PlayerInputData(0, Vector2.zero, false, false, false, 0);

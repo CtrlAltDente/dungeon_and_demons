@@ -22,6 +22,11 @@ namespace ClansWars.Input
             OnFixedPlayerInputDataReady?.Invoke(playerInputData);
         }
 
+        public void SetCharacterAnimator(PlayerCharacter playerCharacter)
+        {
+            _animator = playerCharacter.Animator;
+        }
+
         private PlayerInputData FixInputDependsOnAnimator(PlayerInputData playerInputData)
         {
             playerInputData.MovementVector = _animator.GetBool("InMovement") ? playerInputData.MovementVector : Vector2.zero;

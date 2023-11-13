@@ -61,6 +61,7 @@ public class GameplayManager : MonoBehaviour
     {
         PlayerState _newPlayer = Instantiate(_playerPrefab, position, Quaternion.identity, null);
         _newPlayer.NetworkObject.SpawnWithOwnership(playerId);
+        _newPlayer.SetCharacterClientRpc(0);
         _networkPlayersInput.AddPlayersInputStates(_newPlayer);
     }
 

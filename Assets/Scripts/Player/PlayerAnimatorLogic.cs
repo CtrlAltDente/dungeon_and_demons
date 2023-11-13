@@ -22,5 +22,10 @@ namespace ClansWars.Player
             _animator.SetBool("IsSecondaryAttack", playerInputData.IsSecondaryAttack);
             _animator.SetBool("IsRoll", playerInputData.IsRoll);
         }
+
+        public void SetCharacterAnimator(PlayerCharacter playerCharacter)
+        {
+            _animator = playerCharacter.Animator;
+        }
     }
 }

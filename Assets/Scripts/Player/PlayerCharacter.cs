@@ -8,5 +8,7 @@ namespace ClansWars.Player
     {
         public Transform RightHandItemParent;
         public Transform LeftHandItemParent;
+
+        public Animator Animator;
     }
 }

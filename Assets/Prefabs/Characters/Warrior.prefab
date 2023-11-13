@@ -1848,6 +1848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RightHandItemParent: {fileID: 5328050969241319265}
   LeftHandItemParent: {fileID: 5109260510662426846}
+  Animator: {fileID: 9046168912209199734}
 --- !u!1 &8590688818126390213
 GameObject:
   m_ObjectHideFlags: 0

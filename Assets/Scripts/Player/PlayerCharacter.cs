@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ClansWars.Player
 {
-    public class PlayerModel : MonoBehaviour
+    public class PlayerCharacter : MonoBehaviour
     {
         public Transform RightHandItemParent;
         public Transform LeftHandItemParent;

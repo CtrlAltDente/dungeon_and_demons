@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 namespace ClansWars.Animations
 {
-    public class ModelAnimations : MonoBehaviour
+    public class CharacterAnimationsEvents : MonoBehaviour
     {
         public UnityEvent OnPrimaryAttackEvent;
 

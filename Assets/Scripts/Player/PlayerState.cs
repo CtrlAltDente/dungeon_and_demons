@@ -21,7 +21,7 @@ namespace ClansWars.Player
             }
         }
 
-        public void SetModel(int index)
+        public void SetCharacter(int characterIndex)
         {
 
         }

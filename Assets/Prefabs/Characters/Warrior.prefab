@@ -902,6 +902,88 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.01928702, y: 0.12783763, z: 0.014768571}
     m_Extent: {x: 0.6009724, y: 0.2781513, z: 0.38289478}
   m_DirtyAABB: 0
+--- !u!1 &5407784010773932725
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 649144054667869229}
+  - component: {fileID: 3020804483695953297}
+  - component: {fileID: 3318518713700057148}
+  m_Layer: 0
+  m_Name: --WeaponCollisionArea--
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &649144054667869229
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5407784010773932725}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.859, z: 1.223}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 251811424635456837}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3020804483695953297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5407784010773932725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac831156a6470f44f872711b279188e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnTriggerEnterEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7374852448886992595}
+        m_TargetAssemblyTypeName: ClansWars.Weapons.MeleeWeapon, Assembly-CSharp
+        m_MethodName: DamageCollidersInArea
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _collider: {fileID: 3318518713700057148}
+--- !u!65 &3318518713700057148
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5407784010773932725}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.6, z: 1.08}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &5429901529763326247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1417,7 +1499,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3981763017222041711}
   - component: {fileID: 7374852448886992595}
-  - component: {fileID: 2428318397443219238}
   m_Layer: 0
   m_Name: --MeleeWeapon--
   m_TagString: Untagged
@@ -1453,29 +1534,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 10
-  AttackRange: 0
-  _collider: {fileID: 2428318397443219238}
---- !u!65 &2428318397443219238
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8013202439970122561}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 0
-  serializedVersion: 3
-  m_Size: {x: 1, y: 1.6, z: 1.08}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8143164168304118080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1678,7 +1736,7 @@ GameObject:
   - component: {fileID: 6653630405463717811}
   - component: {fileID: 2124002576965049730}
   m_Layer: 0
-  m_Name: Model_Warrior
+  m_Name: Warrior
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1705,6 +1763,7 @@ Transform:
   - {fileID: 8693947268383693572}
   - {fileID: 4404055504615991111}
   - {fileID: 3981763017222041711}
+  - {fileID: 649144054667869229}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &9046168912209199734
@@ -1757,9 +1816,9 @@ MonoBehaviour:
   OnPrimaryAttackEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7374852448886992595}
-        m_TargetAssemblyTypeName: ClansWars.Weapons.MeleeWeapon, Assembly-CSharp
-        m_MethodName: Attack
+      - m_Target: {fileID: 3020804483695953297}
+        m_TargetAssemblyTypeName: ClansWars.Game.CollisionArea, Assembly-CSharp
+        m_MethodName: EnableCollider
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1789,7 +1848,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RightHandItemParent: {fileID: 5328050969241319265}
   LeftHandItemParent: {fileID: 5109260510662426846}
-  _weapon: {fileID: 0}
 --- !u!1 &8590688818126390213
 GameObject:
   m_ObjectHideFlags: 0

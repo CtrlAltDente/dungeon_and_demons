@@ -7,19 +7,17 @@ namespace ClansWars.Weapons
 {
     public class MeleeWeapon : Weapon
     {
-        [SerializeField]
-        private CollisionArea _collisionArea;
-
         public override void Attack()
         {
-            _collisionArea.gameObject.SetActive(true);
-            StartCoroutine(DisableCollider());
+            
         }
 
-        private IEnumerator DisableCollider()
+        public void DamageCollidersInArea(Collider other)
         {
-            yield return new WaitForSeconds(0.1f);
-            _collisionArea.gameObject.SetActive(false);
+            if (other.GetComponent<IDamagable>() != null)
+            {
+                other.GetComponent<IDamagable>().TakeDamage(_damage);
+            }
         }
     }
 }

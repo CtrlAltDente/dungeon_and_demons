@@ -14,8 +14,6 @@ namespace ClansWars.Player
         private Transform _modelParentObject;
         [SerializeField]
         private Animator _animator;
-        [SerializeField]
-        private ModelAnimations _modelAnimations;
 
         public void SetPlayerInputData(PlayerInputData playerInputData)
         {

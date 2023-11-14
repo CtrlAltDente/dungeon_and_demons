@@ -1,12 +1,12 @@
-using ClansWars.Interfaces;
-using ClansWars.Player;
+using DungeonAndDemons.Interfaces;
+using DungeonAndDemons.Player;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-namespace ClansWars.Input
+namespace DungeonAndDemons.Input
 {
     public class KeyboardInputType : MonoBehaviour, IInputType
     {

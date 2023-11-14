@@ -1,10 +1,10 @@
-using ClansWars.Interfaces;
-using ClansWars.Weapons;
+using DungeonAndDemons.Interfaces;
+using DungeonAndDemons.Weapons;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ClansWars.Player
+namespace DungeonAndDemons.Player
 {
     public class PlayerAttackLogic : MonoBehaviour
     {

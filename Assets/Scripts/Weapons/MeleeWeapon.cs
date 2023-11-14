@@ -1,9 +1,9 @@
-using ClansWars.Game;
+using DungeonAndDemons.Game;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ClansWars.Weapons
+namespace DungeonAndDemons.Weapons
 {
     public class MeleeWeapon : Weapon
     {

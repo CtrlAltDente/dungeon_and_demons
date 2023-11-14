@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ClansWars.Player
+namespace DungeonAndDemons.Player
 {
     public class PlayerCharacter : MonoBehaviour
     {

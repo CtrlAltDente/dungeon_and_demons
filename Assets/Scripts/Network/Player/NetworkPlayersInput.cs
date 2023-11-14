@@ -1,11 +1,11 @@
-using ClansWars.Input;
-using ClansWars.Player;
+using DungeonAndDemons.Input;
+using DungeonAndDemons.Player;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace ClansWars.Network
+namespace DungeonAndDemons.Network
 {
     public class NetworkPlayersInput : NetworkBehaviour
     {

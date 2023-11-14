@@ -1,11 +1,11 @@
-using ClansWars.Game;
-using ClansWars.ScriptableObjects;
+using DungeonAndDemons.Game;
+using DungeonAndDemons.ScriptableObjects;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 
-namespace ClansWars.Zenject
+namespace DungeonAndDemons.Zenject
 {
     public class BaseGameComponentsInstaller : MonoInstaller
     {

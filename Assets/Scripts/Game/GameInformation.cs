@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ClansWars.Game
+namespace DungeonAndDemons.Game
 {
     public static class GameplayInformation
     {

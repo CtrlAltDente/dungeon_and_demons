@@ -1,9 +1,9 @@
-using ClansWars.Player;
+using DungeonAndDemons.Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ClansWars.Weapons
+namespace DungeonAndDemons.Weapons
 {
     public abstract class Weapon : MonoBehaviour
     {

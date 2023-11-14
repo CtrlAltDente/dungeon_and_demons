@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ClansWars.UI
+namespace DungeonAndDemons.UI
 {
     public class MenuController : MonoBehaviour
     {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ClansWars.Game
+namespace DungeonAndDemons.Game
 {
     public class CollisionArea : MonoBehaviour
     {

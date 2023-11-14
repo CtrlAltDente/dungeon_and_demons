@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 using DG.Tweening;
 using UnityEngine.UI;
 
-namespace ClansWars.Game
+namespace DungeonAndDemons.Game
 {
     public class ScenesLoader : MonoBehaviour
     {

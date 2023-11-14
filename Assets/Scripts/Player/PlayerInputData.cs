@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace ClansWars.Player
+namespace DungeonAndDemons.Player
 {
     [Serializable]
     public struct PlayerInputData : INetworkSerializable

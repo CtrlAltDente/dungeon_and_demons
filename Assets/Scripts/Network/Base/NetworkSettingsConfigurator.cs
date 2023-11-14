@@ -7,7 +7,7 @@ using Unity.Netcode;
 using Unity.Netcode.Transports.UTP;
 using UnityEngine;
 
-namespace ClansWars.Network
+namespace DungeonAndDemons.Network
 {
     public class NetworkSettingsConfigurator : MonoBehaviour
     {

@@ -1,4 +1,4 @@
-using ClansWars.Game;
+using DungeonAndDemons.Game;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using Zenject;
 
-namespace ClansWars.Network
+namespace DungeonAndDemons.Network
 {
     public class NetworkRoleMenu : MonoBehaviour
     {

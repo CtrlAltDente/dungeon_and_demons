@@ -1,10 +1,10 @@
-using ClansWars.Player;
+using DungeonAndDemons.Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ClansWars.Input
+namespace DungeonAndDemons.Input
 {
     public class PlayerInput : MonoBehaviour
     {

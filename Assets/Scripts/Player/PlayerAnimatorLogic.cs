@@ -1,12 +1,12 @@
-using ClansWars.Animations;
-using ClansWars.Interfaces;
-using ClansWars.Weapons;
+using DungeonAndDemons.Animations;
+using DungeonAndDemons.Interfaces;
+using DungeonAndDemons.Weapons;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ClansWars.Player
+namespace DungeonAndDemons.Player
 {
     public class PlayerAnimatorLogic : MonoBehaviour, IPlayerLogicPart
     {

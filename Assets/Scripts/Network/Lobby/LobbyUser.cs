@@ -4,7 +4,7 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace ClansWars.Network
+namespace DungeonAndDemons.Network
 {
     public class LobbyUser : NetworkBehaviour
     {

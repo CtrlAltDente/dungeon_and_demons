@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ClansWars.Animations
+namespace DungeonAndDemons.Animations
 {
     public class CharacterAnimationsEvents : MonoBehaviour
     {

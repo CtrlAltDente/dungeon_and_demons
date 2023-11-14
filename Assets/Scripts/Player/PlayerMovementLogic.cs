@@ -1,9 +1,9 @@
-using ClansWars.Interfaces;
+using DungeonAndDemons.Interfaces;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ClansWars.Player
+namespace DungeonAndDemons.Player
 {
     public class PlayerMovementLogic : MonoBehaviour, IPlayerLogicPart
     {

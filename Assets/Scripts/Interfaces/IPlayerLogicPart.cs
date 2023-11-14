@@ -1,6 +1,6 @@
-using ClansWars.Player;
+using DungeonAndDemons.Player;
 
-namespace ClansWars.Interfaces
+namespace DungeonAndDemons.Interfaces
 {
     public interface IPlayerLogicPart
     {

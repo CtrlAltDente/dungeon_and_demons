@@ -1,8 +1,8 @@
-using ClansWars.Game;
-using ClansWars.Input;
-using ClansWars.Network;
-using ClansWars.Player;
-using ClansWars.ScriptableObjects;
+using DungeonAndDemons.Game;
+using DungeonAndDemons.Input;
+using DungeonAndDemons.Network;
+using DungeonAndDemons.Player;
+using DungeonAndDemons.ScriptableObjects;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;

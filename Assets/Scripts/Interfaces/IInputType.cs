@@ -1,9 +1,9 @@
-using ClansWars.Player;
+using DungeonAndDemons.Player;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ClansWars.Interfaces
+namespace DungeonAndDemons.Interfaces
 {
     public interface IInputType
     {

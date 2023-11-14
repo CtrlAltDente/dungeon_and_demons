@@ -1,10 +1,10 @@
-using ClansWars.Input;
+using DungeonAndDemons.Input;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 
-namespace ClansWars.Player
+namespace DungeonAndDemons.Player
 {
     public class PlayerState : NetworkBehaviour
     {

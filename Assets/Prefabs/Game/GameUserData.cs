@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace ClansWars.Game
+namespace DungeonAndDemons.Game
 {
     [Serializable]
     public struct GameUserData

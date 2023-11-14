@@ -5,12 +5,10 @@ using UnityEngine;
 
 namespace ClansWars.Player
 {
-    public class PlayerMovement : MonoBehaviour, IPlayerLogicPart
+    public class PlayerMovementLogic : MonoBehaviour, IPlayerLogicPart
     {
         [SerializeField]
         private Transform _playerTransform;
-        [SerializeField]
-        private PlayerAttack _playerAttack;
 
         [SerializeField]
         private PlayerInputData _currentPlayerInput = new PlayerInputData(0, Vector2.zero, false, false, false, 0);
@@ -20,20 +18,22 @@ namespace ClansWars.Player
         [SerializeField]
         private float _rotationSpeed;
 
-        [SerializeField]
         private bool _isRolling;
 
         private void Update()
         {
-            if (!_currentPlayerInput.IsPrimaryAttack)
-            {
-                Move(_currentPlayerInput);
-            }
+            Move(_currentPlayerInput);
         }
 
         public void SetPlayerInputData(PlayerInputData playerInputData)
         {
-            _currentPlayerInput = playerInputData;
+            if (!_isRolling)
+            {
+                _currentPlayerInput = playerInputData;
+            }
+
+            //roll has more priority because roll blocking input (usually in games)
+            _isRolling = playerInputData.IsRoll;
         }
 
         private void Move(PlayerInputData playerInputData)
@@ -42,8 +42,10 @@ namespace ClansWars.Player
             {
                 Vector3 movementVector3 = new Vector3(playerInputData.MovementVector.x, 0f, playerInputData.MovementVector.y);
                 _playerTransform.rotation = Quaternion.RotateTowards(_playerTransform.rotation, Quaternion.LookRotation(movementVector3), _rotationSpeed * Time.deltaTime);
-                _playerTransform.position += _playerTransform.forward * _movementSpeed * Time.deltaTime;
+                _playerTransform.position += _playerTransform.forward * _movementSpeed * CalculatedRollSpeed * Time.deltaTime;
             }
         }
+
+        private float CalculatedRollSpeed => _isRolling ? 2 : 1;
     }
 }

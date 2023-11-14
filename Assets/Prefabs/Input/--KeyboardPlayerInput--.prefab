@@ -44,5 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe82174f16cc10543b6c6e8b7726ac71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _movementPlayerInputActionReference: {fileID: -1680190386980627800, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
-  _attackPlayerInputActionReference: {fileID: 1120369429361536294, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  _movementPlayerInput: {fileID: -1680190386980627800, guid: c2ac35b5111aaac4daf131da467a311e, type: 3}
+  _primaryAttackPlayerInput: {fileID: 1120369429361536294, guid: c2ac35b5111aaac4daf131da467a311e, type: 3}
+  _secondaryAttackPlayerInput: {fileID: 8501132953680101193, guid: c2ac35b5111aaac4daf131da467a311e, type: 3}
+  _rollPlayerInput: {fileID: 8509118361400022053, guid: c2ac35b5111aaac4daf131da467a311e, type: 3}
+  _scrollInput: {fileID: -8590461675807490062, guid: c2ac35b5111aaac4daf131da467a311e, type: 3}

@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace ClansWars.Player
 {
-    public class PlayerAttack : MonoBehaviour
+    public class PlayerAttackLogic : MonoBehaviour
     {
         [SerializeField]
         private Weapon _currentWeapon;

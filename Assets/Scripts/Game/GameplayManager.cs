@@ -28,6 +28,18 @@ public class GameplayManager : MonoBehaviour
         InitializePlayers();
     }
 
+    public void InitializePlayer(ulong playerId, Vector3 position)
+    {
+        if(NetworkManager.Singleton.IsHost)
+        {
+            InitializeNetworkPlayer(playerId, position);
+        }
+        else if(!NetworkManager.Singleton.IsHost && !NetworkManager.Singleton.IsClient)
+        {
+            InitializeLocalPlayer();
+        }
+    }
+
     private void InitializeMap()
     {
         if (NetworkManager.Singleton.IsHost || !NetworkManager.Singleton.IsClient)
@@ -42,13 +54,10 @@ public class GameplayManager : MonoBehaviour
         {
             for (int i = 0; i < NetworkManager.Singleton.ConnectedClientsIds.Count; i++)
             {
-                InitializeNetworkPlayer(NetworkManager.Singleton.ConnectedClientsIds[i], _currentMap.PlayerSpawnPositions[i].position);
+                InitializePlayer((ulong)i, _currentMap.PlayerSpawnPositions[i].position);                
             }
         }
-        else if (!NetworkManager.Singleton.IsHost && !NetworkManager.Singleton.IsClient)
-        {
-            InitializeLocalPlayer();
-        }
+
     }
 
     private void InitializeNetworkPlayer(ulong playerId, Vector3 position)

@@ -8,7 +8,7 @@ using Zenject;
 
 namespace DungeonAndDemons.Network
 {
-    public class NetworkLobby : NetworkBehaviour
+    public class NetworkLobby : MonoBehaviour
     {
         public bool HasLobbyPlaces => NetworkManager.Singleton.ConnectedClientsList.Count < _maxPlayersInLobby;
 
@@ -17,6 +17,8 @@ namespace DungeonAndDemons.Network
 
         [SerializeField]
         private int _maxPlayersInLobby = 4;
+
+        private GameplayManager _gameplayManager;
 
         private void OnEnable()
         {

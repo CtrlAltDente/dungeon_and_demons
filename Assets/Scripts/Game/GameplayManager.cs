@@ -11,20 +11,16 @@ using Zenject;
 
 public class GameplayManager : MonoBehaviour
 {
+    [SerializeField]
+    private PlayerState _playerPrefab;
+
     [Inject]
     private MapsContainer _mapsContainer;
-
-    [SerializeField]
-    private PlayerInputDataBridge _playerInputDataBridge;
-
     [SerializeField]
     private Map _currentMap;
 
     [SerializeField]
-    private NetworkPlayersInput _networkPlayersInput;
-
-    [SerializeField]
-    private PlayerState _playerPrefab;
+    private PlayersInput _playersInput;
 
     private void Start()
     {
@@ -34,16 +30,14 @@ public class GameplayManager : MonoBehaviour
 
     private void InitializeMap()
     {
-        _currentMap = Instantiate(_mapsContainer.Maps[0], Vector3.zero, Quaternion.identity, null);
+        if (NetworkManager.Singleton.IsHost || !NetworkManager.Singleton.IsClient)
+        {
+            _currentMap = Instantiate(_mapsContainer.Maps[0], Vector3.zero, Quaternion.identity, null);
+        }
     }
 
     private void InitializePlayers()
     {
-        if(NetworkManager.Singleton.IsHost || NetworkManager.Singleton.IsClient)
-        {
-            _playerInputDataBridge.SetNetworkPlayersInput(_networkPlayersInput);
-        }
-
         if (NetworkManager.Singleton.IsHost)
         {
             for (int i = 0; i < NetworkManager.Singleton.ConnectedClientsIds.Count; i++)
@@ -59,15 +53,15 @@ public class GameplayManager : MonoBehaviour
 
     private void InitializeNetworkPlayer(ulong playerId, Vector3 position)
     {
-        PlayerState _newPlayer = Instantiate(_playerPrefab, position, Quaternion.identity, null);
-        _newPlayer.NetworkObject.SpawnWithOwnership(playerId);
-        _newPlayer.SetCharacterClientRpc(0);
-        _networkPlayersInput.AddPlayersInputStates(_newPlayer);
+        PlayerState newPlayer = Instantiate(_playerPrefab, position, Quaternion.identity, null);
+        newPlayer.NetworkObject.SpawnWithOwnership(playerId);
+        newPlayer.SetCharacterClientRpc(0);
+        _playersInput.AddPlayersState(newPlayer);
     }
 
     private void InitializeLocalPlayer()
     {
         PlayerState newPlayer = Instantiate(_playerPrefab, Vector3.zero, Quaternion.identity, null);
-        _playerInputDataBridge.SetPlayerState(newPlayer);
+        _playersInput.AddPlayersState(newPlayer);
     }
 }

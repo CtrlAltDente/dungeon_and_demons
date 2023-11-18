@@ -6013,8 +6013,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4826031797946872802}
-  - component: {fileID: 8735791064790677732}
   - component: {fileID: 8735791064790677733}
+  - component: {fileID: 8735791064790677732}
   m_Layer: 0
   m_Name: --NetworkLobby--
   m_TagString: Untagged
@@ -6053,12 +6053,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fe203fb54c9bd04397a426c1df0c43a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _lobbyUsers:
-  - {fileID: 751948100}
-  - {fileID: 1884924146}
-  - {fileID: 1733681929}
-  - {fileID: 1337452637}
-  _startLobbyButton: {fileID: 1131242865}
+  _maxPlayersInLobby: 4
 --- !u!114 &8735791064790677733
 MonoBehaviour:
   m_ObjectHideFlags: 0

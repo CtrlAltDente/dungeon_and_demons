@@ -10,6 +10,7 @@ namespace DungeonAndDemons.Network
         public void StopNetworkAndExitToMainMenu()
         {
             NetworkManager.Singleton.Shutdown();
+            Destroy(NetworkManager.Singleton.gameObject);
         }
     }
 }

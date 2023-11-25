@@ -13,7 +13,10 @@ namespace DungeonAndDemons.Network
 {
     public class LocalMultiplayerInitializer : MonoBehaviour, IMultiplayerInitalizer
     {
-        public UnityEvent OnSuccessfullMultiplayerInitialization;
+        public UnityEvent OnSuccessfullHostInitialization;
+        public UnityEvent OnSuccessfullClientInitialization;
+
+        public UnityEvent OnMultiplayerInitializationFailed;
 
         [SerializeField]
         private TextMeshProUGUI _ipAddressLabel;
@@ -23,29 +26,40 @@ namespace DungeonAndDemons.Network
 
         public void InitializeHost()
         {
-            StartHostWithUnityTransport(GetLocalIpAddress());
-            _ipAddressLabel.text = $"Local IP Address: {GetLocalIpAddress()}";
+            if (StartHostWithUnityTransport(GetLocalIpAddress()))
+            {
+                _ipAddressLabel.text = $"Local IP Address: {GetLocalIpAddress()}";
 
-            OnSuccessfullMultiplayerInitialization?.Invoke();
+                OnSuccessfullHostInitialization?.Invoke();
+            }
+            else
+            {
+                OnMultiplayerInitializationFailed?.Invoke();
+            }
         }
 
         public void InitializeClient()
         {
-            StartClientWithUnityTransport(_ipAddressField.text);
-
-            OnSuccessfullMultiplayerInitialization?.Invoke();
+            if (StartClientWithUnityTransport(_ipAddressField.text))
+            {
+                OnSuccessfullClientInitialization?.Invoke();
+            }
+            else
+            {
+                OnMultiplayerInitializationFailed?.Invoke();
+            }
         }
 
-        private void StartHostWithUnityTransport(string ipAddress)
+        private bool StartHostWithUnityTransport(string ipAddress)
         {
             SetUnityTransportConnectionData(ipAddress);
-            NetworkManager.Singleton.StartHost();
+            return NetworkManager.Singleton.StartHost();
         }
 
-        private void StartClientWithUnityTransport(string ipAddress)
+        private bool StartClientWithUnityTransport(string ipAddress)
         {
             SetUnityTransportConnectionData(ipAddress);
-            NetworkManager.Singleton.StartClient();
+            return NetworkManager.Singleton.StartClient();
         }
 
         private void SetUnityTransportConnectionData(string ipAddress)

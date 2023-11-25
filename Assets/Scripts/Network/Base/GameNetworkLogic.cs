@@ -16,6 +16,18 @@ namespace DungeonAndDemons.Network
         [SerializeField]
         private List<string> _clientsPings;
 
+        public void Shutdown()
+        {
+            if (NetworkManager.Singleton.IsClient)
+            {
+                NetworkManager.Singleton.Shutdown();
+            }
+            else
+            {
+                ReturnToMainScene(false);
+            }
+        }
+
         private void OnEnable()
         {
             SubscribeOnBasicEvents();

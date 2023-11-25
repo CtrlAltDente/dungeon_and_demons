@@ -14,9 +14,6 @@ namespace DungeonAndDemons.UI
         [SerializeField]
         private List<Menu> _menus = new List<Menu>();
 
-        [SerializeField]
-        private Button _backButton;
-
         private void Start()
         {
             SetStartMenusPositions();
@@ -26,15 +23,6 @@ namespace DungeonAndDemons.UI
         {
             int currentMenuIndex = _menus.IndexOf(_menus.Find((menu) => menu.gameObject.activeInHierarchy));
             _menus[currentMenuIndex].SetPosition(HidePosition, false, () => ActivateNewMenuAndDisableOld(_menus[index], _menus[currentMenuIndex]));
-            _backButton.gameObject.SetActive(_menus[index].PreviousMenu != null);
-        }
-
-        public void Back()
-        {
-            Menu menu = _menus.Find((menu) => menu.gameObject.activeInHierarchy);
-            menu.SetPosition(HidePosition, false, () => ActivateNewMenuAndDisableOld(menu.PreviousMenu, menu));
-
-            _backButton.gameObject.SetActive(menu.PreviousMenu.PreviousMenu != null);
         }
 
         private void ActivateNewMenuAndDisableOld(Menu activateMenu, Menu disableMenu)

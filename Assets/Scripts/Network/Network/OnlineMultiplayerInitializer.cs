@@ -15,7 +15,10 @@ namespace DungeonAndDemons.Network
 {
     public class OnlineMultiplayerInitializer : MonoBehaviour, IMultiplayerInitalizer
     {
-        public UnityEvent OnSuccessfullMultiplayerInitialization;
+        public UnityEvent OnSuccessfullHostInitialization;
+        public UnityEvent OnSuccessfullClientInitialization;
+
+        public UnityEvent OnMultiplayerInitializationFailed;
 
         [SerializeField]
         private TextMeshProUGUI _gameJoinCodeLabel;
@@ -26,16 +29,29 @@ namespace DungeonAndDemons.Network
         public async void InitializeHost()
         {
             string joinGameCode = await StartHostWithRelay();
-            _gameJoinCodeLabel.text = $"Game join code: {joinGameCode}";
 
-            OnSuccessfullMultiplayerInitialization?.Invoke();
+            if (joinGameCode != null)
+            {
+                _gameJoinCodeLabel.text = $"Game join code: {joinGameCode}";
+                OnSuccessfullHostInitialization?.Invoke();
+            }
+            else
+            {
+                OnMultiplayerInitializationFailed?.Invoke();
+            }
+
         }
 
         public async void InitializeClient()
         {
-            await StartClientWithRelay(_gameJoinCodeField.text);
-            
-            OnSuccessfullMultiplayerInitialization?.Invoke();
+            if (await StartClientWithRelay(_gameJoinCodeField.text))
+            {
+                OnSuccessfullClientInitialization?.Invoke();
+            }
+            else
+            {
+                OnMultiplayerInitializationFailed?.Invoke();
+            }
         }
 
         private async Task<string> StartHostWithRelay(int maxConnections = 5)

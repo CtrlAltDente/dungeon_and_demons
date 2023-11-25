@@ -28,7 +28,7 @@ namespace DungeonAndDemons.Network
 
         private void OpenLobbyScene()
         {
-            if(NetworkManager.Singleton.IsHost)
+            if(NetworkManager.Singleton.IsClient)
             {
                 _scenesLoader.LoadNetworkScene("Scene_Lobby");
             }

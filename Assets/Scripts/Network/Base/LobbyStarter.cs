@@ -10,19 +10,20 @@ using Zenject;
 
 namespace DungeonAndDemons.Network
 {
-    public class LobbyStarter : MonoBehaviour
+    public class LobbyStarter : NetworkBehaviour
     {
         [Inject]
         private ScenesLoader _scenesLoader;
 
-        public void GoToLobby()
+        [ClientRpc]
+        public void GoToLobbyClientRpc()
         {
             _scenesLoader.FadeOut(() => OpenLobbyScene());
         }
 
         private void OpenLobbyScene()
         {
-            if(NetworkManager.Singleton.IsClient)
+            if(NetworkManager.Singleton.IsHost)
             {
                 _scenesLoader.LoadNetworkScene("Scene_Lobby");
             }

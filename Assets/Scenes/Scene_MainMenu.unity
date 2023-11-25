@@ -4502,6 +4502,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1030340009}
+  - component: {fileID: 1030340011}
   - component: {fileID: 1030340010}
   m_Layer: 0
   m_Name: --LobbyStarter--
@@ -4537,6 +4538,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f55bbd1407beb1468697f3ff393047f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1030340011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1030340008}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 1565669075
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!224 &1075796977 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6389175726960570053, guid: e1a910f398801874bb03d7796e13f9e6, type: 3}

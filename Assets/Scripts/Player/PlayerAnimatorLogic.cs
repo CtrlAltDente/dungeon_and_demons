@@ -1,6 +1,5 @@
 using DungeonAndDemons.Animations;
 using DungeonAndDemons.Interfaces;
-using DungeonAndDemons.Weapons;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

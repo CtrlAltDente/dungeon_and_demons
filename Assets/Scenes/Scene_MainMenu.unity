@@ -159,7 +159,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 956.48224, y: -625}
+  m_AnchoredPosition: {x: 770.9827, y: -540}
   m_SizeDelta: {x: 350, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &26525219
@@ -424,7 +424,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 859.2734, y: -540}
+  m_AnchoredPosition: {x: 770.9827, y: -455}
   m_SizeDelta: {x: 800, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &85815920
@@ -973,7 +973,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 956.48224, y: -455}
+  m_AnchoredPosition: {x: 770.9827, y: -370}
   m_SizeDelta: {x: 350, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &266959991
@@ -1241,7 +1241,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 956.48224, y: -455}
+  m_AnchoredPosition: {x: 770.9827, y: -370}
   m_SizeDelta: {x: 350, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &301903074
@@ -1477,9 +1477,9 @@ RectTransform:
   - {fileID: 1368642527}
   m_Father: {fileID: 1157804115}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 99.999985, y: 59.999977}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 595.9827, y: -755}
   m_SizeDelta: {x: 350, y: 90}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &353185566
@@ -1612,7 +1612,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 956.48224, y: -455}
+  m_AnchoredPosition: {x: 770.9827, y: -370}
   m_SizeDelta: {x: 350, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &380260586
@@ -2781,7 +2781,7 @@ GameObject:
   - component: {fileID: 658293112}
   - component: {fileID: 658293113}
   m_Layer: 0
-  m_Name: --GameNetworkLogic--
+  m_Name: --NetworkStatus--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2814,6 +2814,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3db6fdf77a4544ea9975eba992b780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnNetworkStop:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1262674272}
+        m_TargetAssemblyTypeName: DungeonAndDemons.UI.MenuController, Assembly-CSharp
+        m_MethodName: EnableMenuByIndex
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _clientsPings: []
 --- !u!1 &682377637
 GameObject:
@@ -3814,7 +3829,7 @@ GameObject:
   m_Component:
   - component: {fileID: 891540755}
   m_Layer: 0
-  m_Name: --NetworkState--
+  m_Name: --Network--
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3871,9 +3886,9 @@ RectTransform:
   - {fileID: 1160316027}
   m_Father: {fileID: 1960024810}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 99.999985, y: 59.999977}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 595.9827, y: -650}
   m_SizeDelta: {x: 350, y: 90}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &895464975
@@ -3920,18 +3935,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1262674272}
-        m_TargetAssemblyTypeName: DungeonAndDemons.UI.MenuController, Assembly-CSharp
-        m_MethodName: EnableMenuByIndex
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 658293113}
         m_TargetAssemblyTypeName: DungeonAndDemons.Network.GameNetworkLogic, Assembly-CSharp
         m_MethodName: Shutdown
@@ -4232,22 +4235,22 @@ MonoBehaviour:
         m_CallState: 2
   OnSuccessfullClientInitialization:
     m_PersistentCalls:
-      m_Calls: []
-  OnMultiplayerInitializationFailed:
-    m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
+      - m_Target: {fileID: 1262674272}
+        m_TargetAssemblyTypeName: DungeonAndDemons.UI.MenuController, Assembly-CSharp
+        m_MethodName: EnableMenuByIndex
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 7
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnMultiplayerInitializationFailed:
+    m_PersistentCalls:
+      m_Calls: []
   _gameJoinCodeLabel: {fileID: 85815920}
   _gameJoinCodeField: {fileID: 1524028587}
 --- !u!1 &997917812
@@ -4692,19 +4695,7 @@ MonoBehaviour:
         m_CallState: 2
   OnMultiplayerInitializationFailed:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _ipAddressLabel: {fileID: 85815920}
   _ipAddressField: {fileID: 487361445}
 --- !u!1 &1096996834
@@ -4743,7 +4734,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 956.48224, y: -625}
+  m_AnchoredPosition: {x: 770.9827, y: -540}
   m_SizeDelta: {x: 350, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1096996836
@@ -5849,9 +5840,9 @@ RectTransform:
   - {fileID: 403366676}
   m_Father: {fileID: 767509221}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 99.999985, y: 59.999977}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 595.9827, y: -755}
   m_SizeDelta: {x: 350, y: 90}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1353564611
@@ -7803,9 +7794,9 @@ RectTransform:
   - {fileID: 997917813}
   m_Father: {fileID: 180016513}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 100, y: 60}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 595.9827, y: -755}
   m_SizeDelta: {x: 350, y: 90}
   m_Pivot: {x: 0, y: 0}
 --- !u!114 &1848412759
@@ -8562,9 +8553,9 @@ RectTransform:
   - {fileID: 2133969707}
   m_Father: {fileID: 462836265}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 955.3185, y: 370}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 770.9827, y: -540}
   m_SizeDelta: {x: 350, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2081452035
@@ -8867,7 +8858,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 956.48224, y: -625}
+  m_AnchoredPosition: {x: 770.9827, y: -540}
   m_SizeDelta: {x: 350, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2126770694

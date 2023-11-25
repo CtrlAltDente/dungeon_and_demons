@@ -172,6 +172,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsAlive: 1
+  CharacterCharacteristics: {fileID: 0}
   _characters:
   - {fileID: 739019952413194449}
   _playerInput: {fileID: 3460752904285419920}
@@ -395,8 +396,55 @@ Transform:
   - {fileID: 3460752904285419921}
   - {fileID: 3419178958206217025}
   - {fileID: 3460752903685383899}
+  - {fileID: 7522207570750893177}
   m_Father: {fileID: 3460752903693222294}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6680307581101457086
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7522207570750893177}
+  - component: {fileID: 1179634671316744320}
+  m_Layer: 0
+  m_Name: --PlayerInputInitializer--
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7522207570750893177
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6680307581101457086}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3460752904684803772}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1179634671316744320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6680307581101457086}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b69af58fb7580e64589bd91abfec8758, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playersInput: {fileID: 0}
+  _keyboardInputTypePrefab: {fileID: 5940401073065867461, guid: 3b9f820bbf4336f4caa135ae4a52f58e, type: 3}
 --- !u!1 &6947888649938510842
 GameObject:
   m_ObjectHideFlags: 0
@@ -740,11 +788,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3020804483695953297, guid: c3aa99f864a26d04abe8ca42559f7857, type: 3}
+      propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 8336166005369858604, guid: c3aa99f864a26d04abe8ca42559f7857, type: 3}
       propertyPath: m_Name
       value: Warrior
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7374852448886992595, guid: c3aa99f864a26d04abe8ca42559f7857, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

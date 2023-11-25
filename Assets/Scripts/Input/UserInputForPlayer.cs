@@ -12,7 +12,7 @@ namespace DungeonAndDemons.Input
     public class UserInputForPlayer : MonoBehaviour
     {
         [SerializeField]
-        private PlayersInput _playersInput;
+        private PlayerState _playerState;
 
         private IInputType _currentInputType;
 
@@ -31,12 +31,19 @@ namespace DungeonAndDemons.Input
 
         private void InitializeInput()
         {
-            _currentInputType = Instantiate(_keyboardInputTypePrefab, transform);
+            if (_playerState.IsOwner)
+            {
+                _currentInputType = Instantiate(_keyboardInputTypePrefab, transform);
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
         }
 
         private void UpdateInputForPlayer()
         {
-            _playersInput.SetInputToPlayerServerRpc(_currentInputType.GetPlayerInputData());
+            _playerState.UpdateInput(_currentInputType.GetPlayerInputData());
         }
     }
 }

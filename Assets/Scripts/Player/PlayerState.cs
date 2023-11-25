@@ -1,6 +1,9 @@
+using DungeonAndDemons.Characters;
 using DungeonAndDemons.Input;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -9,6 +12,10 @@ namespace DungeonAndDemons.Player
     public class PlayerState : NetworkBehaviour
     {
         public bool IsAlive = true;
+        public CharacterCharacteristics CharacterCharacteristics;
+
+        [SerializeField]
+        private NetworkVariable<PlayerInputData> _playerInputData = new NetworkVariable<PlayerInputData>(default, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
         [SerializeField]
         private PlayerCharacter[] _characters;
@@ -20,16 +27,41 @@ namespace DungeonAndDemons.Player
 
         public void UpdateInput(PlayerInputData playerInputData)
         {
-            if (IsAlive)
+            if (!IsAlive)
+                return;
+
+            if (NetworkManager.Singleton.IsClient)
             {
-                _playerInput.SetPlayerInputData(playerInputData);
+                SetNetworkInput(playerInputData);
+            }
+            else
+            {
+                SetLocalInput(playerInputData);
             }
         }
 
-        [ClientRpc]
-        public void SetCharacterClientRpc(int characterIndex)
+        private void SetNetworkInput(PlayerInputData playerInputData)
         {
-            PlayerCharacter currentCharacter = _characters[characterIndex];
+            if (IsOwner)
+            {
+                SetLocalInput(playerInputData);
+                _playerInputData.Value = playerInputData;
+            }
+            else
+            {
+                SetLocalInput(_playerInputData.Value);
+            }
+        }
+
+        private void SetLocalInput(PlayerInputData playerInputData)
+        {
+            _playerInput.SetPlayerInputData(playerInputData);
+        }
+
+        [ClientRpc]
+        public void SetCharacterClientRpc(CharacterClass characterClass)
+        {
+            PlayerCharacter currentCharacter = _characters.First(playerCharacter => playerCharacter.CharacterClass == CharacterClass.Warrior);
 
             foreach (PlayerCharacter character in _characters)
             {

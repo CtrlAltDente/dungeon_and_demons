@@ -1,3 +1,4 @@
+using DungeonAndDemons.Characters;
 using DungeonAndDemons.Game;
 using DungeonAndDemons.Input;
 using DungeonAndDemons.Network;
@@ -18,9 +19,6 @@ public class GameplayManager : MonoBehaviour
     private MapsContainer _mapsContainer;
     [SerializeField]
     private Map _currentMap;
-
-    [SerializeField]
-    private PlayersInput _playersInput;
 
     private void Start()
     {
@@ -63,14 +61,12 @@ public class GameplayManager : MonoBehaviour
     private void InitializeNetworkPlayer(ulong playerId, Vector3 position)
     {
         PlayerState newPlayer = Instantiate(_playerPrefab, position, Quaternion.identity, null);
-        newPlayer.NetworkObject.SpawnWithOwnership(playerId);
-        newPlayer.SetCharacterClientRpc(0);
-        _playersInput.AddPlayersState(newPlayer);
+        newPlayer.NetworkObject.SpawnAsPlayerObject(playerId);
+        newPlayer.SetCharacterClientRpc(CharacterClass.Warrior);
     }
 
     private void InitializeLocalPlayer()
     {
         PlayerState newPlayer = Instantiate(_playerPrefab, Vector3.zero, Quaternion.identity, null);
-        _playersInput.AddPlayersState(newPlayer);
     }
 }

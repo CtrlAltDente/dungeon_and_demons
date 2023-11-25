@@ -10,6 +10,6 @@ namespace DungeonAndDemons.Game
 
         public static int MapIndex;
 
-        public static int PlayerTypeIndex;
+        public static int CharacterIndex;
     }
 }

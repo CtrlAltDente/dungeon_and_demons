@@ -3,13 +3,16 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 using Zenject;
 
 namespace DungeonAndDemons.Network
 {
-    public class GameNetworkLogic : MonoBehaviour
+    public class NetworkStatus : MonoBehaviour
     {
+        public UnityEvent OnNetworkStop;
+
         [Inject]
         private ScenesLoader _scenesLoader;
 
@@ -24,33 +27,30 @@ namespace DungeonAndDemons.Network
             }
             else
             {
-                ReturnToMainScene(false);
+                RaiseOnNetworkStopEvents(false);
             }
-        }
-
-        private void OnEnable()
-        {
-            SubscribeOnBasicEvents();
-        }
-
-        private void OnDisable()
-        {
-            UnsubscribeOnBasicEvents();
         }
 
         private void Start()
         {
+            SubscribeOnBasicEvents();
+
             if (NetworkManager.Singleton.IsHost)
             {
                 StartCoroutine(ShowPing());
             }
         }
 
+        private void OnDestroy()
+        {
+            UnsubscribeOnBasicEvents();
+        }
+
         private void SubscribeOnBasicEvents()
         {
             if (NetworkManager.Singleton)
             {
-                NetworkManager.Singleton.OnClientStopped += ReturnToMainScene;
+                NetworkManager.Singleton.OnClientStopped += RaiseOnNetworkStopEvents;
             }
         }
 
@@ -58,14 +58,13 @@ namespace DungeonAndDemons.Network
         {
             if (NetworkManager.Singleton)
             {
-                NetworkManager.Singleton.OnClientStopped -= ReturnToMainScene;
+                NetworkManager.Singleton.OnClientStopped -= RaiseOnNetworkStopEvents;
             }
         }
 
-        private void ReturnToMainScene(bool value)
+        private void RaiseOnNetworkStopEvents(bool value)
         {
-            Destroy(NetworkManager.Singleton.gameObject);
-            _scenesLoader.LoadLocalScene("Scene_MainMenu");
+            OnNetworkStop?.Invoke();
         }
 
         private IEnumerator ShowPing()

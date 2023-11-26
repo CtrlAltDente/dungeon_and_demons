@@ -950,7 +950,7 @@ MonoBehaviour:
   OnTriggerEnterEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7374852448886992595}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: ClansWars.Weapons.MeleeWeapon, Assembly-CSharp
         m_MethodName: DamageCollidersInArea
         m_Mode: 0
@@ -1498,7 +1498,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3981763017222041711}
-  - component: {fileID: 7374852448886992595}
   m_Layer: 0
   m_Name: --MeleeWeapon--
   m_TagString: Untagged
@@ -1521,19 +1520,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 251811424635456837}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7374852448886992595
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8013202439970122561}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efd02d12f3d758949a4e20c3334b9138, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _damage: 10
 --- !u!1 &8143164168304118080
 GameObject:
   m_ObjectHideFlags: 0
@@ -1732,7 +1718,7 @@ GameObject:
   m_Component:
   - component: {fileID: 251811424635456837}
   - component: {fileID: 9046168912209199734}
-  - component: {fileID: 8182416792773784460}
+  - component: {fileID: 3123297407556795057}
   - component: {fileID: 6653630405463717811}
   - component: {fileID: 2124002576965049730}
   m_Layer: 0
@@ -1787,7 +1773,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &8182416792773784460
+--- !u!114 &3123297407556795057
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1796,7 +1782,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8336166005369858604}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8d0727d5ae3244e3b569694d3912374, type: 3}
+  m_Script: {fileID: 11500000, guid: 09705e5746ebc7f4cbbcc72ae388debb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   TransitionStateInfoList: []
@@ -1846,6 +1832,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724e9ba28baab9248971805cfd40226c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  CharacterClass: 0
   RightHandItemParent: {fileID: 5328050969241319265}
   LeftHandItemParent: {fileID: 5109260510662426846}
   Animator: {fileID: 9046168912209199734}

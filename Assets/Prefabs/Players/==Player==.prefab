@@ -111,7 +111,8 @@ GameObject:
   - component: {fileID: 3460752903693222294}
   - component: {fileID: 3460752903693222312}
   - component: {fileID: 3460752903693222313}
-  - component: {fileID: 5894417637198836445}
+  - component: {fileID: 9068542674027652463}
+  - component: {fileID: 3642999207947459487}
   - component: {fileID: 8280322101670814299}
   - component: {fileID: 4515826578700699685}
   m_Layer: 0
@@ -173,11 +174,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsAlive: 1
   CharacterCharacteristics: {fileID: 0}
+  _playerInputData:
+    m_InternalValue:
+      PlayerId: 0
+      MovementVector: {x: 0, y: 0}
+      IsPrimaryAttack: 0
+      IsSecondaryAttack: 0
+      IsRoll: 0
+      ScrollValue: 0
   _characters:
   - {fileID: 739019952413194449}
   _playerInput: {fileID: 3460752904285419920}
   _playerAnimatorLogic: {fileID: 7698104985748039950}
---- !u!114 &5894417637198836445
+--- !u!114 &9068542674027652463
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -186,7 +195,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3460752903693222295}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
+  m_Script: {fileID: 11500000, guid: c05f29eebeb09dc48ac776ed90e03e4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SyncPositionX: 1
@@ -207,6 +216,18 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
+--- !u!114 &3642999207947459487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3460752903693222295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!54 &8280322101670814299
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -443,7 +464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b69af58fb7580e64589bd91abfec8758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playersInput: {fileID: 0}
+  _playerState: {fileID: 3460752903693222313}
   _keyboardInputTypePrefab: {fileID: 5940401073065867461, guid: 3b9f820bbf4336f4caa135ae4a52f58e, type: 3}
 --- !u!1 &6947888649938510842
 GameObject:

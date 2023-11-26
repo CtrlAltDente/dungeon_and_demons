@@ -15,9 +15,6 @@ namespace DungeonAndDemons.Player
         public CharacterCharacteristics CharacterCharacteristics;
 
         [SerializeField]
-        private NetworkVariable<PlayerInputData> _playerInputData = new NetworkVariable<PlayerInputData>(default, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-
-        [SerializeField]
         private PlayerCharacter[] _characters;
 
         [SerializeField]
@@ -25,31 +22,14 @@ namespace DungeonAndDemons.Player
         [SerializeField]
         private PlayerAnimatorLogic _playerAnimatorLogic;
 
-        public void UpdateInput(PlayerInputData playerInputData)
+        public void SetInput(PlayerInputData playerInputData)
         {
             if (!IsAlive)
                 return;
 
-            if (NetworkManager.Singleton.IsClient)
-            {
-                SetNetworkInput(playerInputData);
-            }
-            else
-            {
-                SetLocalInput(playerInputData);
-            }
-        }
-
-        private void SetNetworkInput(PlayerInputData playerInputData)
-        {
             if (IsOwner)
             {
                 SetLocalInput(playerInputData);
-                _playerInputData.Value = playerInputData;
-            }
-            else
-            {
-                SetLocalInput(_playerInputData.Value);
             }
         }
 

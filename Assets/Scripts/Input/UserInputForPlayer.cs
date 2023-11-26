@@ -19,8 +19,9 @@ namespace DungeonAndDemons.Input
         [SerializeField]
         private KeyboardInputType _keyboardInputTypePrefab;
 
-        private void Awake()
+        private IEnumerator Start()
         {
+            yield return new WaitForSeconds(2f);
             InitializeInput();
         }
 
@@ -29,9 +30,9 @@ namespace DungeonAndDemons.Input
             UpdateInputForPlayer();
         }
 
-        private void InitializeInput()
+        public void InitializeInput()
         {
-            if (_playerState.IsOwner)
+            if (_playerState.IsOwner || !NetworkManager.Singleton.IsClient)
             {
                 _currentInputType = Instantiate(_keyboardInputTypePrefab, transform);
             }
@@ -43,7 +44,10 @@ namespace DungeonAndDemons.Input
 
         private void UpdateInputForPlayer()
         {
-            _playerState.UpdateInput(_currentInputType.GetPlayerInputData());
+            if (_playerState.IsOwner && _currentInputType != null)
+            {
+                _playerState.SetInput(_currentInputType.GetPlayerInputData());
+            }
         }
     }
 }

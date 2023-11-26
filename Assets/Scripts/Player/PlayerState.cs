@@ -29,13 +29,8 @@ namespace DungeonAndDemons.Player
 
             if (IsOwner)
             {
-                SetLocalInput(playerInputData);
+                _playerInput.SetPlayerInputData(playerInputData);
             }
-        }
-
-        private void SetLocalInput(PlayerInputData playerInputData)
-        {
-            _playerInput.SetPlayerInputData(playerInputData);
         }
 
         [ClientRpc]

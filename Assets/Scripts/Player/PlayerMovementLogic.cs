@@ -1,3 +1,4 @@
+using DungeonAndDemons.Animations;
 using DungeonAndDemons.Interfaces;
 using System.Collections;
 using System.Collections.Generic;
@@ -11,6 +12,9 @@ namespace DungeonAndDemons.Player
         private Transform _playerTransform;
 
         [SerializeField]
+        private Animator _playerAnimator;
+
+        [SerializeField]
         private PlayerInputData _currentPlayerInput = new PlayerInputData(0, Vector2.zero, false, false, false, 0);
 
         [SerializeField]
@@ -18,26 +22,47 @@ namespace DungeonAndDemons.Player
         [SerializeField]
         private float _rotationSpeed;
 
+        [SerializeField]
+        private bool _isMoving;
+        [SerializeField]
         private bool _isRolling;
+
+        private float CalculatedRollSpeed => _isRolling ? 2 : 1;
+
+        [SerializeField]
+        private MovementAnimationState _movementAnimationState;
 
         private void Update()
         {
+            if (_movementAnimationState != null)
+            {
+                _isMoving = _movementAnimationState.IsMove;
+                _isRolling = _movementAnimationState.IsRoll;
+            }
+
             Move(_currentPlayerInput);
         }
 
         public void SetPlayerInputData(PlayerInputData playerInputData)
         {
-            if (!_isRolling)
+            if (!_movementAnimationState.IsRoll)
             {
                 _currentPlayerInput = playerInputData;
             }
+        }
 
-            //roll has more priority because roll blocking input (usually in games)
-            _isRolling = playerInputData.IsRoll;
+        public void SetCharacterAnimator(Animator animator)
+        {
+            _playerAnimator = animator;
+
+            _movementAnimationState = animator.GetBehaviour<MovementAnimationState>();
         }
 
         private void Move(PlayerInputData playerInputData)
         {
+            if (!_movementAnimationState.IsMove)
+                return;
+
             if (playerInputData.MovementVector != Vector2.zero)
             {
                 Vector3 movementVector3 = new Vector3(playerInputData.MovementVector.x, 0f, playerInputData.MovementVector.y);
@@ -46,6 +71,15 @@ namespace DungeonAndDemons.Player
             }
         }
 
-        private float CalculatedRollSpeed => _isRolling ? 2 : 1;
+        private void SetIsMoving(bool isMoving)
+        {
+            Debug.Log($"Setted value is moving {isMoving}");
+            _isMoving = isMoving;
+        }
+        private void SetIsRolling(bool isRolling)
+        {
+            Debug.Log($"Setted value is roll {isRolling}");
+            _isRolling = isRolling;
+        }
     }
 }

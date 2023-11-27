@@ -12,27 +12,9 @@ namespace DungeonAndDemons.Input
 
         public UnityEvent<PlayerInputData> OnFixedPlayerInputDataReady;
         
-        [SerializeField]
-        public Animator _animator;
-
         public void SetPlayerInputData(PlayerInputData playerInputData)
         {
             OnPlayerInputDataReady?.Invoke(playerInputData);
-            playerInputData = FixInputDependsOnAnimator(playerInputData);
-            OnFixedPlayerInputDataReady?.Invoke(playerInputData);
-        }
-
-        public void SetCharacterAnimator(PlayerCharacter playerCharacter)
-        {
-            _animator = playerCharacter.Animator;
-        }
-
-        private PlayerInputData FixInputDependsOnAnimator(PlayerInputData playerInputData)
-        {
-            playerInputData.MovementVector = _animator.GetBool("InMovement") ? playerInputData.MovementVector : Vector2.zero;
-            playerInputData.IsRoll = _animator.GetBool("InRoll");
-
-            return playerInputData;
         }
     }
 }

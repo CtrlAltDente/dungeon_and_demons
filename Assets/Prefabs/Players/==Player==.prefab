@@ -111,9 +111,7 @@ GameObject:
   - component: {fileID: 3460752903693222294}
   - component: {fileID: 3460752903693222312}
   - component: {fileID: 3460752903693222313}
-  - component: {fileID: 9068542674027652463}
-  - component: {fileID: 3642999207947459487}
-  - component: {fileID: 8280322101670814299}
+  - component: {fileID: 7201205767863043294}
   - component: {fileID: 4515826578700699685}
   m_Layer: 0
   m_Name: ==Player==
@@ -172,9 +170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 259e8b79617cc9447956dfd62b01e3b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsAlive: 1
-  CharacterCharacteristics: {fileID: 0}
-  _playerInputData:
+  PlayerInputData:
     m_InternalValue:
       PlayerId: 0
       MovementVector: {x: 0, y: 0}
@@ -182,11 +178,13 @@ MonoBehaviour:
       IsSecondaryAttack: 0
       IsRoll: 0
       ScrollValue: 0
+  IsAlive: 1
+  CharacterCharacteristics: {fileID: 0}
   _characters:
   - {fileID: 739019952413194449}
   _playerInput: {fileID: 3460752904285419920}
   _playerAnimatorLogic: {fileID: 7698104985748039950}
---- !u!114 &9068542674027652463
+--- !u!114 &7201205767863043294
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -195,15 +193,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 3460752903693222295}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c05f29eebeb09dc48ac776ed90e03e4e, type: 3}
+  m_Script: {fileID: 11500000, guid: e96cb6065543e43c4a752faaa1468eb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   SyncPositionX: 1
   SyncPositionY: 1
   SyncPositionZ: 1
-  SyncRotAngleX: 1
+  SyncRotAngleX: 0
   SyncRotAngleY: 1
-  SyncRotAngleZ: 1
+  SyncRotAngleZ: 0
   SyncScaleX: 0
   SyncScaleY: 0
   SyncScaleZ: 0
@@ -216,45 +214,6 @@ MonoBehaviour:
   InLocalSpace: 0
   Interpolate: 1
   SlerpPosition: 0
---- !u!114 &3642999207947459487
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3460752903693222295}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!54 &8280322101670814299
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3460752903693222295}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 80
-  m_CollisionDetection: 0
 --- !u!136 &4515826578700699685
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -341,7 +300,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 3460752903685383898}
-        m_TargetAssemblyTypeName: ClansWars.Player.PlayerMovement, Assembly-CSharp
+        m_TargetAssemblyTypeName: DungeonAndDemons.Player.PlayerMovementLogic, Assembly-CSharp
         m_MethodName: SetPlayerInputData
         m_Mode: 0
         m_Arguments:
@@ -352,7 +311,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _animator: {fileID: 7688221937481213733}
+  _animator: {fileID: 0}
 --- !u!1 &3460752904507798534
 GameObject:
   m_ObjectHideFlags: 0
@@ -812,6 +771,50 @@ PrefabInstance:
     - target: {fileID: 3020804483695953297, guid: c3aa99f864a26d04abe8ca42559f7857, type: 3}
       propertyPath: OnTriggerEnterEvent.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653630405463717811, guid: c3aa99f864a26d04abe8ca42559f7857, type: 3}
+      propertyPath: OnMovement.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653630405463717811, guid: c3aa99f864a26d04abe8ca42559f7857, type: 3}
+      propertyPath: OnMovement.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3460752903685383898}
+    - target: {fileID: 6653630405463717811, guid: c3aa99f864a26d04abe8ca42559f7857, type: 3}
+      propertyPath: OnMovement.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653630405463717811, guid: c3aa99f864a26d04abe8ca42559f7857, type: 3}
+      propertyPath: OnMovement.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: set_IsMove
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653630405463717811, guid: c3aa99f864a26d04abe8ca42559f7857, type: 3}
+      propertyPath: OnMovementEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653630405463717811, guid: c3aa99f864a26d04abe8ca42559f7857, type: 3}
+      propertyPath: OnMovementEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3460752903685383898}
+    - target: {fileID: 6653630405463717811, guid: c3aa99f864a26d04abe8ca42559f7857, type: 3}
+      propertyPath: OnMovementEvents.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Move
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653630405463717811, guid: c3aa99f864a26d04abe8ca42559f7857, type: 3}
+      propertyPath: OnMovement.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DungeonAndDemons.Player.PlayerMovementLogic, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653630405463717811, guid: c3aa99f864a26d04abe8ca42559f7857, type: 3}
+      propertyPath: OnMovementEvents.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: DungeonAndDemons.Player.PlayerMovementLogic, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653630405463717811, guid: c3aa99f864a26d04abe8ca42559f7857, type: 3}
+      propertyPath: OnMovement.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6653630405463717811, guid: c3aa99f864a26d04abe8ca42559f7857, type: 3}
+      propertyPath: OnMovementEvents.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 8336166005369858604, guid: c3aa99f864a26d04abe8ca42559f7857, type: 3}
       propertyPath: m_Name

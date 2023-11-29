@@ -14,23 +14,22 @@ namespace DungeonAndDemons.Input
         [SerializeField]
         private PlayerState _playerState;
 
-        private IInputType _currentInputType;
-
         [SerializeField]
         private KeyboardInputType _keyboardInputTypePrefab;
 
+        private IInputType _currentInputType;
+
+        private int _inputUpdatePerSecond = 25;
+
         private IEnumerator Start()
         {
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(0.1f);
             InitializeInput();
+
+            StartCoroutine(UpdateInputForPlayer());
         }
 
-        private void Update()
-        {
-            UpdateInputForPlayer();
-        }
-
-        public void InitializeInput()
+        private void InitializeInput()
         {
             if (_playerState.IsOwner || !NetworkManager.Singleton.IsClient)
             {
@@ -42,11 +41,20 @@ namespace DungeonAndDemons.Input
             }
         }
 
-        private void UpdateInputForPlayer()
+        private IEnumerator UpdateInputForPlayer()
         {
-            if (_playerState.IsOwner && _currentInputType != null)
+            while (gameObject.activeInHierarchy)
             {
-                _playerState.SetInput(_currentInputType.GetPlayerInputData());
+                yield return new WaitForSeconds(1f / _inputUpdatePerSecond);
+                
+                if (_playerState.IsAlive)
+                {
+                    _playerState.SetInputServerRpc(_currentInputType.GetPlayerInputData());
+                }
+                else
+                {
+                    _playerState.SetInputServerRpc(new PlayerInputData(NetworkManager.Singleton.LocalClientId, default, default, default, default, default));
+                }
             }
         }
     }

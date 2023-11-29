@@ -11,8 +11,6 @@ namespace DungeonAndDemons.Player
 {
     public class PlayerState : NetworkBehaviour
     {
-        public NetworkVariable<PlayerInputData> PlayerInputData = new NetworkVariable<PlayerInputData>(default, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
-
         public bool IsAlive = true;
         public CharacterCharacteristics CharacterCharacteristics;
 
@@ -24,14 +22,10 @@ namespace DungeonAndDemons.Player
         [SerializeField]
         private PlayerAnimatorLogic _playerAnimatorLogic;
 
-        private void Update()
+        [ServerRpc]
+        public void SetInputServerRpc(PlayerInputData playerInputData)
         {
-            ApplyInput();
-        }
-
-        public void SetInput(PlayerInputData playerInputData)
-        {
-            PlayerInputData.Value = playerInputData;
+            _playerInput.SetPlayerInputData(playerInputData);
         }
 
         [ClientRpc]
@@ -49,14 +43,6 @@ namespace DungeonAndDemons.Player
 
             _playerInput.SetCharacterAnimator(currentCharacter);
             _playerAnimatorLogic.SetCharacterAnimator(currentCharacter);
-        }
-
-        public void ApplyInput()
-        {
-            if(IsHost)
-            {
-                _playerInput.SetPlayerInputData(PlayerInputData.Value);
-            }
         }
     }
 }

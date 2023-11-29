@@ -91,7 +91,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerTransform: {fileID: 3460752903693222294}
-  _playerAnimator: {fileID: 0}
   _currentPlayerInput:
     PlayerId: 0
     MovementVector: {x: 0, y: 0}
@@ -181,33 +180,6 @@ MonoBehaviour:
       ScrollValue: 0
   IsAlive: 1
   CharacterCharacteristics: {fileID: 0}
-  OnAnimatorGetted:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 7698104985748039950}
-        m_TargetAssemblyTypeName: DungeonAndDemons.Player.PlayerAnimatorLogic, Assembly-CSharp
-        m_MethodName: SetCharacterAnimator
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3460752903685383898}
-        m_TargetAssemblyTypeName: DungeonAndDemons.Player.PlayerMovementLogic, Assembly-CSharp
-        m_MethodName: SetCharacterAnimator
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
   _characters:
   - {fileID: 739019952413194449}
   _playerInput: {fileID: 3460752904285419920}
@@ -324,6 +296,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnFixedPlayerInputDataReady:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 3460752903685383898}
         m_TargetAssemblyTypeName: DungeonAndDemons.Player.PlayerMovementLogic, Assembly-CSharp
         m_MethodName: SetPlayerInputData
@@ -336,9 +311,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  OnFixedPlayerInputDataReady:
-    m_PersistentCalls:
-      m_Calls: []
+  _animator: {fileID: 0}
 --- !u!1 &3460752904507798534
 GameObject:
   m_ObjectHideFlags: 0

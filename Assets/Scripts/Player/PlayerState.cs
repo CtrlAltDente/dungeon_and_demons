@@ -6,7 +6,6 @@ using System.Globalization;
 using System.Linq;
 using Unity.Netcode;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace DungeonAndDemons.Player
 {
@@ -17,23 +16,13 @@ namespace DungeonAndDemons.Player
         public bool IsAlive = true;
         public CharacterCharacteristics CharacterCharacteristics;
 
-        public UnityEvent<Animator> OnAnimatorGetted;
-
         [SerializeField]
         private PlayerCharacter[] _characters;
-        [SerializeField]
-        private PlayerCharacter _currentCharacter;
 
         [SerializeField]
         private PlayerInput _playerInput;
         [SerializeField]
         private PlayerAnimatorLogic _playerAnimatorLogic;
-
-        private IEnumerator Start()
-        {
-            yield return new WaitForSeconds(5f);
-            OnAnimatorGetted?.Invoke(_currentCharacter.Animator);
-        }
 
         private void Update()
         {
@@ -58,7 +47,8 @@ namespace DungeonAndDemons.Player
                 }
             }
 
-            _currentCharacter = currentCharacter;
+            _playerInput.SetCharacterAnimator(currentCharacter);
+            _playerAnimatorLogic.SetCharacterAnimator(currentCharacter);
         }
 
         public void ApplyInput()

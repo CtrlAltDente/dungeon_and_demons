@@ -8,6 +8,7 @@ namespace DungeonAndDemons.ScriptableObjects
     [CreateAssetMenu(menuName = "Scriptable Objects/Items Container", fileName = "Items Container", order = 1)]
     public class ItemsContainer : ScriptableObject
     {
-        public Item[] Items;
+        public ItemType ContainerItemsType;
+        public ItemVisual[] Items;
     }
 }

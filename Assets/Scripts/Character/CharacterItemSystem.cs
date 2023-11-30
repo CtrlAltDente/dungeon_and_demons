@@ -6,7 +6,7 @@ namespace DungeonAndDemons.Items
 {
     public class CharacterItemSystem : MonoBehaviour
     {
-        public List<IItemType> AvailableItems;
+        public List<WorldItem> AvailableItems;
 
         public ItemSlot[] Slots;
 
@@ -32,18 +32,19 @@ namespace DungeonAndDemons.Items
 
         private void OnTriggerEnter(Collider other)
         {
-            if (other.gameObject.GetComponent<IItemType>() != null)
+            if (other.gameObject.GetComponent<WorldItem>() != null)
             {
-                AvailableItems.Add(other.gameObject.GetComponent<IItemType>());
+                SetItem(other.gameObject.GetComponent<WorldItem>().ItemInfo);
+                //AvailableItems.Add(other.gameObject.GetComponent<Item>());
             }
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.gameObject.GetComponent<IItemType>() != null)
+            /*if (other.gameObject.GetComponent<Item>() != null)
             {
-                AvailableItems.Remove(other.gameObject.GetComponent<IItemType>());
-            }
+                AvailableItems.Remove(other.gameObject.GetComponent<Item>());
+            }*/
         }
     }
 }

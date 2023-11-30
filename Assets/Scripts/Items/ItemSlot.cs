@@ -7,7 +7,7 @@ namespace DungeonAndDemons.Items
 {
     public class ItemSlot : MonoBehaviour
     {
-        public GameObject Item;
+        public WorldItem Item;
         public ItemInfo SlotItemInfo;
         public ItemType SlotType;
 

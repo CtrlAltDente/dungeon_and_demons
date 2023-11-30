@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DungeonAndDemons.Items
 {
-    public class SuitItem : Item
+    public class Item : MonoBehaviour
     {
 
     }

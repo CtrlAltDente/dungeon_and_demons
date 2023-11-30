@@ -8,5 +8,6 @@ namespace DungeonAndDemons.Items
     {
         public ItemType Type;
         public int ItemIndex;
+        public int ItemValue;
     }
 }

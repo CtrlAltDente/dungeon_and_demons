@@ -4,8 +4,8 @@ using UnityEngine;
 
 namespace DungeonAndDemons.Items
 {
-    public class SuitItem : Item
+    public class WeaponItem : Item
     {
-
+        public bool IsDoubleHanded;
     }
 }

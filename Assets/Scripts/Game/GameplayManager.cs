@@ -62,7 +62,6 @@ public class GameplayManager : MonoBehaviour
     {
         PlayerState newPlayer = Instantiate(_playerPrefab, position, Quaternion.identity, null);
         newPlayer.NetworkObject.SpawnAsPlayerObject(playerId);
-        newPlayer.SetCharacterClientRpc(CharacterClass.Warrior);
     }
 
     private void InitializeLocalPlayer()

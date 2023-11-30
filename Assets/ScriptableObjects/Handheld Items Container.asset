@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27f64301e50b49e4e9e339dd69c503f8, type: 3}
+  m_Name: Handheld Items Container
+  m_EditorClassIdentifier: 
+  Items:
+  - {fileID: 6942633651857228625, guid: f3c0fd306973d5e40be0ecd57a47fc5d, type: 3}
+  - {fileID: 1398270069291725837, guid: 4e8cd27accf462f49a9ecc12a99f5b95, type: 3}

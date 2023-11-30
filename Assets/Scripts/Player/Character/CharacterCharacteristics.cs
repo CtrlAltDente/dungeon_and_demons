@@ -7,8 +7,6 @@ namespace DungeonAndDemons.Characters
 {
     public class CharacterCharacteristics : MonoBehaviour
     {
-        public CharacterClass CharacterClass;
-
         public int Strength;
         public int Dexterity;
         public int Intelligence;

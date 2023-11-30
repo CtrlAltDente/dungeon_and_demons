@@ -6,7 +6,9 @@ namespace DungeonAndDemons.Items
 {
     public enum ItemType 
     {
-        Handheld,
+        None,
+        Accessory,
+        Weapon,
         Suit
     }
 }

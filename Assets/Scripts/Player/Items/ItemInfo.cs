@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DungeonAndDemons.Items
 {
-    public class ItemInfo : MonoBehaviour
+    public struct ItemInfo
     {
         public ItemType Type;
         public int ItemIndex;

@@ -1,4 +1,5 @@
 using DungeonAndDemons.Characters;
+using DungeonAndDemons.Items;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,8 +10,7 @@ namespace DungeonAndDemons.Player
     {
         public CharacterStats CharacterStats;
 
-        public Transform RightHandItemParent;
-        public Transform LeftHandItemParent;
+        public CharacterItemSystem CharacterItemSystem;
 
         public Animator Animator;
     }

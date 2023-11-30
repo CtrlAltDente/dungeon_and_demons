@@ -250,6 +250,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1602279165}
+  - component: {fileID: 1602279166}
   m_Layer: 0
   m_Name: Suits
   m_TagString: Untagged
@@ -275,6 +276,20 @@ Transform:
   - {fileID: 5567619883220336065}
   m_Father: {fileID: 543450652509024410}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1602279166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1602279164}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dda128b714f6f042a70aadcc6f3053f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 0}
+  SlotType: 3
 --- !u!1 &1709137579
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,6 +507,7 @@ GameObject:
   m_Component:
   - component: {fileID: 543450652509024410}
   - component: {fileID: 919132148239264289}
+  - component: {fileID: 919132148239264292}
   - component: {fileID: 919132148239264291}
   - component: {fileID: 919132148239264290}
   m_Layer: 0
@@ -525,8 +541,7 @@ MonoBehaviour:
       Strength: 0
       Dexterity: 0
       Intelligence: 0
-  RightHandItemParent: {fileID: 4935804745236815698}
-  LeftHandItemParent: {fileID: 7752115149057716507}
+  CharacterItemSystem: {fileID: 919132148239264292}
   Animator: {fileID: 919132148239264290}
 --- !u!95 &919132148239264290
 Animator:
@@ -563,6 +578,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TransitionStateInfoList: []
   m_Animator: {fileID: 919132148239264290}
+--- !u!114 &919132148239264292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148239264288}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43063e885067d45479d5df6d403feea5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slots:
+  - {fileID: 7752115149057716508}
+  - {fileID: 5959402980906831414}
+  - {fileID: 1602279166}
 --- !u!4 &945239466997602087
 Transform:
   m_ObjectHideFlags: 0
@@ -699,6 +730,7 @@ GameObject:
   - component: {fileID: 7752115149057716507}
   - component: {fileID: 281062595919773733}
   - component: {fileID: 5681299001529975753}
+  - component: {fileID: 7752115149057716508}
   m_Layer: 0
   m_Name: Body_Hand_Left
   m_TagString: Untagged
@@ -1215,6 +1247,7 @@ GameObject:
   - component: {fileID: 4935804745236815698}
   - component: {fileID: 586952215610804560}
   - component: {fileID: 3790698343376923554}
+  - component: {fileID: 5959402980906831414}
   m_Layer: 0
   m_Name: Body_Hand_Right
   m_TagString: Untagged
@@ -1222,6 +1255,20 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &5959402980906831414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5959402980906831413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dda128b714f6f042a70aadcc6f3053f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 0}
+  SlotType: 2
 --- !u!1 &6169106353360220488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1346,6 +1393,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 543450652509024410}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7752115149057716508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2244223563849396186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dda128b714f6f042a70aadcc6f3053f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Item: {fileID: 0}
+  SlotType: 1
 --- !u!1 &7756449450940153366
 GameObject:
   m_ObjectHideFlags: 0

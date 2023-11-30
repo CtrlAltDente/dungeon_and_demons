@@ -9,6 +9,7 @@ namespace DungeonAndDemons.Characters
     [Serializable]
     public struct CharacterVisualConfiguration : INetworkSerializable
     {
+        public Color BodyColor;
         public int HairStyleIndex;
         public int EyebrowIndex;
         public int BeardIndex;

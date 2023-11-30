@@ -394,12 +394,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dda128b714f6f042a70aadcc6f3053f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 0}
-  SlotItemInfo:
+  SlotType: 3
+  _worldItemPrefab: {fileID: 1230351647751567938, guid: f3c0fd306973d5e40be0ecd57a47fc5d, type: 3}
+  _slotWorldItem: {fileID: 0}
+  _slotItemInfo:
     Type: 0
     ItemIndex: 0
     ItemValue: 0
-  SlotType: 3
 --- !u!1 &1709137579
 GameObject:
   m_ObjectHideFlags: 0
@@ -504,6 +505,10 @@ PrefabInstance:
       propertyPath: ItemInfo.Type
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1230351647751567938, guid: f3c0fd306973d5e40be0ecd57a47fc5d, type: 3}
+      propertyPath: ItemInfo.ItemValue
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2665088796610082715, guid: f3c0fd306973d5e40be0ecd57a47fc5d, type: 3}
       propertyPath: m_Name
       value: WorldItem
@@ -514,7 +519,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6753306087787351387, guid: f3c0fd306973d5e40be0ecd57a47fc5d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.33
+      value: 7.12
       objectReference: {fileID: 0}
     - target: {fileID: 6753306087787351387, guid: f3c0fd306973d5e40be0ecd57a47fc5d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -630,6 +635,10 @@ PrefabInstance:
       propertyPath: ItemInfo.Type
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1230351647751567938, guid: f3c0fd306973d5e40be0ecd57a47fc5d, type: 3}
+      propertyPath: ItemInfo.ItemValue
+      value: 23
+      objectReference: {fileID: 0}
     - target: {fileID: 2665088796610082715, guid: f3c0fd306973d5e40be0ecd57a47fc5d, type: 3}
       propertyPath: m_Name
       value: WorldItem (1)
@@ -640,7 +649,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6753306087787351387, guid: f3c0fd306973d5e40be0ecd57a47fc5d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.33
+      value: 7.12
       objectReference: {fileID: 0}
     - target: {fileID: 6753306087787351387, guid: f3c0fd306973d5e40be0ecd57a47fc5d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -843,7 +852,7 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -1408,12 +1417,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dda128b714f6f042a70aadcc6f3053f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 0}
-  SlotItemInfo:
+  SlotType: 2
+  _worldItemPrefab: {fileID: 1230351647751567938, guid: f3c0fd306973d5e40be0ecd57a47fc5d, type: 3}
+  _slotWorldItem: {fileID: 0}
+  _slotItemInfo:
     Type: 0
     ItemIndex: 0
     ItemValue: 0
-  SlotType: 2
 --- !u!1 &6169106353360220488
 GameObject:
   m_ObjectHideFlags: 0
@@ -1550,12 +1560,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1dda128b714f6f042a70aadcc6f3053f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Item: {fileID: 0}
-  SlotItemInfo:
+  SlotType: 1
+  _worldItemPrefab: {fileID: 1230351647751567938, guid: f3c0fd306973d5e40be0ecd57a47fc5d, type: 3}
+  _slotWorldItem: {fileID: 0}
+  _slotItemInfo:
     Type: 0
     ItemIndex: 0
     ItemValue: 0
-  SlotType: 1
 --- !u!1 &7756449450940153366
 GameObject:
   m_ObjectHideFlags: 0

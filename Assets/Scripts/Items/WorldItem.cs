@@ -16,18 +16,22 @@ namespace DungeonAndDemons.Items
 
         [SerializeField]
         private MeshCollider _meshCollider;
+        [SerializeField]
+        private Rigidbody _rigidbody;
 
         public ItemVisual ItemVisual;
 
         private void Start()
         {
-            Initialize();
+            Initialize(false);
         }
 
-        public void Initialize()
+        public void Initialize(bool isKinematic)
         { 
-            if(ItemInfo.Type != ItemType.None)
+            if(_meshCollider.sharedMesh == null)
             {
+                _rigidbody.isKinematic = isKinematic;
+                
                 ItemVisual = Instantiate(_itemsContainer.Find(container => container.ContainerItemsType == ItemInfo.Type).Items[ItemInfo.ItemIndex], transform.position, Quaternion.identity, transform);
                 _meshCollider.sharedMesh = ItemVisual.MeshFilter.sharedMesh;
             }

@@ -14,7 +14,10 @@ namespace DungeonAndDemons.Items
         {
             if (AvailableItems.Count > 0)
             {
-                SetItem(AvailableItems[0].ItemInfo);
+                WorldItem item = AvailableItems[0];
+                AvailableItems.Remove(item);
+                SetItem(item.ItemInfo);
+                Destroy(item.gameObject);
             }
         }
 
@@ -24,7 +27,11 @@ namespace DungeonAndDemons.Items
             {
                 if (slot.SlotType == itemInfo.Type)
                 {
-                    slot.DropItem();
+                    if(slot.HasItem)
+                    {
+                        slot.DropItem();
+                    }
+
                     slot.SetItem(itemInfo);
                 }
             }
@@ -34,17 +41,20 @@ namespace DungeonAndDemons.Items
         {
             if (other.gameObject.GetComponent<WorldItem>() != null)
             {
-                SetItem(other.gameObject.GetComponent<WorldItem>().ItemInfo);
-                //AvailableItems.Add(other.gameObject.GetComponent<Item>());
+                AvailableItems.Add(other.gameObject.GetComponent<WorldItem>());
+                PickupAvailableItem();
             }
         }
 
         private void OnTriggerExit(Collider other)
         {
-            /*if (other.gameObject.GetComponent<Item>() != null)
+            if (other.gameObject.GetComponent<WorldItem>() != null)
             {
-                AvailableItems.Remove(other.gameObject.GetComponent<Item>());
-            }*/
+                if (AvailableItems.Contains(other.gameObject.GetComponent<WorldItem>()))
+                {
+                    AvailableItems.Remove(other.gameObject.GetComponent<WorldItem>());
+                }
+            }
         }
     }
 }

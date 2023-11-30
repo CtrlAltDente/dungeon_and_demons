@@ -54,6 +54,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: be3f26b36ca45154eac36fbbac3ef323, type: 2}
   - {fileID: 11400000, guid: 90430ddbd97f21b478f5b1609a887ab8, type: 2}
   _meshCollider: {fileID: 2570540732055348425}
+  _rigidbody: {fileID: 2204080468116428707}
   ItemVisual: {fileID: 0}
 --- !u!54 &2204080468116428707
 Rigidbody:

@@ -10,9 +10,9 @@ namespace DungeonAndDemons.Characters
     [Serializable]
     public struct CharacterItems : INetworkSerializable
     {
-        private Item Accessory;
-        private Item Weapon;
-        private Item Suit;
+        private ItemInfo Accessory;
+        private ItemInfo Weapon;
+        private ItemInfo Suit;
 
         public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
         {

@@ -6,14 +6,8 @@ using UnityEngine;
 
 namespace DungeonAndDemons.Items
 {
-    [Serializable]
-    public struct Item : INetworkSerializable
+    public class Item
     {
         public ItemInfo ItemInfo;
-
-        public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
-        {
-            serializer.SerializeValue(ref ItemInfo);
-        }
     }
 }

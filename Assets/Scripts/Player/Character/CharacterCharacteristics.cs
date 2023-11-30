@@ -5,14 +5,11 @@ using UnityEngine;
 
 namespace DungeonAndDemons.Characters
 {
-    public class CharacterCharacteristics : MonoBehaviour
+    [Serializable]
+    public struct CharacterCharacteristics
     {
-        public int Strength;
-        public int Dexterity;
-        public int Intelligence;
-
-        public int SuitIndex;
-        public int PrimaryItemIndex;
-        public int SecondaryItemIndex;
+        public int Strength;        //hp and attack power
+        public int Dexterity;       //critical strike chance and enemy attack miss chance
+        public int Intelligence;    //mana
     }
 }

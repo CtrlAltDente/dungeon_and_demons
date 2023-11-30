@@ -7,7 +7,7 @@ namespace DungeonAndDemons.Player
 {
     public class PlayerCharacter : MonoBehaviour
     {
-        public CharacterVisualConfiguration CharacterVisualConfiguration;
+        public CharacterStats CharacterStats;
 
         public Transform RightHandItemParent;
         public Transform LeftHandItemParent;

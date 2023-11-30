@@ -12,7 +12,6 @@ namespace DungeonAndDemons.Player
     public class PlayerState : NetworkBehaviour
     {
         public bool IsAlive = true;
-        public CharacterCharacteristics CharacterCharacteristics;
 
         [SerializeField]
         private PlayerCharacter _playerCharacter;

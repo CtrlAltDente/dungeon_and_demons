@@ -9,6 +9,6 @@ namespace DungeonAndDemons.ScriptableObjects
     public class ItemsContainer : ScriptableObject
     {
         public ItemType ContainerItemsType;
-        public ItemModel[] Items;
+        public Item[] Items;
     }
 }

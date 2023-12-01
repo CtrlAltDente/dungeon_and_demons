@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4767582680976913498}
   - component: {fileID: 3725063253074347043}
   - component: {fileID: 5847700792577119929}
-  - component: {fileID: -2585769761271745991}
   m_Layer: 0
   m_Name: Shield_1
   m_TagString: Untagged
@@ -84,16 +83,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &-2585769761271745991
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1251261009915017247}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 577264e364cc9374291319107e5e978d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  MeshFilter: {fileID: 3725063253074347043}

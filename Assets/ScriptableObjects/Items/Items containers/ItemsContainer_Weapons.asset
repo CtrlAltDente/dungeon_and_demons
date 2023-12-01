@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: ItemsContainer_Weapons
   m_EditorClassIdentifier: 
   ContainerItemsType: 2
-  Items: []
+  Items:
+  - {fileID: 11400000, guid: 5e1deaed8736b8b43847430218d5fd17, type: 2}

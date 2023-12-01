@@ -9,5 +9,10 @@ namespace DungeonAndDemons.Items
     public struct ItemStats
     {
         public int ItemValue;
+
+        public ItemStats(int itemValue)
+        {
+            ItemValue = itemValue;
+        }
     }
 }

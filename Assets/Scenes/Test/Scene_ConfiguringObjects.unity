@@ -748,7 +748,6 @@ GameObject:
   m_Component:
   - component: {fileID: 543450652509024410}
   - component: {fileID: 919132148239264289}
-  - component: {fileID: 919132148239264292}
   - component: {fileID: 919132148239264291}
   - component: {fileID: 919132148239264290}
   - component: {fileID: 919132148239264293}
@@ -771,19 +770,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724e9ba28baab9248971805cfd40226c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterStats:
-    CharacterVisualConfiguration:
-      BodyColor: {r: 0, g: 0, b: 0, a: 0}
-      HairStyleIndex: 0
-      EyebrowIndex: 0
-      BeardIndex: 0
-      HairColor: {r: 0, g: 0, b: 0, a: 0}
-      SuitIndex: 0
-    CharacterCharacteristics:
-      Strength: 0
-      Dexterity: 0
-      Intelligence: 0
-  CharacterItemSystem: {fileID: 919132148239264292}
   Animator: {fileID: 919132148239264290}
 --- !u!95 &919132148239264290
 Animator:
@@ -820,23 +806,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   TransitionStateInfoList: []
   m_Animator: {fileID: 919132148239264290}
---- !u!114 &919132148239264292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132148239264288}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43063e885067d45479d5df6d403feea5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  AvailableItems: []
-  Slots:
-  - {fileID: 7752115149057716508}
-  - {fileID: 5959402980906831414}
-  - {fileID: 1602279166}
 --- !u!65 &919132148239264293
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -5,10 +5,10 @@ using UnityEngine;
 
 namespace DungeonAndDemons.ScriptableObjects
 {
-    [CreateAssetMenu(menuName = "Scriptable Objects/Items Container", fileName = "Items Container", order = 1)]
+    [CreateAssetMenu(menuName = "Scriptable Objects/Items/Items Container", fileName = "ItemsContainer_", order = 1)]
     public class ItemsContainer : ScriptableObject
     {
         public ItemType ContainerItemsType;
-        public ItemVisual[] Items;
+        public ItemModel[] Items;
     }
 }

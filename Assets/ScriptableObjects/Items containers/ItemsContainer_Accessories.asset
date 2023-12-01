@@ -10,8 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 27f64301e50b49e4e9e339dd69c503f8, type: 3}
-  m_Name: Accessories Items Container
+  m_Name: ItemsContainer_Accessories
   m_EditorClassIdentifier: 
   ContainerItemsType: 1
-  Items:
-  - {fileID: -2585769761271745991, guid: 4e8cd27accf462f49a9ecc12a99f5b95, type: 3}
+  Items: []

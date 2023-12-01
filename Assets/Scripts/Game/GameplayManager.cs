@@ -1,4 +1,3 @@
-using DungeonAndDemons.Characters;
 using DungeonAndDemons.Game;
 using DungeonAndDemons.Input;
 using DungeonAndDemons.Network;

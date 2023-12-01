@@ -7,6 +7,13 @@ namespace DungeonAndDemons.Player
 {
     public class PlayerCharacter : MonoBehaviour
     {
+        public PlayerInfo PlayerInfo;
+
         public Animator Animator;
+
+        public void UpdateItemInfo(ItemType itemType, ItemStats itemStats)
+        {
+
+        }
     }
 }

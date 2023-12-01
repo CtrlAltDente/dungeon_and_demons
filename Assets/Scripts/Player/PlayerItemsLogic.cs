@@ -10,10 +10,6 @@ namespace DungeonAndDemons.Player
     {
         public UnityEvent<ItemWorldObject> OnItemPicked;
 
-        public ItemSlot WeaponSlot;
-        public ItemSlot AccessorySlot;
-        public ItemSlot SuitSlot;
-
         [SerializeField]
         private List<ItemWorldObject> ItemsAroudPlayer;
 
@@ -40,6 +36,7 @@ namespace DungeonAndDemons.Player
                 if (!ItemsAroudPlayer.Contains(possibleWorldObject))
                 {
                     ItemsAroudPlayer.Add(possibleWorldObject);
+                    PickupItem();
                 }
             }
         }

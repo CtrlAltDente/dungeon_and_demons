@@ -1,3 +1,4 @@
+using DungeonAndDemons.ScriptableObjects;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;
@@ -10,7 +11,9 @@ namespace DungeonAndDemons.Items
     {
         public ItemType SlotItemType;
 
-        public UnityEvent<ItemType, ItemStats> OnItemInformationUpdated;
+        public UnityEvent<ItemType, int> OnItemInformationUpdated;
+
+        public ItemsContainer[] ItemsContainers;
 
         private ItemWorldObject _slotItemWorldObject;
 
@@ -18,15 +21,17 @@ namespace DungeonAndDemons.Items
         {
             DropItem();
 
-            if (itemObject.ItemReference.Type == SlotItemType)
+            if (itemObject.ItemType == SlotItemType)
             {
+                ItemsContainer itemsContainer = GetItemsContainerByType(itemObject.ItemType);
+
                 _slotItemWorldObject = itemObject;
 
                 _slotItemWorldObject.IsKinematic = true;
-                _slotItemWorldObject.transform.position = transform.position + _slotItemWorldObject.ItemReference.Model.PositionOffset;
-                _slotItemWorldObject.transform.rotation = transform.rotation * Quaternion.Euler(_slotItemWorldObject.ItemReference.Model.RotationOffset);
+                _slotItemWorldObject.transform.position = transform.position + itemsContainer.Items[_slotItemWorldObject.ItemIndex].Model.PositionOffset;
+                _slotItemWorldObject.transform.rotation = transform.rotation * Quaternion.Euler(itemsContainer.Items[_slotItemWorldObject.ItemIndex].Model.RotationOffset);
                 
-                OnItemInformationUpdated?.Invoke(SlotItemType, _slotItemWorldObject.ItemReference.Stats);
+                OnItemInformationUpdated?.Invoke(SlotItemType, _slotItemWorldObject.ItemIndex);
             }
         }
 
@@ -40,8 +45,21 @@ namespace DungeonAndDemons.Items
                 
                 _slotItemWorldObject = null;
 
-                OnItemInformationUpdated?.Invoke(SlotItemType, new ItemStats(1));
+                OnItemInformationUpdated?.Invoke(SlotItemType, 0);
             }
+        }
+
+        private ItemsContainer GetItemsContainerByType(ItemType itemType)
+        {
+            foreach (var item in ItemsContainers)
+            {
+                if (item.ContainerItemsType == itemType)
+                {
+                    return item;
+                }
+            }
+
+            return null;
         }
     }
 }

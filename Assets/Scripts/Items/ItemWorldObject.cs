@@ -7,7 +7,10 @@ namespace DungeonAndDemons.Items
 {
     public class ItemWorldObject : MonoBehaviour
     {
-        public Item ItemReference;
+        public ItemsContainer[] ItemsContainers;
+
+        public ItemType ItemType;
+        public int ItemIndex;
 
         public bool InitializeAtStart = false;
 
@@ -41,8 +44,36 @@ namespace DungeonAndDemons.Items
         {
             IsKinematic = isKinematic;
 
-            Instantiate(ItemReference.Model.Model, transform.position, Quaternion.identity, transform);
-            _meshCollider.sharedMesh = ItemReference.Model.Mesh;
+            ItemsContainer itemsContainer = GetItemsContainerByType();
+            
+            if (itemsContainer != null)
+            {
+                InstantiateItemModel(itemsContainer);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
+        private ItemsContainer GetItemsContainerByType()
+        {
+            foreach (var item in ItemsContainers)
+            {
+                if (item.ContainerItemsType == ItemType)
+                {
+                    return item;
+                }
+            }
+
+            return null;
+        }
+
+        private void InstantiateItemModel(ItemsContainer itemsContainer)
+        {
+            Item item = itemsContainer.Items[ItemIndex];
+            Instantiate(item.Model.Model, transform.position, Quaternion.identity, transform);
+            _meshCollider.sharedMesh = item.Model.Mesh;
         }
     }
 }

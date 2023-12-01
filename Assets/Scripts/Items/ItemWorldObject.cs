@@ -41,7 +41,7 @@ namespace DungeonAndDemons.Items
         {
             IsKinematic = isKinematic;
 
-            Instantiate(ItemReference.Model, transform.position, Quaternion.identity, transform);
+            Instantiate(ItemReference.Model.Model, transform.position, Quaternion.identity, transform);
             _meshCollider.sharedMesh = ItemReference.Model.Mesh;
         }
     }

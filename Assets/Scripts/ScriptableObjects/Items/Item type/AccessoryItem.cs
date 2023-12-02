@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace DungeonAndDemons.Items
 {
-    [CreateAssetMenu(fileName = "Accessory_", menuName = "Scriptable Objects/Items/Accessory Item", order = 5)]
+    [CreateAssetMenu(menuName = "Scriptable Objects/Items/Item Type/Accessory", fileName = "Accessory_", order = 0)]
     public class AccessoryItem : ScriptableObject
     {
         public string Name;

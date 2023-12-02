@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DungeonAndDemons.ScriptableObjects
 {
-    [CreateAssetMenu(fileName = "ItemModel_", menuName = "Scriptable Objects/Items/Item Model", order = 3)]
+    [CreateAssetMenu(fileName = "ItemModel_", menuName = "Scriptable Objects/Items/Model", order = 0)]
     public class ItemModel : ScriptableObject
     {
         public Mesh Mesh => Model.GetComponent<MeshFilter>().sharedMesh;

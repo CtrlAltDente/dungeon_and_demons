@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace DungeonAndDemons.Items
 {
-    [CreateAssetMenu(fileName = "Suit_", menuName = "Scriptable Objects/Items/Suit Item", order = 4)]
-    public class SuitItem : ScriptableObject
+    [CreateAssetMenu(menuName = "Scriptable Objects/Items/Item Type/Weapon", fileName = "Weapon_", order = 2)]
+    public class WeaponItem : ScriptableObject
     {
         public string Name;
-        public int ArmorValue;
+        public int DamageValue;
         public ItemModel Model;
     }
 }

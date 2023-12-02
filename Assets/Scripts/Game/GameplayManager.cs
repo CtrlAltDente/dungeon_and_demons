@@ -3,6 +3,7 @@ using DungeonAndDemons.Input;
 using DungeonAndDemons.Network;
 using DungeonAndDemons.Player;
 using DungeonAndDemons.ScriptableObjects;
+using DungeonAndDemons.ScriptableObjects.Containers;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
@@ -41,7 +42,7 @@ public class GameplayManager : MonoBehaviour
     {
         if (NetworkManager.Singleton.IsHost || !NetworkManager.Singleton.IsClient)
         {
-            _currentMap = Instantiate(_mapsContainer.Maps[0], Vector3.zero, Quaternion.identity, null);
+            _currentMap = Instantiate(_mapsContainer.Items[0], Vector3.zero, Quaternion.identity, null);
         }
     }
 

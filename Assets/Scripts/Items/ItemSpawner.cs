@@ -1,9 +1,12 @@
+using DungeonAndDemons.Interfaces;
 using DungeonAndDemons.ScriptableObjects.Containers;
 using DungeonAndDemons.ScriptableObjects.Items;
 using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
+using UnityEditor.Rendering;
 using UnityEngine;
+using static UnityEngine.Rendering.DebugUI;
 
 namespace DungeonAndDemons.Items
 {
@@ -14,15 +17,42 @@ namespace DungeonAndDemons.Items
         [SerializeField]
         private AccessoriesContainer _accessoriesContainer;
         [SerializeField]
-        private WeaponsContainer _weaponsContainer;
-        [SerializeField]
         private SuitsContainer _suitsContainer;
+        [SerializeField]
+        private WeaponsContainer _weaponsContainer;
 
         [SerializeField]
-        private AccessoryObject _accessoryObject;
+        private AccessoryObject _accessoryObjectPrefab;
         [SerializeField]
-        private WeaponObject _weaponObject;
+        private SuitObject _suitObjectPrefab;
         [SerializeField]
-        private SuitObject _suitObject;
+        private WeaponObject _weaponObjectPrefab;
+
+        private void Start()
+        {
+            SpawnAccessoryObject(Info);
+        }
+
+        public void SpawnAccessoryObject(ItemInfo itemInfo)
+        {
+            SpawnObject(_accessoryObjectPrefab, _accessoriesContainer, itemInfo);
+        }
+
+        public void SpawnSuitObject(ItemInfo itemInfo)
+        {
+            SpawnObject(_suitObjectPrefab, _suitsContainer, itemInfo);
+        }
+
+        public void SpawnWeaponObject(ItemInfo itemInfo)
+        {
+            SpawnObject(_weaponObjectPrefab, _weaponsContainer, itemInfo);
+        }
+
+        private void SpawnObject<T>(ItemObject<T> itemObject, Container<T> container, ItemInfo itemInfo) where T : IItemPreferences
+        {
+            var newItemObject = Instantiate(itemObject, transform.position, Quaternion.identity, null);
+            newItemObject.Info = itemInfo;
+            newItemObject.Item = container.Items[itemInfo.ItemIndex];
+        }
     }
 }

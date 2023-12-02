@@ -1,10 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
 namespace DungeonAndDemons.Items
 {
-    [SerializeField]
+    [Serializable]
     public struct ItemInfo
     {
         public int ItemIndex;

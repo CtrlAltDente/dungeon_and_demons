@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DungeonAndDemons.Items
+namespace DungeonAndDemons.ScriptableObjects.Items
 {
     [CreateAssetMenu(menuName = "Scriptable Objects/Items/Item Type/Suit", fileName = "Suit_", order = 1)]
     public class SuitItem : ScriptableObject, IItemPreferences

@@ -4,7 +4,8 @@ using UnityEngine;
 
 namespace DungeonAndDemons.Items
 {
-    public class ItemInfo : MonoBehaviour
+    [SerializeField]
+    public struct ItemInfo
     {
         public int ItemIndex;
     }

@@ -7,7 +7,7 @@ namespace DungeonAndDemons.Interfaces
 {
     public interface IItemPreferences
     {
-        public string Name { get; set; }
-        public ItemModel Model { get; set; }
+        public string Name { get; }
+        public ItemModel Model { get; }
     }
 }

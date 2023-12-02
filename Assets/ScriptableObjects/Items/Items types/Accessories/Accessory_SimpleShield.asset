@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c513bc9756ff525469e1a27b1c4dea41, type: 3}
-  m_Name: Item_Sword
+  m_Script: {fileID: 11500000, guid: 585bae09fa0339a44b93297adbe601a3, type: 3}
+  m_Name: Accessory_SimpleShield
   m_EditorClassIdentifier: 
-  Type: 2
-  Stats:
-    ItemValue: 2
-  Model: {fileID: 11400000, guid: abff33aa1f612a447a40e897bf326186, type: 2}
+  BlockValue: 1
+  _name: It should save... Maybe.
+  _model: {fileID: 11400000, guid: f8921f1d46cbdf34bab6bd485864c84a, type: 2}

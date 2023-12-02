@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e8cdfd344dc6e4cace0d1797929a07, type: 3}
   m_Name: Map Container
   m_EditorClassIdentifier: 
-  Maps:
+  Items:
   - {fileID: 7639745619530932367, guid: 0e43cad26f8e0c144921b2d4e99c303f, type: 3}

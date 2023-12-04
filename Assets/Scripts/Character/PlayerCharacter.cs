@@ -3,6 +3,7 @@ using DungeonAndDemons.Items;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -14,6 +15,11 @@ namespace DungeonAndDemons.Player
 
         [SerializeField]
         public PlayerInfo PlayerInfo;
+
+        private void Awake()
+        {
+            SetupItemsAtStart();
+        }
 
         public void SetItem(ItemObject<IItemPreferences> itemObject)
         {
@@ -27,6 +33,14 @@ namespace DungeonAndDemons.Player
             catch(Exception e)
             {
                 Debug.LogWarning(e.Message);
+            }
+        }
+
+        private void SetupItemsAtStart()
+        {
+            foreach(ItemSlot itemSlot in PlayerInfo.ItemSlots)
+            {
+                OnItemSlotUpdated?.Invoke(itemSlot);
             }
         }
 

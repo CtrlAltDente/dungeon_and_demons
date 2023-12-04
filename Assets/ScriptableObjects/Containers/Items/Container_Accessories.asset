@@ -13,4 +13,5 @@ MonoBehaviour:
   m_Name: Container_Accessories
   m_EditorClassIdentifier: 
   Items:
+  - {fileID: 0}
   - {fileID: 11400000, guid: bd651214220f32a4c98f4e1d271f0ff7, type: 2}

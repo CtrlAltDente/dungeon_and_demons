@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 namespace DungeonAndDemons.Items
 {
-    public abstract class ItemSlotVisualizer<T> : MonoBehaviour where T : IItemPreferences
+    public abstract class ItemSlotVisualizer<T> : MonoBehaviour where T : IItemBase
     {
         [SerializeField]
         private Container<T> ItemsContainer;

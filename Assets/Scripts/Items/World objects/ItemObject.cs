@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace DungeonAndDemons.Items
 {
-    public class ItemObject<T> : MonoBehaviour where T : IItemPreferences
+    public class ItemObject<T> : MonoBehaviour where T : IItemBase
     {
         public ItemInfo Info;
         public T Item;

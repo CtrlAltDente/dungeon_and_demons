@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace DungeonAndDemons.Interfaces
 {
-    public interface IItemPreferences
+    public interface IItemBase
     {
         public string Name { get; }
         public ItemModel Model { get; }

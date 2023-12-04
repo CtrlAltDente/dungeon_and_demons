@@ -21,7 +21,7 @@ namespace DungeonAndDemons.Player
             SetupItemsAtStart();
         }
 
-        public void SetItem(ItemObject<IItemPreferences> itemObject)
+        public void SetItem(ItemObject<IItemBase> itemObject)
         {
             try
             {

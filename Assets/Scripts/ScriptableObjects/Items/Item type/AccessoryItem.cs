@@ -7,7 +7,7 @@ using UnityEngine;
 namespace DungeonAndDemons.ScriptableObjects.Items
 {
     [CreateAssetMenu(menuName = "Scriptable Objects/Items/Item Type/Accessory", fileName = "Accessory_", order = 0)]
-    public class AccessoryItem : ScriptableObject, IItemPreferences
+    public class AccessoryItem : ScriptableObject, IItemBase
     {
         public int BlockValue;
 

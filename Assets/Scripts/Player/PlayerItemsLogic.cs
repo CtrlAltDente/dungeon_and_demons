@@ -9,10 +9,9 @@ namespace DungeonAndDemons.Player
 {
     public class PlayerItemsLogic : MonoBehaviour, IPlayerLogicPart
     {
-        public UnityEvent<ItemObject<IItemPreferences>> OnItemPicked;
+        public UnityEvent<ItemObject<IItemBase>> OnItemPicked;
 
-        [SerializeField]
-        private List<ItemObject<IItemPreferences>> AvailableItems;
+        private List<ItemObject<IItemBase>> AvailableItems;
 
         public void SetPlayerInputData(PlayerInputData playerInputData)
         {
@@ -32,7 +31,7 @@ namespace DungeonAndDemons.Player
 
         private void OnTriggerEnter(Collider other)
         {
-            ItemObject<IItemPreferences> possibleItem = other.GetComponent<ItemObject<IItemPreferences>>();
+            ItemObject<IItemBase> possibleItem = other.GetComponent<ItemObject<IItemBase>>();
 
             if (possibleItem != null)
             {
@@ -45,7 +44,7 @@ namespace DungeonAndDemons.Player
 
         private void OnTriggerExit(Collider other)
         {
-            ItemObject<IItemPreferences> possibleItem = other.GetComponent<ItemObject<IItemPreferences>>();
+            ItemObject<IItemBase> possibleItem = other.GetComponent<ItemObject<IItemBase>>();
 
             if (possibleItem != null)
             {

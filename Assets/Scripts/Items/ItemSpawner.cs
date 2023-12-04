@@ -48,7 +48,7 @@ namespace DungeonAndDemons.Items
             SpawnObject(_weaponObjectPrefab, _weaponsContainer, itemInfo);
         }
 
-        private void SpawnObject<T>(ItemObject<T> itemObject, Container<T> container, ItemInfo itemInfo) where T : IItemPreferences
+        private void SpawnObject<T>(ItemObject<T> itemObject, Container<T> container, ItemInfo itemInfo) where T : IItemBase
         {
             var newItemObject = Instantiate(itemObject, transform.position, Quaternion.identity, null);
             newItemObject.Info = itemInfo;

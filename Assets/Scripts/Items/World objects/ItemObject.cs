@@ -13,6 +13,18 @@ namespace DungeonAndDemons.Items
 
         public virtual ItemType Type => ItemType.None;
 
+        public bool IsKinematic
+        {
+            get
+            {
+                return GetComponent<Rigidbody>().isKinematic;
+            }
+            set
+            {
+                GetComponent<Rigidbody>().isKinematic = value;
+            }
+        }
+
         [SerializeField]
         private MeshFilter _meshFilter;
         [SerializeField]
@@ -26,15 +38,32 @@ namespace DungeonAndDemons.Items
             Initialize();
         }
 
-        private void Initialize()
+        public void Initialize()
         {
-            _meshFilter.mesh = Item.Model.Mesh;
-            _meshRenderer.materials = Item.Model.Model.GetComponent<MeshRenderer>().sharedMaterials;
+            if (Item != null)
+            {
+                SetItemData(
+                    Item.Model.Mesh,
+                    Item.Model.Model.GetComponent<MeshRenderer>().sharedMaterials,
+                    Item.Model.PositionOffset,
+                    Item.Model.RotationOffset
+                    );
+            }
+            else
+            {
+                SetItemData(null, null, Vector3.zero, Vector3.zero);
+            }
+        }
 
-            _meshCollider.sharedMesh = Item.Model.Mesh;
+        private void SetItemData(Mesh mesh, Material[] materials, Vector3 positionOffset, Vector3 rotationOffset)
+        {
+            _meshFilter.mesh = mesh;
+            _meshRenderer.materials = materials;
 
-            transform.position += Item.Model.PositionOffset;
-            transform.rotation *= Quaternion.Euler(Item.Model.RotationOffset);
+            _meshCollider.sharedMesh = mesh;
+
+            transform.localPosition = positionOffset;
+            transform.localRotation = Quaternion.Euler(rotationOffset);
         }
     }
 }

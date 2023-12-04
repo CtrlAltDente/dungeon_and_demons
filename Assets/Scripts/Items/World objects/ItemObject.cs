@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace DungeonAndDemons.Items
 {
-    public class ItemObject<T> : MonoBehaviour where T : IItemBase
+    public class ItemObject<T> : MonoBehaviour, IItemObject<T> where T : IItemBase
     {
         public virtual ItemType Type => ItemType.None;
 

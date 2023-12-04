@@ -758,6 +758,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724e9ba28baab9248971805cfd40226c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnItemSlotUpdated:
+    m_PersistentCalls:
+      m_Calls: []
   PlayerInfo:
     CharacterVisualConfig:
       SkinColor: {r: 0, g: 0, b: 0, a: 0}
@@ -771,10 +774,13 @@ MonoBehaviour:
     Strength: 0
     Dexterity: 0
     Intelligence: 0
-    WeaponIndex: 0
-    AccessoryIndex: 0
-    SuitIndex: 0
-  Animator: {fileID: 1332364755129334122}
+    ItemSlots:
+    - ItemType: 1
+      ItemIndex: 0
+    - ItemType: 2
+      ItemIndex: 0
+    - ItemType: 3
+      ItemIndex: 0
 --- !u!1 &8103488541168354005
 GameObject:
   m_ObjectHideFlags: 0

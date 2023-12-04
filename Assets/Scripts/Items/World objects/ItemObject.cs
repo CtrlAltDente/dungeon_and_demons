@@ -13,7 +13,7 @@ namespace DungeonAndDemons.Items
 
         public virtual ItemType Type => ItemType.None;
 
-        public bool InitializeAtStart = true;
+        public bool IsInitializeAtStart = true;
 
         public bool IsKinematic
         {
@@ -37,7 +37,10 @@ namespace DungeonAndDemons.Items
 
         private void Start()
         {
-            Initialize();
+            if (IsInitializeAtStart)
+            {
+                InitializeAtStart();
+            }
         }
 
         public void Initialize()
@@ -67,6 +70,16 @@ namespace DungeonAndDemons.Items
 
             transform.localPosition = positionOffset;
             transform.localRotation = Quaternion.Euler(rotationOffset);
+        }
+
+        private void InitializeAtStart()
+        {
+            SetItemData(
+                    Item.Model.Mesh,
+                    Item.Model.Model.GetComponent<MeshRenderer>().sharedMaterials,
+                    transform.position + Item.Model.PositionOffset,
+                    transform.rotation.eulerAngles + Item.Model.RotationOffset
+                    );
         }
     }
 }

@@ -31,13 +31,20 @@ namespace DungeonAndDemons.Input
 
         private void InitializeInput()
         {
-            if (_playerState.IsOwner || !NetworkManager.Singleton.IsClient)
+            if (NetworkManager.Singleton)
             {
-                _currentInputType = Instantiate(_keyboardInputTypePrefab, transform);
+                if (_playerState.IsOwner || !NetworkManager.Singleton.IsClient)
+                {
+                    _currentInputType = Instantiate(_keyboardInputTypePrefab, transform);
+                }
+                else
+                {
+                    Destroy(this.gameObject);
+                }
             }
             else
             {
-                Destroy(this.gameObject);
+                _currentInputType = Instantiate(_keyboardInputTypePrefab, transform);
             }
         }
 
@@ -46,15 +53,38 @@ namespace DungeonAndDemons.Input
             while (gameObject.activeInHierarchy)
             {
                 yield return new WaitForSeconds(1f / _inputUpdatePerSecond);
-                
-                if (_playerState.IsAlive)
+
+                if(NetworkManager.Singleton)
                 {
-                    _playerState.SetInputServerRpc(_currentInputType.GetPlayerInputData());
+                    SetNetworkInput();
                 }
                 else
                 {
-                    _playerState.SetInputServerRpc(new PlayerInputData(NetworkManager.Singleton.LocalClientId, default, default, default, default, default));
+                    SetLocalInput();
                 }
+            }
+        }
+
+        private void SetNetworkInput()
+        {
+            if (_playerState.IsAlive)
+            {
+                _playerState.SetInputServerRpc(_currentInputType.GetPlayerInputData());
+            }
+            else
+            {
+                _playerState.SetInputServerRpc(new PlayerInputData(NetworkManager.Singleton.LocalClientId, default, default, default, default, default));
+            }
+        }
+        private void SetLocalInput()
+        {
+            if (_playerState.IsAlive)
+            {
+                _playerState.SetInput(_currentInputType.GetPlayerInputData());
+            }
+            else
+            {
+                _playerState.SetInput(new PlayerInputData(NetworkManager.Singleton.LocalClientId, default, default, default, default, default));
             }
         }
     }

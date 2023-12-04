@@ -27,5 +27,10 @@ namespace DungeonAndDemons.Player
         {
             _playerInput.SetPlayerInputData(playerInputData);
         }
+
+        public void SetInput(PlayerInputData playerInputData)
+        {
+            _playerInput.SetPlayerInputData(playerInputData);
+        }
     }
 }

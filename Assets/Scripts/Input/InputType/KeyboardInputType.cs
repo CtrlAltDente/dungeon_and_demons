@@ -30,11 +30,21 @@ namespace DungeonAndDemons.Input
             bool isRoll = _rollPlayerInput.action.IsPressed();
             float scrollValue = _scrollInput.action.ReadValue<float>();
 
-            ulong id = NetworkManager.Singleton.IsClient ? NetworkManager.Singleton.LocalClientId : 0;
+            ulong id = GetPlayerId();
 
             PlayerInputData playerInputData = new PlayerInputData(id, movementVector, isPrimaryAttack, isSecondaryAttack, isRoll, scrollValue);
 
             return playerInputData;
+        }
+
+        private ulong GetPlayerId()
+        {
+            if(NetworkManager.Singleton)
+            {
+                return NetworkManager.Singleton.IsClient ? NetworkManager.Singleton.LocalClientId : 0;
+            }
+
+            return 0;
         }
     }
 }

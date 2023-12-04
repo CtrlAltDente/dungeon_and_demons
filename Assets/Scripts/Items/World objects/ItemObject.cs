@@ -58,7 +58,8 @@ namespace DungeonAndDemons.Items
         private void SetItemData(Mesh mesh, Material[] materials, Vector3 positionOffset, Vector3 rotationOffset)
         {
             _meshFilter.mesh = mesh;
-            _meshRenderer.materials = materials;
+            if (materials != null)
+                _meshRenderer.materials = materials;
 
             _meshCollider.sharedMesh = mesh;
 

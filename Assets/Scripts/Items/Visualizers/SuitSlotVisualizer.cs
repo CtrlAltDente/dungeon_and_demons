@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace DungeonAndDemons.Items
 {
-    public class SuitSlotVisualizer : ItemSlotVisualizer<WeaponItem>
+    public class SuitSlotVisualizer : ItemSlotVisualizer<SuitItem>
     {
         protected override ItemType SlotType => ItemType.Suit;
     }

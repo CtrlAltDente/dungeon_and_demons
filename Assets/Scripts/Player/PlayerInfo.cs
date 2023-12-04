@@ -1,4 +1,5 @@
 using DungeonAndDemons.Character;
+using DungeonAndDemons.Items;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -20,8 +21,6 @@ namespace DungeonAndDemons.Player
         public int Dexterity;
         public int Intelligence;
 
-        public int WeaponIndex;
-        public int AccessoryIndex;
-        public int SuitIndex;
+        public ItemSlot[] ItemSlots;
     }
 }

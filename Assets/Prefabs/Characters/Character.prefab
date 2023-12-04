@@ -792,6 +792,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6116802843893243965, guid: 21fdbbcd89a50fc46b9b0d1fc7d72e98, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7817559105248777955, guid: 21fdbbcd89a50fc46b9b0d1fc7d72e98, type: 3}
       propertyPath: m_Name
       value: SuitObjectPrefab
@@ -836,6 +840,10 @@ PrefabInstance:
     - target: {fileID: 5254229210705020262, guid: ac35002c6daac304697cbb2b401f4ceb, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5685905453958459667, guid: ac35002c6daac304697cbb2b401f4ceb, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7673130205211331814, guid: ac35002c6daac304697cbb2b401f4ceb, type: 3}
       propertyPath: m_LocalPosition.x
@@ -906,6 +914,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3157628705002798210}
     m_Modifications:
+    - target: {fileID: 1275161917594699294, guid: 97bb478b15395424fbb5482da3859d95, type: 3}
+      propertyPath: m_ExcludeLayers.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 2616510228689994663, guid: 97bb478b15395424fbb5482da3859d95, type: 3}
       propertyPath: m_IsKinematic
       value: 1

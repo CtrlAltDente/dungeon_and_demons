@@ -748,6 +748,10 @@ PrefabInstance:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2512727970420687920, guid: 21fdbbcd89a50fc46b9b0d1fc7d72e98, type: 3}
+      propertyPath: IsInitializeAtStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4231364152394129716, guid: 21fdbbcd89a50fc46b9b0d1fc7d72e98, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -825,6 +829,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AccessoryObjectPrefab
       objectReference: {fileID: 0}
+    - target: {fileID: 2656980216055950468, guid: ac35002c6daac304697cbb2b401f4ceb, type: 3}
+      propertyPath: IsInitializeAtStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5254229210705020262, guid: ac35002c6daac304697cbb2b401f4ceb, type: 3}
       propertyPath: m_IsKinematic
       value: 1
@@ -901,6 +909,10 @@ PrefabInstance:
     - target: {fileID: 2616510228689994663, guid: 97bb478b15395424fbb5482da3859d95, type: 3}
       propertyPath: m_IsKinematic
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3740447134128329779, guid: 97bb478b15395424fbb5482da3859d95, type: 3}
+      propertyPath: IsInitializeAtStart
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4575892232773842848, guid: 97bb478b15395424fbb5482da3859d95, type: 3}
       propertyPath: m_Name

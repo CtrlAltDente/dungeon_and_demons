@@ -241,7 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsAlive: 1
-  _playerCharacter: {fileID: 1316993675113941228}
+  _playerCharacter: {fileID: 0}
   _playerInput: {fileID: 3460752904285419920}
 --- !u!114 &7201205767863043294
 MonoBehaviour:
@@ -723,6 +723,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2822502159852287524}
+  - component: {fileID: 3136509552585743474}
   m_Layer: 0
   m_Name: --PlayerStatsLogic--
   m_TagString: Untagged
@@ -745,6 +746,35 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3460752904684803772}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3136509552585743474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015262854104906033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724e9ba28baab9248971805cfd40226c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlayerInfo:
+    CharacterVisualConfig:
+      SkinColor: {r: 0, g: 0, b: 0, a: 0}
+      HairColor: {r: 0, g: 0, b: 0, a: 0}
+      HaistyleIndex: 0
+      EyebrowIndex: 0
+      BeardIndex: 0
+    Name: 
+    Level: 0
+    CurrentXP: 0
+    Strength: 0
+    Dexterity: 0
+    Intelligence: 0
+    WeaponIndex: 0
+    AccessoryIndex: 0
+    SuitIndex: 0
+  Animator: {fileID: 1332364755129334122}
 --- !u!1 &8103488541168354005
 GameObject:
   m_ObjectHideFlags: 0
@@ -869,17 +899,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
---- !u!114 &1316993675113941228 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6540124619706846201, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
-  m_PrefabInstance: {fileID: 5225818744272683797}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 724e9ba28baab9248971805cfd40226c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1332364755129334122 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6555082554465614463, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}

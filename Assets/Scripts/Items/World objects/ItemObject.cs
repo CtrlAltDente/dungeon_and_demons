@@ -14,7 +14,6 @@ namespace DungeonAndDemons.Items
 
         [SerializeField]
         private ItemInfo _info;
-        [SerializeField]
         private T _item;
 
         [SerializeField]
@@ -86,6 +85,19 @@ namespace DungeonAndDemons.Items
             }
         }
 
+        private void InitializeAtStart()
+        {
+            if (_item != null)
+            {
+                SetItemData(
+                        _item.Model.Mesh,
+                        _item.Model.Model.GetComponent<MeshRenderer>().sharedMaterials,
+                        transform.position + _item.Model.PositionOffset,
+                        transform.rotation.eulerAngles + _item.Model.RotationOffset
+                        );
+            }
+        }
+
         private void SetItemData(Mesh mesh, Material[] materials, Vector3 positionOffset, Vector3 rotationOffset)
         {
             _meshFilter.mesh = mesh;
@@ -96,16 +108,6 @@ namespace DungeonAndDemons.Items
 
             transform.localPosition = positionOffset;
             transform.localRotation = Quaternion.Euler(rotationOffset);
-        }
-
-        private void InitializeAtStart()
-        {
-            SetItemData(
-                    _item.Model.Mesh,
-                    _item.Model.Model.GetComponent<MeshRenderer>().sharedMaterials,
-                    transform.position + _item.Model.PositionOffset,
-                    transform.rotation.eulerAngles + _item.Model.RotationOffset
-                    );
         }
     }
 }

@@ -11,6 +11,8 @@ namespace DungeonAndDemons.Items
         public ItemInfo Info;
         public T Item;
 
+        public virtual ItemType Type => ItemType.None;
+
         [SerializeField]
         private MeshFilter _meshFilter;
         [SerializeField]

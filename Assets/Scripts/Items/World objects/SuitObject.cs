@@ -7,6 +7,6 @@ namespace DungeonAndDemons.Items
 {
     public class SuitObject : ItemObject<SuitItem>
     {
-
+        public override ItemType Type => ItemType.Suit;
     }
 }

@@ -8,12 +8,46 @@ namespace DungeonAndDemons.Items
 {
     public class ItemObject<T> : MonoBehaviour where T : IItemBase
     {
-        public ItemInfo Info;
-        public T Item;
-
         public virtual ItemType Type => ItemType.None;
 
         public bool IsInitializeAtStart = true;
+
+        [SerializeField]
+        private ItemInfo _info;
+        [SerializeField]
+        private T _item;
+
+        [SerializeField]
+        private MeshFilter _meshFilter;
+        [SerializeField]
+        private MeshRenderer _meshRenderer;
+
+        [SerializeField]
+        private MeshCollider _meshCollider;
+
+        public ItemInfo Info
+        {
+            get
+            {
+                return _info;
+            }
+            set
+            {
+                _info = value;
+            }
+        }
+
+        public T Item
+        {
+            get
+            {
+                return _item;
+            }
+            set
+            {
+                _item = value;
+            }
+        }
 
         public bool IsKinematic
         {
@@ -27,14 +61,6 @@ namespace DungeonAndDemons.Items
             }
         }
 
-        [SerializeField]
-        private MeshFilter _meshFilter;
-        [SerializeField]
-        private MeshRenderer _meshRenderer;
-
-        [SerializeField]
-        private MeshCollider _meshCollider;
-
         private void Start()
         {
             if (IsInitializeAtStart)
@@ -45,13 +71,13 @@ namespace DungeonAndDemons.Items
 
         public void Initialize()
         {
-            if (Item != null)
+            if (_item != null)
             {
                 SetItemData(
-                    Item.Model.Mesh,
-                    Item.Model.Model.GetComponent<MeshRenderer>().sharedMaterials,
-                    Item.Model.PositionOffset,
-                    Item.Model.RotationOffset
+                    _item.Model.Mesh,
+                    _item.Model.Model.GetComponent<MeshRenderer>().sharedMaterials,
+                    _item.Model.PositionOffset,
+                    _item.Model.RotationOffset
                     );
             }
             else
@@ -75,10 +101,10 @@ namespace DungeonAndDemons.Items
         private void InitializeAtStart()
         {
             SetItemData(
-                    Item.Model.Mesh,
-                    Item.Model.Model.GetComponent<MeshRenderer>().sharedMaterials,
-                    transform.position + Item.Model.PositionOffset,
-                    transform.rotation.eulerAngles + Item.Model.RotationOffset
+                    _item.Model.Mesh,
+                    _item.Model.Model.GetComponent<MeshRenderer>().sharedMaterials,
+                    transform.position + _item.Model.PositionOffset,
+                    transform.rotation.eulerAngles + _item.Model.RotationOffset
                     );
         }
     }

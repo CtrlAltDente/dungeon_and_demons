@@ -8,7 +8,7 @@ namespace DungeonAndDemons.Items
     {
         None,
         Accessory,
-        Weapon,
-        Suit
+        Suit,
+        Weapon
     }
 }

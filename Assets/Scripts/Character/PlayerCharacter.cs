@@ -16,7 +16,7 @@ namespace DungeonAndDemons.Player
         [SerializeField]
         public PlayerInfo PlayerInfo;
 
-        private void Awake()
+        private void Start()
         {
             SetupItemsAtStart();
         }

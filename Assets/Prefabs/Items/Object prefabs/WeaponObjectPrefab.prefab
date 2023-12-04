@@ -48,7 +48,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49f37d6c896d12c43a47c61b731b6ecf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Info:
+    ItemIndex: 0
   Item: {fileID: 0}
+  InitializeAtStart: 1
   _meshFilter: {fileID: 740314673319880838}
   _meshRenderer: {fileID: 1424771958355065227}
   _meshCollider: {fileID: 1275161917594699294}

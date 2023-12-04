@@ -13,6 +13,8 @@ namespace DungeonAndDemons.Items
 
         public virtual ItemType Type => ItemType.None;
 
+        public bool InitializeAtStart = true;
+
         public bool IsKinematic
         {
             get

@@ -8,7 +8,7 @@ using UnityEngine;
 namespace DungeonAndDemons.Player
 {
     [Serializable]
-    public struct PlayerInfo
+    public class PlayerInfo
     {
         public CharacterVisualConfig CharacterVisualConfig;
 
@@ -20,7 +20,5 @@ namespace DungeonAndDemons.Player
         public int Strength;
         public int Dexterity;
         public int Intelligence;
-
-        public ItemSlot[] ItemSlots;
     }
 }

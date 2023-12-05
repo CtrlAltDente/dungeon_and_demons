@@ -94,8 +94,9 @@ MonoBehaviour:
   OnItemPicked:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 3136509552585743474}
-        m_TargetAssemblyTypeName: DungeonAndDemons.Player.PlayerCharacter, Assembly-CSharp
+      - m_Target: {fileID: 2811451906033006502}
+        m_TargetAssemblyTypeName: DungeonAndDemons.Character.CharacterInventory,
+          Assembly-CSharp
         m_MethodName: SetItem
         m_Mode: 0
         m_Arguments:
@@ -106,6 +107,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  AvailableItems: []
 --- !u!65 &9188988575492285302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -356,6 +358,18 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7698104985748039950}
         m_TargetAssemblyTypeName: ClansWars.Player.PlayerModel, Assembly-CSharp
+        m_MethodName: SetPlayerInputData
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4229923750717292689}
+        m_TargetAssemblyTypeName: DungeonAndDemons.Player.PlayerItemsLogic, Assembly-CSharp
         m_MethodName: SetPlayerInputData
         m_Mode: 0
         m_Arguments:
@@ -807,8 +821,50 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnItemSlotUpdated:
     m_PersistentCalls:
-      m_Calls: []
-  _slots: []
+      m_Calls:
+      - m_Target: {fileID: 2597221973144854497}
+        m_TargetAssemblyTypeName: DungeonAndDemons.Items.ItemSlotVisualizer, Assembly-CSharp
+        m_MethodName: SetItemSlotInfo
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4384280857576455622}
+        m_TargetAssemblyTypeName: DungeonAndDemons.Items.ItemSlotVisualizer, Assembly-CSharp
+        m_MethodName: SetItemSlotInfo
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 886957441422990694}
+        m_TargetAssemblyTypeName: DungeonAndDemons.Items.ItemSlotVisualizer, Assembly-CSharp
+        m_MethodName: SetItemSlotInfo
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _slots:
+  - ItemType: 1
+    Item: {fileID: 0}
+  - ItemType: 2
+    Item: {fileID: 0}
+  - ItemType: 3
+    Item: {fileID: 0}
 --- !u!114 &4978474258493989150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -954,11 +1010,44 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
+--- !u!114 &886957441422990694 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4957000161237376627, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
+  m_PrefabInstance: {fileID: 5225818744272683797}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dda128b714f6f042a70aadcc6f3053f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &1332364755129334122 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6555082554465614463, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
   m_PrefabInstance: {fileID: 5225818744272683797}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2597221973144854497 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7822464387831094516, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
+  m_PrefabInstance: {fileID: 5225818744272683797}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dda128b714f6f042a70aadcc6f3053f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &4384280857576455622 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8385084872142634707, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
+  m_PrefabInstance: {fileID: 5225818744272683797}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dda128b714f6f042a70aadcc6f3053f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &4869235975011718437 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 799061450970879536, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}

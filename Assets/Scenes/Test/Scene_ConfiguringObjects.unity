@@ -618,6 +618,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: ItemSpawner
       objectReference: {fileID: 0}
+    - target: {fileID: 9102612699168917739, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
+      propertyPath: Type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102612699168917739, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
+      propertyPath: Model
+      value: 
+      objectReference: {fileID: 11400000, guid: abff33aa1f612a447a40e897bf326186, type: 2}
+    - target: {fileID: 9102612699168917739, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
+      propertyPath: Modifiers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102612699168917739, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
+      propertyPath: Modifiers.Array.data[0].ModifierType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9102612699168917739, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
+      propertyPath: Modifiers.Array.data[0].ModifierValue
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

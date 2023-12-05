@@ -12,12 +12,14 @@ namespace DungeonAndDemons.Player
     {
         public UnityEvent<ItemObject> OnItemPicked;
 
+        [SerializeField]
         private List<ItemObject> AvailableItems = new List<ItemObject>();
 
         public void SetPlayerInputData(PlayerInputData playerInputData)
         {
             if (playerInputData.ScrollValue > 0)
             {
+                Debug.Log("PICK!");
                 PickupItem();
             }
         }
@@ -27,6 +29,37 @@ namespace DungeonAndDemons.Player
             if (AvailableItems.Count > 0)
             {
                 OnItemPicked?.Invoke(AvailableItems[0]);
+            }
+        }
+
+        private void DropItem()
+        {
+            
+        }
+
+        private void OnTriggerEnter(Collider other)
+        {
+            ItemObject itemObject = other.GetComponent<ItemObject>();
+
+            if (itemObject)
+            {
+                if (!AvailableItems.Contains(itemObject))
+                {
+                    AvailableItems.Add(itemObject);
+                }
+            }
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            ItemObject itemObject = other.GetComponent<ItemObject>();
+
+            if(itemObject)
+            {
+                if(AvailableItems.Contains(itemObject))
+                {
+                    AvailableItems.Remove(itemObject);
+                }
             }
         }
     }

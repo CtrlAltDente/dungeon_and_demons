@@ -18,25 +18,24 @@ namespace DungeonAndDemons.Character
             SetupItemsAtStart();
         }
 
+        public void SetItem(ItemObject itemObject)
+        {
+            foreach (ItemSlot slot in _slots)
+            {
+                if (slot.ItemType == itemObject.Item.Type)
+                {
+                    slot.Item = itemObject.Item;
+                    OnItemSlotUpdated?.Invoke(slot);
+                }
+            }
+        }
+
         private void SetupItemsAtStart()
         {
             foreach (ItemSlot slot in _slots)
             {
                 OnItemSlotUpdated?.Invoke(slot);
             }
-        }
-
-        private ItemSlot GetItemSlotByType(ItemType itemType)
-        {
-            foreach (ItemSlot slot in _slots)
-            {
-                if (slot.ItemType == itemType)
-                {
-                    return slot;
-                }
-            }
-
-            return null;
         }
     }
 }

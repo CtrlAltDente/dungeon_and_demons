@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3128020203119241816}
   - component: {fileID: 7357318591663304090}
+  - component: {fileID: 9102612699168917739}
   m_Layer: 0
   m_Name: ItemSpawner
   m_TagString: Untagged
@@ -45,8 +46,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _itemObject: {fileID: 7754017824268446998, guid: 8e390f80551d7e74c8d586d2dd911570, type: 3}
-  _itemPrefab: {fileID: 0}
-  ItemPreset:
-    Type: 0
-    Model: {fileID: 0}
-    Modifiers: []
+  _itemPreset: {fileID: 9102612699168917739}
+--- !u!114 &9102612699168917739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8388640115934032837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e9b535586c03d74c8f52104fa359540, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Type: 0
+  Model: {fileID: 0}
+  Modifiers: []

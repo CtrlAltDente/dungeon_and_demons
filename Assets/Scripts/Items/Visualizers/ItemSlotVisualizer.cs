@@ -6,26 +6,30 @@ using UnityEngine.Events;
 
 namespace DungeonAndDemons.Items
 {
-    public abstract class ItemSlotVisualizer : MonoBehaviour
+    public class ItemSlotVisualizer : MonoBehaviour
     {
-        protected abstract ItemType SlotType { get; }
+        [SerializeField]
+        private ItemType _slotType;
+        [SerializeField]
+        private ItemObject _itemObject;
+
+        private Item CurrentItem;
 
         public void SetItemSlotInfo(ItemSlot itemSlot)
         {
-            if (itemSlot.ItemType == SlotType)
+            if (itemSlot.ItemType == _slotType)
             {
-                SetItem(itemSlot.ItemIndex);
+                if (CurrentItem != itemSlot.Item)
+                {
+                    VisualizeItemFromSlot(itemSlot);
+                }
             }
         }
 
-        public void DropItem()
+        private void VisualizeItemFromSlot(ItemSlot itemSlot)
         {
-
-        }
-
-        private void SetItem(int itemIndex)
-        {
-
+            _itemObject.Item = itemSlot.Item;
+            _itemObject.Initialize();
         }
     }
 }

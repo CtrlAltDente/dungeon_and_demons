@@ -11,41 +11,22 @@ namespace DungeonAndDemons.Items
         private ItemObject _itemObject;
 
         [SerializeField]
-        private Item _itemPrefab;
-
-        public ItemPreset ItemPreset;
+        private Item _itemPreset;
 
         private void Start()
         {
-            SpawnPrefab(ItemPreset);
+            SpawnPrefab(_itemPreset);
         }
 
-        public void SpawnPrefab(ItemPreset itemPreset)
+        public void SpawnPrefab(Item itemPreset)
         {
             ItemObject spawnedItemObject = Instantiate(_itemObject, transform.position, Quaternion.identity, null);
 
-            Item spawnedItem = spawnedItemObject.gameObject.AddComponent<Item>();
+            spawnedItemObject.Item = spawnedItemObject.gameObject.AddComponent<Item>();
 
-            spawnedItem.Type = itemPreset.Type;
-            spawnedItem.Model = itemPreset.Model;
-            spawnedItem.Modifiers = itemPreset.Modifiers;
-
-            spawnedItemObject.Item = spawnedItem;
-        }
-    }
-
-    [Serializable]
-    public struct ItemPreset
-    {
-        public ItemType Type;
-        public ItemModel Model;
-        public List<Modifier> Modifiers;
-
-        public ItemPreset(ItemType itemType, ItemModel itemModel, List<Modifier> modifiers)
-        {
-            Type = itemType;
-            Model = itemModel;
-            Modifiers = modifiers;
+            spawnedItemObject.Item.Type = itemPreset.Type;
+            spawnedItemObject.Item.Model = itemPreset.Model;
+            spawnedItemObject.Item.Modifiers = itemPreset.Modifiers;
         }
     }
 }

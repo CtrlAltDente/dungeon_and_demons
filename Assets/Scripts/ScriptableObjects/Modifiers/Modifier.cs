@@ -8,14 +8,13 @@ using UnityEngine;
 
 namespace DungeonAndDemons.ScriptableObjects.Modifiers
 {
-    [Serializable]
-    public abstract class Modifier
+    public abstract class Modifier : ScriptableObject
     {
+        public int ModifierValue;
+
         public abstract string ModifierName { get; }
         public abstract string ModifierDescription { get; }
 
-        public abstract ModifierType ModifierType { get; }
-
-        public abstract void ApplyModifier(PlayerCharacter playerCharacter);
+        public abstract void ApplyModifier(PlayerInfo playerInfo);
     }
 }

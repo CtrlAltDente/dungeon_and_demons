@@ -1,3 +1,4 @@
+using DungeonAndDemons.Character;
 using DungeonAndDemons.Interfaces;
 using DungeonAndDemons.Items;
 using System;
@@ -15,6 +16,10 @@ namespace DungeonAndDemons.Player
 
         [SerializeField]
         public PlayerInfo PlayerInfo;
+        [SerializeField]
+        public ItemSlot[] Items;
+        [SerializeField]
+        public ModifierStats CharacterStats;
 
         private void Start()
         {
@@ -23,7 +28,7 @@ namespace DungeonAndDemons.Player
 
         private void SetupItemsAtStart()
         {
-            foreach(ItemSlot itemSlot in PlayerInfo.ItemSlots)
+            foreach(ItemSlot itemSlot in Items)
             {
                 OnItemSlotUpdated?.Invoke(itemSlot);
             }
@@ -31,7 +36,7 @@ namespace DungeonAndDemons.Player
 
         private ItemSlot GetItemSlotByType(ItemType itemType)
         {
-            foreach(ItemSlot itemSlot in PlayerInfo.ItemSlots)
+            foreach(ItemSlot itemSlot in Items)
             {
                 if(itemSlot.ItemType == itemType)
                 {

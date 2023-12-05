@@ -21,21 +21,6 @@ namespace DungeonAndDemons.Player
             SetupItemsAtStart();
         }
 
-        public void SetItem(ItemObject<IItemBase> itemObject)
-        {
-            try
-            {
-                ItemSlot itemSlot = GetItemSlotByType(itemObject.Type);
-                itemSlot.ItemIndex = itemObject.Info.ItemIndex;
-
-                OnItemSlotUpdated?.Invoke(itemSlot);
-            }
-            catch(Exception e)
-            {
-                Debug.LogWarning(e.Message);
-            }
-        }
-
         private void SetupItemsAtStart()
         {
             foreach(ItemSlot itemSlot in PlayerInfo.ItemSlots)

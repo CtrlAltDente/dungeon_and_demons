@@ -7,15 +7,13 @@ using UnityEngine;
 
 namespace DungeonAndDemons.ScriptableObjects.Modifiers
 {
-    [Serializable]
-    public class WeaponModifier : Modifier
+    [CreateAssetMenu(fileName = "Modifier_Weapon", menuName = "Scriptable Objects/Items/Modifiers/Weapon", order = 0)]
+    public class AttackDamageModifier : Modifier
     {
         public override string ModifierName => "Weapon";
         public override string ModifierDescription => "Damage";
 
-        public override ModifierType ModifierType => ModifierType.Item;
-
-        public override void ApplyModifier(PlayerCharacter playerCharacter)
+        public override void ApplyModifier(PlayerInfo playerInfo)
         {
             
         }

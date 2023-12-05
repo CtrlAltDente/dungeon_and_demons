@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DungeonAndDemons.Items
+namespace DungeonAndDemons.ScriptableObjects.Containers
 {
-    public class SuitObject : ItemObject<SuitItem>
+    public class ItemsContainer : Container<Item>
     {
-        public override ItemType Type => ItemType.Suit;
+
     }
 }

@@ -1,20 +1,19 @@
 using DungeonAndDemons.Interfaces;
 using DungeonAndDemons.ScriptableObjects;
+using DungeonAndDemons.ScriptableObjects.Items;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 namespace DungeonAndDemons.Items
 {
-    public class ItemObject<T> : MonoBehaviour, IItemObject<T> where T : IItemBase
+    public class ItemObject : MonoBehaviour
     {
-        public virtual ItemType Type => ItemType.None;
+        public virtual ItemType Type => Item.Type;
 
         public bool IsInitializeAtStart = true;
 
-        [SerializeField]
-        private ItemInfo _info;
-        private T _item;
+        public Item Item;
 
         [SerializeField]
         private MeshFilter _meshFilter;
@@ -23,30 +22,6 @@ namespace DungeonAndDemons.Items
 
         [SerializeField]
         private MeshCollider _meshCollider;
-
-        public ItemInfo Info
-        {
-            get
-            {
-                return _info;
-            }
-            set
-            {
-                _info = value;
-            }
-        }
-
-        public T Item
-        {
-            get
-            {
-                return _item;
-            }
-            set
-            {
-                _item = value;
-            }
-        }
 
         public bool IsKinematic
         {
@@ -70,13 +45,13 @@ namespace DungeonAndDemons.Items
 
         public void Initialize()
         {
-            if (_item != null)
+            if (Item != null)
             {
                 SetItemData(
-                    _item.Model.Mesh,
-                    _item.Model.Model.GetComponent<MeshRenderer>().sharedMaterials,
-                    _item.Model.PositionOffset,
-                    _item.Model.RotationOffset
+                    Item.Model.Mesh,
+                    Item.Model.Model.GetComponent<MeshRenderer>().sharedMaterials,
+                    Item.Model.PositionOffset,
+                    Item.Model.RotationOffset
                     );
             }
             else
@@ -87,13 +62,13 @@ namespace DungeonAndDemons.Items
 
         private void InitializeAtStart()
         {
-            if (_item != null)
+            if (Item != null)
             {
                 SetItemData(
-                        _item.Model.Mesh,
-                        _item.Model.Model.GetComponent<MeshRenderer>().sharedMaterials,
-                        transform.position + _item.Model.PositionOffset,
-                        transform.rotation.eulerAngles + _item.Model.RotationOffset
+                        Item.Model.Mesh,
+                        Item.Model.Model.GetComponent<MeshRenderer>().sharedMaterials,
+                        transform.position + Item.Model.PositionOffset,
+                        transform.rotation.eulerAngles + Item.Model.RotationOffset
                         );
             }
         }

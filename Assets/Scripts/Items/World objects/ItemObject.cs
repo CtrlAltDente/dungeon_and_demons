@@ -1,6 +1,5 @@
 using DungeonAndDemons.Interfaces;
 using DungeonAndDemons.ScriptableObjects;
-using DungeonAndDemons.ScriptableObjects.Items;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

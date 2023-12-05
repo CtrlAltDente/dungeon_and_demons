@@ -772,9 +772,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 724e9ba28baab9248971805cfd40226c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnItemSlotUpdated:
-    m_PersistentCalls:
-      m_Calls: []
   CharacterVisual: {fileID: 870295584749433049}
   CharacterInventory: {fileID: 2811451906033006502}
   CharacterStats: {fileID: 4978474258493989150}
@@ -808,13 +805,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65c33404605275e45a7ef4d748a4b1c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Slots:
-  - ItemType: 1
-    ItemIndex: 0
-  - ItemType: 2
-    ItemIndex: 0
-  - ItemType: 3
-    ItemIndex: 0
+  OnItemSlotUpdated:
+    m_PersistentCalls:
+      m_Calls: []
+  _slots: []
 --- !u!114 &4978474258493989150
 MonoBehaviour:
   m_ObjectHideFlags: 0

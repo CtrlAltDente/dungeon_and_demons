@@ -1,6 +1,5 @@
 using DungeonAndDemons.Interfaces;
 using DungeonAndDemons.Items;
-using DungeonAndDemons.ScriptableObjects.Items;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Rendering;

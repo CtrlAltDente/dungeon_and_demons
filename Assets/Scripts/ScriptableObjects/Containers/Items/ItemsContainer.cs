@@ -1,4 +1,4 @@
-using DungeonAndDemons.ScriptableObjects.Items;
+using DungeonAndDemons.Items;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -12,8 +12,8 @@ namespace DungeonAndDemons.ScriptableObjects.Modifiers
     {
         public int ModifierValue;
 
-        public abstract string ModifierName { get; }
-        public abstract string ModifierDescription { get; }
+        public string ModifierName;
+        public string ModifierDescription;
 
         public abstract void ApplyModifier(PlayerInfo playerInfo);
     }

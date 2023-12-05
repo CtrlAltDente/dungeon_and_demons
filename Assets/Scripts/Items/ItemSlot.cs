@@ -9,6 +9,6 @@ namespace DungeonAndDemons.Items
     public class ItemSlot
     {
         public ItemType ItemType;
-        public int ItemIndex;
+        public Item Item;
     }
 }

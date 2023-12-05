@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace DungeonAndDemons.ScriptableObjects.Modifiers
 {
-    [CreateAssetMenu(fileName = "Modifier_Weapon", menuName = "Scriptable Objects/Items/Modifiers/Weapon", order = 0)]
+    [CreateAssetMenu(fileName = "Modifier_AttackDamage", menuName = "Scriptable Objects/Items/Modifiers/AttackDamage", order = 0)]
     public class AttackDamageModifier : Modifier
     {
         public override void ApplyModifier(PlayerInfo playerInfo)

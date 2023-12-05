@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 431945ad4283329439dc117cdfb7663b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _accessoriesContainer: {fileID: 11400000, guid: 257a0670f52fdab4891cd16714c68e33, type: 2}
-  _suitsContainer: {fileID: 11400000, guid: 6f6d81b9a4f12084591e9938a37e3f48, type: 2}
-  _weaponsContainer: {fileID: 11400000, guid: 58308216667e97b4da42910b1a133b31, type: 2}
-  _accessoryObjectPrefab: {fileID: 2656980216055950468, guid: ac35002c6daac304697cbb2b401f4ceb, type: 3}
-  _suitObjectPrefab: {fileID: 2512727970420687920, guid: 21fdbbcd89a50fc46b9b0d1fc7d72e98, type: 3}
-  _weaponObjectPrefab: {fileID: 3740447134128329779, guid: 97bb478b15395424fbb5482da3859d95, type: 3}
+  _itemObject: {fileID: 7754017824268446998, guid: 8e390f80551d7e74c8d586d2dd911570, type: 3}
+  _itemPrefab: {fileID: 0}
+  ItemPreset:
+    Type: 0
+    Model: {fileID: 0}
+    Modifiers: []

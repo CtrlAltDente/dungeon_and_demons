@@ -123,53 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &263887730
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 263887731}
-  - component: {fileID: 263887732}
-  m_Layer: 0
-  m_Name: Item
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &263887731
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263887730}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.3541535, y: 0.7669765, z: -1.851969}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &263887732
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 263887730}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e9b535586c03d74c8f52104fa359540, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Type: 3
-  Model: {fileID: 11400000, guid: abff33aa1f612a447a40e897bf326186, type: 2}
-  Modifiers: []
 --- !u!1 &859037680
 GameObject:
   m_ObjectHideFlags: 0
@@ -641,6 +594,26 @@ PrefabInstance:
       propertyPath: Info.ItemIndex
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
+      propertyPath: ItemPreset.Type
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
+      propertyPath: ItemPreset.Model
+      value: 
+      objectReference: {fileID: 11400000, guid: abff33aa1f612a447a40e897bf326186, type: 2}
+    - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
+      propertyPath: ItemPreset.Modifiers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
+      propertyPath: ItemPreset.Modifiers.Array.data[0].ModifierType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
+      propertyPath: ItemPreset.Modifiers.Array.data[0].ModifierValue
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8388640115934032837, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
       propertyPath: m_Name
       value: ItemSpawner
@@ -660,4 +633,3 @@ SceneRoots:
   - {fileID: 859037684}
   - {fileID: 8455961029555941978}
   - {fileID: 1261077813}
-  - {fileID: 263887731}

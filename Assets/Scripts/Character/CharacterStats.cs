@@ -1,17 +1,11 @@
-using DungeonAndDemons.Character;
-using DungeonAndDemons.Items;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace DungeonAndDemons.Player
+namespace DungeonAndDemons.Character
 {
-    [Serializable]
-    public class PlayerInfo
+    public class CharacterStats : MonoBehaviour
     {
-        public CharacterVisualConfig CharacterVisualConfig;
-
         public string Name;
 
         public int Level;

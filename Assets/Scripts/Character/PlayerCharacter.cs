@@ -14,12 +14,10 @@ namespace DungeonAndDemons.Player
     {
         public UnityEvent<ItemSlot> OnItemSlotUpdated;
 
-        [SerializeField]
-        public PlayerInfo PlayerInfo;
-        [SerializeField]
-        public ItemSlot[] Items;
-        [SerializeField]
-        public ModifierStats CharacterStats;
+        public CharacterVisual CharacterVisual;
+
+        public CharacterInventory CharacterInventory;
+        public CharacterStats CharacterStats;
 
         private void Start()
         {
@@ -28,19 +26,19 @@ namespace DungeonAndDemons.Player
 
         private void SetupItemsAtStart()
         {
-            foreach(ItemSlot itemSlot in Items)
+            foreach(ItemSlot slot in CharacterInventory.Slots)
             {
-                OnItemSlotUpdated?.Invoke(itemSlot);
+                OnItemSlotUpdated?.Invoke(slot);
             }
         }
 
         private ItemSlot GetItemSlotByType(ItemType itemType)
         {
-            foreach(ItemSlot itemSlot in Items)
+            foreach(ItemSlot slot in CharacterInventory.Slots)
             {
-                if(itemSlot.ItemType == itemType)
+                if(slot.ItemType == itemType)
                 {
-                    return itemSlot;
+                    return slot;
                 }
             }
 

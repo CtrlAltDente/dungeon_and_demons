@@ -735,6 +735,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2822502159852287524}
   - component: {fileID: 3136509552585743474}
+  - component: {fileID: 870295584749433049}
+  - component: {fileID: 2811451906033006502}
+  - component: {fileID: 4978474258493989150}
   m_Layer: 0
   m_Name: --PlayerStatsLogic--
   m_TagString: Untagged
@@ -772,23 +775,64 @@ MonoBehaviour:
   OnItemSlotUpdated:
     m_PersistentCalls:
       m_Calls: []
-  PlayerInfo:
-    CharacterVisualConfig:
-      SkinColor: {r: 0, g: 0, b: 0, a: 0}
-      HairColor: {r: 0, g: 0, b: 0, a: 0}
-      HaistyleIndex: 0
-      EyebrowIndex: 0
-      BeardIndex: 0
-    Name: 
-    Level: 0
-    CurrentXP: 0
-    Strength: 0
-    Dexterity: 0
-    Intelligence: 0
-  Items: []
-  CharacterStats:
-    AttackDamageModifiers: []
-    ArmorModifiers: []
+  CharacterVisual: {fileID: 870295584749433049}
+  CharacterInventory: {fileID: 2811451906033006502}
+  CharacterStats: {fileID: 4978474258493989150}
+--- !u!114 &870295584749433049
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015262854104906033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c06c216f62183e247bb56db07cd3b15c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterVisualConfig:
+    SkinColor: {r: 0, g: 0, b: 0, a: 0}
+    HairColor: {r: 0, g: 0, b: 0, a: 0}
+    HaistyleIndex: 0
+    EyebrowIndex: 0
+    BeardIndex: 0
+--- !u!114 &2811451906033006502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015262854104906033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65c33404605275e45a7ef4d748a4b1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Slots:
+  - ItemType: 1
+    ItemIndex: 0
+  - ItemType: 2
+    ItemIndex: 0
+  - ItemType: 3
+    ItemIndex: 0
+--- !u!114 &4978474258493989150
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8015262854104906033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31c13de4c2cfb445bcbf8769bc7696a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Lead
+  Level: 0
+  CurrentXP: 0
+  Strength: 0
+  Dexterity: 0
+  Intelligence: 0
 --- !u!1 &8103488541168354005
 GameObject:
   m_ObjectHideFlags: 0

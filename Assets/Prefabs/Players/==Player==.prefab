@@ -106,7 +106,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  AvailableItems: []
 --- !u!65 &9188988575492285302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -772,46 +771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnItemSlotUpdated:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1176760510123606210}
-        m_TargetAssemblyTypeName: DungeonAndDemons.Items.ItemSlotVisualizer`1[[DungeonAndDemons.ScriptableObjects.Items.SuitItem,
-          Assembly-CSharp
-        m_MethodName: SetItemSlotInfo
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6805488743891932494}
-        m_TargetAssemblyTypeName: DungeonAndDemons.Items.ItemSlotVisualizer`1[[DungeonAndDemons.ScriptableObjects.Items.AccessoryItem,
-          Assembly-CSharp
-        m_MethodName: SetItemSlotInfo
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 543339657328695739}
-        m_TargetAssemblyTypeName: DungeonAndDemons.Items.ItemSlotVisualizer`1[[DungeonAndDemons.ScriptableObjects.Items.WeaponItem,
-          Assembly-CSharp
-        m_MethodName: SetItemSlotInfo
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   PlayerInfo:
     CharacterVisualConfig:
       SkinColor: {r: 0, g: 0, b: 0, a: 0}
@@ -825,13 +785,10 @@ MonoBehaviour:
     Strength: 0
     Dexterity: 0
     Intelligence: 0
-    ItemSlots:
-    - ItemType: 1
-      ItemIndex: 0
-    - ItemType: 2
-      ItemIndex: 0
-    - ItemType: 3
-      ItemIndex: 0
+  Items: []
+  CharacterStats:
+    AttackDamageModifiers: []
+    ArmorModifiers: []
 --- !u!1 &8103488541168354005
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,33 +908,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 347407069938802734, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
+    - {fileID: 7230235600451349799, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
+    - {fileID: 5896676478361012730, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
---- !u!114 &543339657328695739 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5696916089595108014, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
-  m_PrefabInstance: {fileID: 5225818744272683797}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 072f89a7242ecac48bbc19fc90a33542, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1176760510123606210 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6400009825892402135, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
-  m_PrefabInstance: {fileID: 5225818744272683797}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e87f527d058bcf94ca950936ea0f1fd7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!95 &1332364755129334122 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 6555082554465614463, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
@@ -988,14 +926,3 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 799061450970879536, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
   m_PrefabInstance: {fileID: 5225818744272683797}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &6805488743891932494 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1653988200314213979, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
-  m_PrefabInstance: {fileID: 5225818744272683797}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 593b3e9df093d8b489ced738fb755936, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

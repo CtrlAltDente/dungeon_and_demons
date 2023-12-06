@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DungeonAndDemons.Character
 {
-    public class CharacterStats : MonoBehaviour
+    public class CharacterAttributes : MonoBehaviour
     {
         public string Name;
 

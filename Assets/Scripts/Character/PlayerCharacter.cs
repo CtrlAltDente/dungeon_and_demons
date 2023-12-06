@@ -14,6 +14,6 @@ namespace DungeonAndDemons.Player
     {
         public CharacterVisual CharacterVisual;
         public CharacterInventory CharacterInventory;
-        public CharacterStats CharacterStats;
+        public CharacterAttributes CharacterAttributes;
     }
 }

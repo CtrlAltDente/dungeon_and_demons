@@ -1,4 +1,5 @@
 using DungeonAndDemons.Interfaces;
+using DungeonAndDemons.Player;
 using DungeonAndDemons.ScriptableObjects;
 using System.Collections;
 using System.Collections.Generic;
@@ -22,6 +23,9 @@ namespace DungeonAndDemons.Items
         [SerializeField]
         private MeshCollider _meshCollider;
 
+        [SerializeField]
+        private GameObject _itemUI;
+
         public bool IsKinematic
         {
             get
@@ -44,7 +48,7 @@ namespace DungeonAndDemons.Items
 
         public void Initialize()
         {
-            if (Item != null)
+            if (Item.Model != null)
             {
                 SetItemData(
                     Item.Model.Mesh,
@@ -61,7 +65,7 @@ namespace DungeonAndDemons.Items
 
         private void InitializeAtStart()
         {
-            if (Item != null)
+            if (Item.Model != null)
             {
                 SetItemData(
                         Item.Model.Mesh,

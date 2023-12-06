@@ -1,7 +1,10 @@
+using DungeonAndDemons.Character;
 using DungeonAndDemons.Interfaces;
 using DungeonAndDemons.Items;
+using DungeonAndDemons.UI;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Events;
@@ -10,56 +13,98 @@ namespace DungeonAndDemons.Player
 {
     public class PlayerItemsLogic : MonoBehaviour, IPlayerLogicPart
     {
-        public UnityEvent<ItemObject> OnItemPicked;
+        [SerializeField]
+        private CharacterInventory _characterInventory;
 
         [SerializeField]
-        private List<ItemObject> AvailableItems = new List<ItemObject>();
+        private ItemObject _itemObjectPrefab;
+
+        [SerializeField]
+        private ItemUI _itemUiPrefab;
+        [SerializeField]
+        private List<ItemUI> _itemUiElements;
 
         public void SetPlayerInputData(PlayerInputData playerInputData)
         {
-            if (playerInputData.ScrollValue > 0)
+            if (playerInputData.ScrollValue < 0)
             {
-                Debug.Log("PICK!");
-                PickupItem();
+                DropFromSlot(2);
             }
         }
 
-        private void PickupItem()
+        public void PickupItem(Item item)
         {
-            if (AvailableItems.Count > 0)
-            {
-                OnItemPicked?.Invoke(AvailableItems[0]);
-            }
+            _characterInventory.SetItem(item);
         }
 
-        private void DropItem()
+        public void DropFromSlot(int slotIndex)
         {
-            
+            DropItem(_characterInventory.Slots[slotIndex].Item);
+            _characterInventory.SetItem(new Item(_characterInventory.Slots[slotIndex].ItemType, null, null));
+        }
+
+        public void DropItem(Item item)
+        {
+            if (item.Model != null)
+            {
+                ItemObject spawnedObject = Instantiate(_itemObjectPrefab, transform.position + transform.forward * 1.5f + Vector3.up, Quaternion.identity, null);
+                spawnedObject.Item = item;
+            }
         }
 
         private void OnTriggerEnter(Collider other)
+        {
+            ShowItemUI(other);
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            HideItemUI(other);
+        }
+
+        private void ShowItemUI(Collider other)
         {
             ItemObject itemObject = other.GetComponent<ItemObject>();
 
             if (itemObject)
             {
-                if (!AvailableItems.Contains(itemObject))
+                ItemUI newItemUi = Instantiate(_itemUiPrefab, itemObject.transform.position, Quaternion.identity, null);
+                newItemUi.ItemObject = itemObject;
+
+                newItemUi.Button.onClick.AddListener(() =>
                 {
-                    AvailableItems.Add(itemObject);
-                }
+                    PickupItem(itemObject.Item);
+                    _itemUiElements.Remove(newItemUi);
+                    Destroy(newItemUi.gameObject);
+                    Destroy(itemObject.gameObject);
+                });
+
+                _itemUiElements.Add(newItemUi);
             }
         }
 
-        private void OnTriggerExit(Collider other)
+        private void HideItemUI(Collider other)
         {
             ItemObject itemObject = other.GetComponent<ItemObject>();
 
-            if(itemObject)
+            ItemUI itemUIObject = null;
+
+            if (itemObject)
             {
-                if(AvailableItems.Contains(itemObject))
+                foreach (ItemUI itemUI in _itemUiElements)
                 {
-                    AvailableItems.Remove(itemObject);
+                    if (itemUI.ItemObject == itemObject)
+                    {
+                        itemUIObject = itemUI;
+                        break;
+                    }
                 }
+            }
+
+            if (itemUIObject)
+            {
+                _itemUiElements.Remove(itemUIObject);
+                Destroy(itemUIObject.gameObject);
             }
         }
     }

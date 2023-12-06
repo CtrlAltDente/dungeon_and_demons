@@ -13,21 +13,17 @@ namespace DungeonAndDemons.Items
         [SerializeField]
         private ItemObject _itemObject;
 
-        private Item CurrentItem;
-
         public void SetItemSlotInfo(ItemSlot itemSlot)
         {
             if (itemSlot.ItemType == _slotType)
             {
-                if (CurrentItem != itemSlot.Item)
-                {
-                    VisualizeItemFromSlot(itemSlot);
-                }
+                VisualizeItemFromSlot(itemSlot);
             }
         }
 
         private void VisualizeItemFromSlot(ItemSlot itemSlot)
         {
+            Debug.Log("Visualize");
             _itemObject.Item = itemSlot.Item;
             _itemObject.Initialize();
         }

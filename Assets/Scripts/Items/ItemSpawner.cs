@@ -22,11 +22,7 @@ namespace DungeonAndDemons.Items
         {
             ItemObject spawnedItemObject = Instantiate(_itemObject, transform.position, Quaternion.identity, null);
 
-            spawnedItemObject.Item = spawnedItemObject.gameObject.AddComponent<Item>();
-
-            spawnedItemObject.Item.Type = itemPreset.Type;
-            spawnedItemObject.Item.Model = itemPreset.Model;
-            spawnedItemObject.Item.Modifiers = itemPreset.Modifiers;
+            spawnedItemObject.Item = itemPreset;
         }
     }
 }

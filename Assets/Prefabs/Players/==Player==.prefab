@@ -91,23 +91,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b25c57487fb8d4489f00ed10d1c24df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnItemPicked:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2811451906033006502}
-        m_TargetAssemblyTypeName: DungeonAndDemons.Character.CharacterInventory,
-          Assembly-CSharp
-        m_MethodName: SetItem
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  AvailableItems: []
+  _characterInventory: {fileID: 2811451906033006502}
+  _itemObjectPrefab: {fileID: 7754017824268446998, guid: 8e390f80551d7e74c8d586d2dd911570, type: 3}
+  _itemUiPrefab: {fileID: 5827081107046562020, guid: 94013e098e14bf342a22da25782304f5, type: 3}
+  _itemUiElements: []
 --- !u!65 &9188988575492285302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -233,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3280187382
+  GlobalObjectIdHash: 843966861
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -788,7 +775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CharacterVisual: {fileID: 870295584749433049}
   CharacterInventory: {fileID: 2811451906033006502}
-  CharacterStats: {fileID: 4978474258493989150}
+  CharacterAttributes: {fileID: 4978474258493989150}
 --- !u!114 &870295584749433049
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -998,9 +985,45 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1928857235753377239, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928857235753377239, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1928857235753377239, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5493424638232756441, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
       propertyPath: m_Name
       value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 6997840841043160010, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6997840841043160010, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6997840841043160010, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7242962951254654276, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7242962951254654276, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7242962951254654276, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 347407069938802734, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}

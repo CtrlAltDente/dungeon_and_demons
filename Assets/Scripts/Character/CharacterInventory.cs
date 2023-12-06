@@ -10,6 +10,8 @@ namespace DungeonAndDemons.Character
     {
         public UnityEvent<ItemSlot> OnItemSlotUpdated;
 
+        public ItemSlot[] Slots => _slots;
+
         [SerializeField]
         private ItemSlot[] _slots;
 
@@ -18,16 +20,22 @@ namespace DungeonAndDemons.Character
             SetupItemsAtStart();
         }
 
-        public void SetItem(ItemObject itemObject)
+        public void SetItem(Item item)
         {
             foreach (ItemSlot slot in _slots)
             {
-                if (slot.ItemType == itemObject.Item.Type)
+                if(slot.ItemType == item.Type)
                 {
-                    slot.Item = itemObject.Item;
+                    slot.Item = item;
                     OnItemSlotUpdated?.Invoke(slot);
                 }
             }
+        }
+
+        public void DropItem(int slotIndex)
+        {
+            _slots[slotIndex].Item = new Item(ItemType.None, null, null);
+            OnItemSlotUpdated?.Invoke(_slots[slotIndex]);
         }
 
         private void SetupItemsAtStart()

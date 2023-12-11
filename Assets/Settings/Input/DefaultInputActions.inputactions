@@ -426,7 +426,7 @@
                     "name": "",
                     "id": "91da14c3-0e4a-4a4c-bdb7-6248989db244",
                     "path": "<Keyboard>/e",
-                    "interactions": "Hold",
+                    "interactions": "",
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "PickupItem",

@@ -26,26 +26,30 @@ namespace DungeonAndDemons.Player
         {
             if (playerInputData.IsPickupItem)
             {
-                if(_availableItems.Count > 0)
-                {
-                    PickupItem(_availableItems[0].Item);
-                    Destroy(_availableItems[0].gameObject);
-                }
+                PickupAvailableItem();
             }
         }
 
-        public void PickupItem(Item item)
+        public void PickupAvailableItem()
         {
-            _characterInventory.SetItem(item);
+            if (_availableItems.Count > 0)
+            {
+                ItemObject itemObject = _availableItems[0];
+                ItemSlot slot = _characterInventory.GetSlotForItem(itemObject.Item);
+                DropFromSlot(slot);
+                _characterInventory.SetItem(itemObject.Item);
+                RemoveItemFromItemList(itemObject);
+                Destroy(itemObject.gameObject);
+            }
         }
 
-        public void DropFromSlot(int slotIndex)
+        public void DropFromSlot(ItemSlot slot)
         {
-            DropItem(_characterInventory.Slots[slotIndex].Item);
-            _characterInventory.SetItem(new Item(_characterInventory.Slots[slotIndex].ItemType, null, null));
+            DropItem(slot.Item);
+            _characterInventory.SetItem(new Item(slot.ItemType, null, null));
         }
 
-        public void DropItem(Item item)
+        private void DropItem(Item item)
         {
             if (item.Model != null)
             {
@@ -56,18 +60,21 @@ namespace DungeonAndDemons.Player
 
         private void OnTriggerEnter(Collider other)
         {
-            AddItemToItemsList(other);
+            AddItemToItemsList(GetItemInCollider(other));
         }
 
         private void OnTriggerExit(Collider other)
         {
-            RemoveItemFromItemList(other);
+            RemoveItemFromItemList(GetItemInCollider(other));
         }
 
-        private void AddItemToItemsList(Collider other)
+        private ItemObject GetItemInCollider(Collider other)
         {
-            ItemObject itemObject = other.GetComponent<ItemObject>();
+            return other.GetComponent<ItemObject>();
+        }
 
+        private void AddItemToItemsList(ItemObject itemObject)
+        {
             if (itemObject)
             {
                 if(!_availableItems.Contains(itemObject))
@@ -78,10 +85,8 @@ namespace DungeonAndDemons.Player
             }
         }
 
-        private void RemoveItemFromItemList(Collider other)
+        private void RemoveItemFromItemList(ItemObject itemObject)
         {
-            ItemObject itemObject = other.GetComponent<ItemObject>();
-
             if (itemObject)
             {
                 if (_availableItems.Contains(itemObject))

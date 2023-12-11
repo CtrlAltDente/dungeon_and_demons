@@ -32,10 +32,17 @@ namespace DungeonAndDemons.Character
             }
         }
 
-        public void DropItem(int slotIndex)
+        public ItemSlot GetSlotForItem(Item item)
         {
-            _slots[slotIndex].Item = new Item(ItemType.None, null, null);
-            OnItemSlotUpdated?.Invoke(_slots[slotIndex]);
+            foreach (ItemSlot slot in _slots)
+            {
+                if (slot.ItemType == item.Type)
+                {
+                    return slot;
+                }
+            }
+
+            return null;
         }
 
         private void SetupItemsAtStart()

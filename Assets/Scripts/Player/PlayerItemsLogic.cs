@@ -20,15 +20,22 @@ namespace DungeonAndDemons.Player
         private ItemObject _itemObjectPrefab;
 
         [SerializeField]
+        private List<ItemObject> _availableItems;
+        [SerializeField]
         private ItemUI _itemUiPrefab;
         [SerializeField]
         private List<ItemUI> _itemUiElements;
 
         public void SetPlayerInputData(PlayerInputData playerInputData)
         {
-            if (playerInputData.ScrollValue < 0)
+            if (playerInputData.IsPickupItem)
             {
-                DropFromSlot(2);
+                if(_availableItems.Count > 0)
+                {
+                    PickupItem(_availableItems[0].Item);
+                    HideItemUI(_availableItems[0].gameObject.GetComponent<Collider>());
+                    Destroy(_availableItems[0].gameObject);
+                }
             }
         }
 
@@ -55,11 +62,39 @@ namespace DungeonAndDemons.Player
         private void OnTriggerEnter(Collider other)
         {
             ShowItemUI(other);
+            AddItemToItemsList(other);
         }
 
         private void OnTriggerExit(Collider other)
         {
             HideItemUI(other);
+            RemoveItemFromItemList(other);
+        }
+
+        private void AddItemToItemsList(Collider other)
+        {
+            ItemObject itemObject = other.GetComponent<ItemObject>();
+
+            if (itemObject)
+            {
+                if(!_availableItems.Contains(itemObject))
+                {
+                    _availableItems.Add(itemObject);
+                }
+            }
+        }
+
+        private void RemoveItemFromItemList(Collider other)
+        {
+            ItemObject itemObject = other.GetComponent<ItemObject>();
+
+            if (itemObject)
+            {
+                if (_availableItems.Contains(itemObject))
+                {
+                    _availableItems.Remove(itemObject);
+                }
+            }
         }
 
         private void ShowItemUI(Collider other)
@@ -70,14 +105,6 @@ namespace DungeonAndDemons.Player
             {
                 ItemUI newItemUi = Instantiate(_itemUiPrefab, itemObject.transform.position, Quaternion.identity, null);
                 newItemUi.ItemObject = itemObject;
-
-                newItemUi.Button.onClick.AddListener(() =>
-                {
-                    PickupItem(itemObject.Item);
-                    _itemUiElements.Remove(newItemUi);
-                    Destroy(newItemUi.gameObject);
-                    Destroy(itemObject.gameObject);
-                });
 
                 _itemUiElements.Add(newItemUi);
             }

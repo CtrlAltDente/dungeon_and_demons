@@ -20,7 +20,8 @@ namespace DungeonAndDemons.Input
         private InputActionReference _rollPlayerInput;
         [SerializeField]
         private InputActionReference _scrollInput;
-
+        [SerializeField]
+        private InputActionReference _pickupItemInput;
 
         public PlayerInputData GetPlayerInputData()
         {
@@ -29,10 +30,11 @@ namespace DungeonAndDemons.Input
             bool isSecondaryAttack = _secondaryAttackPlayerInput.action.IsPressed();
             bool isRoll = _rollPlayerInput.action.IsPressed();
             float scrollValue = _scrollInput.action.ReadValue<float>();
+            bool isPickupItem = _pickupItemInput.action.triggered;
 
             ulong id = GetPlayerId();
 
-            PlayerInputData playerInputData = new PlayerInputData(id, movementVector, isPrimaryAttack, isSecondaryAttack, isRoll, scrollValue);
+            PlayerInputData playerInputData = new PlayerInputData(id, movementVector, isPrimaryAttack, isSecondaryAttack, isRoll, scrollValue, isPickupItem);
 
             return playerInputData;
         }

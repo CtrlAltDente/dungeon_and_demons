@@ -11,7 +11,7 @@ namespace DungeonAndDemons.Player
         private Transform _playerTransform;
 
         [SerializeField]
-        private PlayerInputData _currentPlayerInput = new PlayerInputData(0, Vector2.zero, false, false, false, 0);
+        private PlayerInputData _currentPlayerInput = default;
 
         [SerializeField]
         private float _movementSpeed;

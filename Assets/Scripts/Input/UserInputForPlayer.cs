@@ -73,7 +73,7 @@ namespace DungeonAndDemons.Input
             }
             else
             {
-                _playerState.SetInputServerRpc(new PlayerInputData(NetworkManager.Singleton.LocalClientId, default, default, default, default, default));
+                _playerState.SetInputServerRpc(new PlayerInputData(NetworkManager.Singleton.LocalClientId, default, default, default, default, default, default));
             }
         }
         private void SetLocalInput()
@@ -84,7 +84,7 @@ namespace DungeonAndDemons.Input
             }
             else
             {
-                _playerState.SetInput(new PlayerInputData(NetworkManager.Singleton.LocalClientId, default, default, default, default, default));
+                _playerState.SetInput(new PlayerInputData(NetworkManager.Singleton.LocalClientId, default, default, default, default, default, default));
             }
         }
     }

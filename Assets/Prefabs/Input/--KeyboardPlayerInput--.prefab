@@ -49,3 +49,4 @@ MonoBehaviour:
   _secondaryAttackPlayerInput: {fileID: 8501132953680101193, guid: c2ac35b5111aaac4daf131da467a311e, type: 3}
   _rollPlayerInput: {fileID: 8509118361400022053, guid: c2ac35b5111aaac4daf131da467a311e, type: 3}
   _scrollInput: {fileID: -8590461675807490062, guid: c2ac35b5111aaac4daf131da467a311e, type: 3}
+  _pickupItemInput: {fileID: -3302903722179264089, guid: c2ac35b5111aaac4daf131da467a311e, type: 3}

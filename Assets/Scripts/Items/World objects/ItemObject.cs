@@ -1,19 +1,22 @@
 using DungeonAndDemons.Interfaces;
 using DungeonAndDemons.Player;
 using DungeonAndDemons.ScriptableObjects;
+using DungeonAndDemons.UI;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 namespace DungeonAndDemons.Items
 {
     public class ItemObject : MonoBehaviour
     {
-        public virtual ItemType Type => Item.Type;
+        public virtual ItemType Type => _item.Type;
 
         public bool IsInitializeAtStart = true;
 
-        public Item Item;
+        [SerializeField]
+        private Item _item;
 
         [SerializeField]
         private MeshFilter _meshFilter;
@@ -24,7 +27,7 @@ namespace DungeonAndDemons.Items
         private MeshCollider _meshCollider;
 
         [SerializeField]
-        private GameObject _itemUI;
+        private ItemUI _itemUI;
 
         public bool IsKinematic
         {
@@ -38,12 +41,27 @@ namespace DungeonAndDemons.Items
             }
         }
 
+        public Item Item
+        {
+            set
+            {
+                _item = value;
+                _itemUI.SetDescription(this);
+            }
+            get
+            {
+                return _item;
+            }
+        }
+
         private void Start()
         {
             if (IsInitializeAtStart)
             {
                 InitializeAtStart();
             }
+
+            _itemUI.SetDescription(this);
         }
 
         public void Initialize()
@@ -61,6 +79,11 @@ namespace DungeonAndDemons.Items
             {
                 SetItemData(null, null, Vector3.zero, Vector3.zero);
             }
+        }
+
+        public void SetActiveUI(bool isActive)
+        {
+            _itemUI.gameObject.SetActive(isActive);
         }
 
         private void InitializeAtStart()

@@ -21,11 +21,7 @@ namespace DungeonAndDemons.Player
 
         [SerializeField]
         private List<ItemObject> _availableItems;
-        [SerializeField]
-        private ItemUI _itemUiPrefab;
-        [SerializeField]
-        private List<ItemUI> _itemUiElements;
-
+        
         public void SetPlayerInputData(PlayerInputData playerInputData)
         {
             if (playerInputData.IsPickupItem)
@@ -33,7 +29,6 @@ namespace DungeonAndDemons.Player
                 if(_availableItems.Count > 0)
                 {
                     PickupItem(_availableItems[0].Item);
-                    HideItemUI(_availableItems[0].gameObject.GetComponent<Collider>());
                     Destroy(_availableItems[0].gameObject);
                 }
             }
@@ -61,13 +56,11 @@ namespace DungeonAndDemons.Player
 
         private void OnTriggerEnter(Collider other)
         {
-            ShowItemUI(other);
             AddItemToItemsList(other);
         }
 
         private void OnTriggerExit(Collider other)
         {
-            HideItemUI(other);
             RemoveItemFromItemList(other);
         }
 
@@ -79,6 +72,7 @@ namespace DungeonAndDemons.Player
             {
                 if(!_availableItems.Contains(itemObject))
                 {
+                    itemObject.SetActiveUI(true);
                     _availableItems.Add(itemObject);
                 }
             }
@@ -92,46 +86,9 @@ namespace DungeonAndDemons.Player
             {
                 if (_availableItems.Contains(itemObject))
                 {
+                    itemObject.SetActiveUI(false);
                     _availableItems.Remove(itemObject);
                 }
-            }
-        }
-
-        private void ShowItemUI(Collider other)
-        {
-            ItemObject itemObject = other.GetComponent<ItemObject>();
-
-            if (itemObject)
-            {
-                ItemUI newItemUi = Instantiate(_itemUiPrefab, itemObject.transform.position, Quaternion.identity, null);
-                newItemUi.ItemObject = itemObject;
-
-                _itemUiElements.Add(newItemUi);
-            }
-        }
-
-        private void HideItemUI(Collider other)
-        {
-            ItemObject itemObject = other.GetComponent<ItemObject>();
-
-            ItemUI itemUIObject = null;
-
-            if (itemObject)
-            {
-                foreach (ItemUI itemUI in _itemUiElements)
-                {
-                    if (itemUI.ItemObject == itemObject)
-                    {
-                        itemUIObject = itemUI;
-                        break;
-                    }
-                }
-            }
-
-            if (itemUIObject)
-            {
-                _itemUiElements.Remove(itemUIObject);
-                Destroy(itemUIObject.gameObject);
             }
         }
     }

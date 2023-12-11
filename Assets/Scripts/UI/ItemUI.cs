@@ -8,11 +8,25 @@ namespace DungeonAndDemons.UI
 {
     public class ItemUI : MonoBehaviour
     {
-        public ItemObject ItemObject;
+        private void Update()
+        {
+            UpdatePosition();
+            UpdateRotation();
+        }
 
-        public Button Button => _button;
+        public void SetDescription(ItemObject itemObject)
+        {
 
-        [SerializeField]
-        private Button _button;
+        }
+        
+        private void UpdatePosition()
+        {
+            transform.position = new Vector3(transform.parent.position.x, 3, transform.parent.position.z);
+        }
+
+        private void UpdateRotation()
+        {
+            transform.rotation = Quaternion.Euler(60f, 0f, 0f);
+        }
     }
 }

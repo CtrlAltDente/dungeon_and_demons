@@ -636,10 +636,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1332364755129334122, guid: 7ba0c7c3fa2a9d14d8e28f3e68cbf63d, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 5eadbcd1ee66ef848b72962b675dd98f, type: 2}
+    - target: {fileID: 1437319820257371714, guid: 7ba0c7c3fa2a9d14d8e28f3e68cbf63d, type: 3}
+      propertyPath: IsInitializeAtStart
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1615417344934392012, guid: 7ba0c7c3fa2a9d14d8e28f3e68cbf63d, type: 3}
+      propertyPath: IsInitializeAtStart
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2811451906033006502, guid: 7ba0c7c3fa2a9d14d8e28f3e68cbf63d, type: 3}
       propertyPath: _slots.Array.data[1].Item.Stats.Array.size
       value: 0
@@ -695,6 +699,10 @@ PrefabInstance:
     - target: {fileID: 3460752903693222312, guid: 7ba0c7c3fa2a9d14d8e28f3e68cbf63d, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 1126640554
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506265304919248991, guid: 7ba0c7c3fa2a9d14d8e28f3e68cbf63d, type: 3}
+      propertyPath: IsInitializeAtStart
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5201644791327875250, guid: 7ba0c7c3fa2a9d14d8e28f3e68cbf63d, type: 3}

@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: ItemModel_HoodSuit
   m_EditorClassIdentifier: 
   Model: {fileID: 5181645758684930317, guid: fb581b001025f954586c671d3f76762c, type: 3}
-  PositionOffset: {x: 0, y: 0, z: 0}
+  PositionOffset: {x: 0, y: 0.7, z: 0}
   RotationOffset: {x: 0, y: 0, z: 0}
+  ItemActions: []

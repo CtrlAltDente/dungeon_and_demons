@@ -46,16 +46,13 @@ namespace DungeonAndDemons.Player
         public void DropFromSlot(ItemSlot slot)
         {
             DropItem(slot.Item);
-            _characterInventory.SetItem(new Item(slot.ItemType, null, null));
+            _characterInventory.SetItem(new Item(slot.ItemType, 0, null, null));
         }
 
         private void DropItem(Item item)
         {
-            if (item.Model != null)
-            {
-                ItemObject spawnedObject = Instantiate(_itemObjectPrefab, transform.position + transform.forward * 1.5f + Vector3.up, Quaternion.identity, null);
-                spawnedObject.Item = item;
-            }
+            ItemObject spawnedObject = Instantiate(_itemObjectPrefab, transform.position + transform.forward * 1.5f + Vector3.up, Quaternion.identity, null);
+            spawnedObject.Item = item;
         }
 
         private void OnTriggerEnter(Collider other)

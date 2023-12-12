@@ -1,6 +1,7 @@
 using DungeonAndDemons.Interfaces;
 using DungeonAndDemons.Player;
 using DungeonAndDemons.ScriptableObjects;
+using DungeonAndDemons.ScriptableObjects.Containers;
 using DungeonAndDemons.UI;
 using System.Collections;
 using System.Collections.Generic;
@@ -14,6 +15,9 @@ namespace DungeonAndDemons.Items
         public virtual ItemType Type => _item.Type;
 
         public bool IsInitializeAtStart = true;
+
+        [SerializeField]
+        private ItemModelsContainer[] _modelContainers;
 
         [SerializeField]
         private Item _item;
@@ -66,13 +70,15 @@ namespace DungeonAndDemons.Items
 
         public void Initialize()
         {
-            if (Item.Model != null)
+            ItemModel itemModel = GetModelContainer(Item.Type).Items[Item.ModelIndex];
+
+            if (itemModel != null)
             {
                 SetItemData(
-                    Item.Model.Mesh,
-                    Item.Model.Model.GetComponent<MeshRenderer>().sharedMaterials,
-                    Item.Model.PositionOffset,
-                    Item.Model.RotationOffset
+                    itemModel.Mesh,
+                    itemModel.Model.GetComponent<MeshRenderer>().sharedMaterials,
+                    itemModel.PositionOffset,
+                    itemModel.RotationOffset
                     );
             }
             else
@@ -88,13 +94,15 @@ namespace DungeonAndDemons.Items
 
         private void InitializeAtStart()
         {
-            if (Item.Model != null)
+            ItemModel itemModel = GetModelContainer(Item.Type).Items[Item.ModelIndex];
+
+            if (itemModel != null)
             {
                 SetItemData(
-                        Item.Model.Mesh,
-                        Item.Model.Model.GetComponent<MeshRenderer>().sharedMaterials,
-                        transform.position + Item.Model.PositionOffset,
-                        transform.rotation.eulerAngles + Item.Model.RotationOffset
+                        itemModel.Mesh,
+                        itemModel.Model.GetComponent<MeshRenderer>().sharedMaterials,
+                        transform.position + itemModel.PositionOffset,
+                        transform.rotation.eulerAngles + itemModel.RotationOffset
                         );
             }
         }
@@ -109,6 +117,19 @@ namespace DungeonAndDemons.Items
 
             transform.localPosition = positionOffset;
             transform.localRotation = Quaternion.Euler(rotationOffset);
+        }
+
+        private ItemModelsContainer GetModelContainer(ItemType itemType)
+        {
+            foreach(ItemModelsContainer modelsContainer in _modelContainers)
+            {
+                if(modelsContainer.ItemsType == itemType)
+                {
+                    return modelsContainer;
+                }
+            }
+
+            return null;
         }
     }
 }

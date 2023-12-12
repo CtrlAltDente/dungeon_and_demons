@@ -93,8 +93,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _characterInventory: {fileID: 2811451906033006502}
   _itemObjectPrefab: {fileID: 7754017824268446998, guid: 8e390f80551d7e74c8d586d2dd911570, type: 3}
-  _itemUiPrefab: {fileID: 5827081107046562020, guid: 94013e098e14bf342a22da25782304f5, type: 3}
-  _itemUiElements: []
+  _availableItems: []
 --- !u!65 &9188988575492285302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -168,6 +167,7 @@ MonoBehaviour:
     IsSecondaryAttack: 0
     IsRoll: 0
     ScrollValue: 0
+    IsPickupItem: 0
   _movementSpeed: 4
   _rotationSpeed: 360
 --- !u!1 &3460752903693222295
@@ -847,11 +847,23 @@ MonoBehaviour:
         m_CallState: 2
   _slots:
   - ItemType: 1
-    Item: {fileID: 0}
+    Item:
+      Type: 1
+      ModelIndex: 0
+      Stats: []
+      Modifiers: []
   - ItemType: 2
-    Item: {fileID: 0}
+    Item:
+      Type: 2
+      ModelIndex: 0
+      Stats: []
+      Modifiers: []
   - ItemType: 3
-    Item: {fileID: 0}
+    Item:
+      Type: 3
+      ModelIndex: 0
+      Stats: []
+      Modifiers: []
 --- !u!114 &4978474258493989150
 MonoBehaviour:
   m_ObjectHideFlags: 0

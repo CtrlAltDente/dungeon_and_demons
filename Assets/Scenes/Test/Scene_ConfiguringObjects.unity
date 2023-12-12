@@ -270,12 +270,32 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: abff33aa1f612a447a40e897bf326186, type: 2}
     - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
+      propertyPath: _itemPreset.ModelIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
+      propertyPath: _itemPreset.Stats.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
       propertyPath: ItemPreset.Modifiers.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
       propertyPath: _itemPreset.Modifiers.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
+      propertyPath: _itemPreset.Stats.Array.data[1].StatsName
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
+      propertyPath: _itemPreset.Stats.Array.data[0].StatsValue
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
+      propertyPath: _itemPreset.Stats.Array.data[1].StatsValue
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
       propertyPath: ItemPreset.Modifiers.Array.data[0].ModifierType
@@ -810,12 +830,24 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: abff33aa1f612a447a40e897bf326186, type: 2}
     - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
+      propertyPath: _itemPreset.ModelIndex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
+      propertyPath: _itemPreset.Stats.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
       propertyPath: ItemPreset.Modifiers.Array.size
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
       propertyPath: _itemPreset.Modifiers.Array.size
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
+      propertyPath: _itemPreset.Stats.Array.data[0].StatsValue
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
       propertyPath: ItemPreset.Modifiers.Array.data[0].ModifierType
@@ -827,11 +859,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
       propertyPath: _itemPreset.Modifiers.Array.data[0].ModifierType
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7357318591663304090, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
       propertyPath: _itemPreset.Modifiers.Array.data[0].ModifierValue
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8388640115934032837, guid: 6a13ae55bcbabfd4e8cf0fb99c80d468, type: 3}
       propertyPath: m_Name

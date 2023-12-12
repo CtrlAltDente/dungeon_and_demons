@@ -10,13 +10,15 @@ namespace DungeonAndDemons.Items
     public struct Item
     {
         public ItemType Type;
-        public ItemModel Model;
+        public int ModelIndex;
+        public List<ItemStats> Stats;
         public List<Modifier> Modifiers;
 
-        public Item(ItemType type, ItemModel model, List<Modifier> modifiers)
+        public Item(ItemType type, int modelIndex, List<ItemStats> stats, List<Modifier> modifiers)
         {
             Type = type;
-            Model = model;
+            ModelIndex = modelIndex;
+            Stats = stats;
             Modifiers = modifiers;
         }
     }

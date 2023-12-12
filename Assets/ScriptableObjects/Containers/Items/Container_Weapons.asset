@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 114df949ea4aada4d898732d56a1fb65, type: 3}
   m_Name: Container_Weapons
   m_EditorClassIdentifier: 
-  Items: []
+  Items:
+  - {fileID: 0}
+  - {fileID: 11400000, guid: abff33aa1f612a447a40e897bf326186, type: 2}
+  ItemsType: 3

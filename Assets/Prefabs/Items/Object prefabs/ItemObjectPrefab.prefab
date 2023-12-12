@@ -95,9 +95,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsInitializeAtStart: 1
-  Item:
+  _modelContainers:
+  - {fileID: 11400000, guid: 7769dee7306d7824196a71c0b9c6d6fc, type: 2}
+  - {fileID: 11400000, guid: bdd20473f60975e4c97539fbfa29e2fb, type: 2}
+  - {fileID: 11400000, guid: 58308216667e97b4da42910b1a133b31, type: 2}
+  _item:
     Type: 0
-    Model: {fileID: 0}
+    ModelIndex: 0
+    Stats: []
     Modifiers: []
   _meshFilter: {fileID: 1118306956738778253}
   _meshRenderer: {fileID: 6304903497056448790}

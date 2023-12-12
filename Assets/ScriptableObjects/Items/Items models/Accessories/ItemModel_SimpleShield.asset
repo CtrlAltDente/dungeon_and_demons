@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: ItemModel_SimpleShield
   m_EditorClassIdentifier: 
   Model: {fileID: 1251261009915017247, guid: 4e8cd27accf462f49a9ecc12a99f5b95, type: 3}
+  ItemType: 4
   PositionOffset: {x: 0, y: 0, z: 0}
   RotationOffset: {x: 0, y: 0, z: 0}

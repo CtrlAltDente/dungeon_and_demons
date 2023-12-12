@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ItemModel_SimpleSuit
   m_EditorClassIdentifier: 
   Model: {fileID: 8996592182647443352, guid: a0034517f6f33174d936ae7993ef5868, type: 3}
+  ItemType: 3
   PositionOffset: {x: 0, y: 0.7, z: 0}
   RotationOffset: {x: 0, y: 0, z: 0}
-  ItemActions: []

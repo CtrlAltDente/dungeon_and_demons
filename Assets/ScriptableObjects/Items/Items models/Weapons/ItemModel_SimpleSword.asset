@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ItemModel_SimpleSword
   m_EditorClassIdentifier: 
   Model: {fileID: 5004157458223727988, guid: 0fcdfeb58f13c7b42af33a178e726403, type: 3}
-  MeshFilter: {fileID: 0}
+  ItemType: 0
   PositionOffset: {x: 0, y: 0, z: 0}
   RotationOffset: {x: 0, y: 0, z: 0}

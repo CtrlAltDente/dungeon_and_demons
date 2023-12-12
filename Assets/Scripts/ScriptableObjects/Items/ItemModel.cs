@@ -1,3 +1,4 @@
+using DungeonAndDemons.Items;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,9 +9,11 @@ namespace DungeonAndDemons.ScriptableObjects
     public class ItemModel : ScriptableObject
     {
         public Mesh Mesh => Model.GetComponent<MeshFilter>().sharedMesh;
-        
+
         public GameObject Model;
-        
+
+        public ItemType ItemType;
+
         public Vector3 PositionOffset;
         public Vector3 RotationOffset;
     }

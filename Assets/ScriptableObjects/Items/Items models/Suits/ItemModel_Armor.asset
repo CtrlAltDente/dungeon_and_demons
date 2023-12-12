@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: ItemModel_Armor
   m_EditorClassIdentifier: 
   Model: {fileID: 5390360837508999675, guid: b67974684b1e7f840aadb6d374dabcda, type: 3}
+  ItemType: 3
   PositionOffset: {x: 0, y: 0.7, z: 0}
   RotationOffset: {x: 0, y: 0, z: 0}
-  ItemActions: []

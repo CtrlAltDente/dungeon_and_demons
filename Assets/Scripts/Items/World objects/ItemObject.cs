@@ -12,7 +12,7 @@ namespace DungeonAndDemons.Items
 {
     public class ItemObject : MonoBehaviour
     {
-        public virtual ItemType Type => _item.Type;
+        public virtual SlotType Type => _item.Type;
 
         public bool IsInitializeAtStart = true;
 
@@ -119,7 +119,7 @@ namespace DungeonAndDemons.Items
             transform.localRotation = Quaternion.Euler(rotationOffset);
         }
 
-        private ItemModelsContainer GetModelContainer(ItemType itemType)
+        private ItemModelsContainer GetModelContainer(SlotType itemType)
         {
             foreach(ItemModelsContainer modelsContainer in _modelContainers)
             {

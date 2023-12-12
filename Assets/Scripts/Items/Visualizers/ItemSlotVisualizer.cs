@@ -9,7 +9,7 @@ namespace DungeonAndDemons.Items
     public class ItemSlotVisualizer : MonoBehaviour
     {
         [SerializeField]
-        private ItemType _slotType;
+        private SlotType _slotType;
         [SerializeField]
         private ItemObject _itemObject;
 

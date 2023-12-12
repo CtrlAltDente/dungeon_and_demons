@@ -9,6 +9,6 @@ namespace DungeonAndDemons.Interfaces
     {
         public ItemInfo Info { get; }
         public T Item { get; }
-        public ItemType Type { get; }
+        public SlotType Type { get; }
     }
 }

@@ -8,7 +8,7 @@ namespace DungeonAndDemons.Items
     [Serializable]
     public class ItemSlot
     {
-        public ItemType ItemType;
+        public SlotType ItemType;
         public Item Item;
     }
 }

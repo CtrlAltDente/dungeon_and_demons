@@ -640,6 +640,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 5eadbcd1ee66ef848b72962b675dd98f, type: 2}
+    - target: {fileID: 2811451906033006502, guid: 7ba0c7c3fa2a9d14d8e28f3e68cbf63d, type: 3}
+      propertyPath: _slots.Array.data[1].Item.Stats.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3460752903693222294, guid: 7ba0c7c3fa2a9d14d8e28f3e68cbf63d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -4,11 +4,11 @@ using UnityEngine;
 
 namespace DungeonAndDemons.Items
 {
-    public enum ItemType 
+    public enum SlotType 
     {
         None,
-        Accessory,
-        Suit,
-        Weapon
+        LeftHand,
+        Body,
+        RightHand
     }
 }

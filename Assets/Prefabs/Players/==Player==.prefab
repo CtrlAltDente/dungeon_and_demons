@@ -220,7 +220,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 843966861
+  GlobalObjectIdHash: 3280187382
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -444,12 +444,12 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 2822502159852287524}
-  - {fileID: 3315382192881429769}
   - {fileID: 3460752904285419921}
   - {fileID: 3419178958206217025}
   - {fileID: 3460752903685383899}
   - {fileID: 7522207570750893177}
+  - {fileID: 2822502159852287524}
+  - {fileID: 3315382192881429769}
   m_Father: {fileID: 3460752903693222294}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6680307581101457086

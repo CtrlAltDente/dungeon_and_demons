@@ -46,6 +46,135 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _modelParentObject: {fileID: 3460752904507798553}
   _animator: {fileID: 1332364755129334122}
+--- !u!1 &1142251405670757774
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2288961478465930996}
+  - component: {fileID: 9191686270786917247}
+  - component: {fileID: 8223827798900354461}
+  - component: {fileID: 9137183527698648356}
+  m_Layer: 0
+  m_Name: --PlayerCharacter--
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2288961478465930996
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142251405670757774}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3460752904684803772}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9191686270786917247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142251405670757774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724e9ba28baab9248971805cfd40226c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CharacterVisual: {fileID: 8223827798900354461}
+  CharacterInventory: {fileID: 2456502127711876399}
+  CharacterAttributes: {fileID: 9137183527698648356}
+--- !u!114 &8223827798900354461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142251405670757774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c06c216f62183e247bb56db07cd3b15c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterVisualConfig:
+    SkinColor: {r: 0, g: 0, b: 0, a: 0}
+    HairColor: {r: 0, g: 0, b: 0, a: 0}
+    HaistyleIndex: 0
+    EyebrowIndex: 0
+    BeardIndex: 0
+--- !u!114 &9137183527698648356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142251405670757774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b31c13de4c2cfb445bcbf8769bc7696a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Name: Lead
+  Level: 1
+  CurrentXP: 0
+  Strength: 2
+  Dexterity: 2
+  Intelligence: 2
+--- !u!1 &1536634385289276579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2642223308142772006}
+  - component: {fileID: 6499893732035992260}
+  m_Layer: 0
+  m_Name: AttackCalculator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2642223308142772006
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536634385289276579}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2822502159852287524}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6499893732035992260
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536634385289276579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5e0775c810d2174b82110d4cf1b4ec2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3318390464120859681
 GameObject:
   m_ObjectHideFlags: 0
@@ -56,6 +185,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3315382192881429769}
   - component: {fileID: 4229923750717292689}
+  - component: {fileID: 2456502127711876399}
   - component: {fileID: 9188988575492285302}
   m_Layer: 0
   m_Name: --PlayerItemsLogic--
@@ -91,9 +221,79 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b25c57487fb8d4489f00ed10d1c24df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterInventory: {fileID: 2811451906033006502}
+  _characterInventory: {fileID: 2456502127711876399}
   _itemObjectPrefab: {fileID: 7754017824268446998, guid: 8e390f80551d7e74c8d586d2dd911570, type: 3}
   _availableItems: []
+--- !u!114 &2456502127711876399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3318390464120859681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65c33404605275e45a7ef4d748a4b1c7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnItemSlotUpdated:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2597221973144854497}
+        m_TargetAssemblyTypeName: DungeonAndDemons.Items.ItemSlotVisualizer, Assembly-CSharp
+        m_MethodName: SetItemSlotInfo
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4384280857576455622}
+        m_TargetAssemblyTypeName: DungeonAndDemons.Items.ItemSlotVisualizer, Assembly-CSharp
+        m_MethodName: SetItemSlotInfo
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 886957441422990694}
+        m_TargetAssemblyTypeName: DungeonAndDemons.Items.ItemSlotVisualizer, Assembly-CSharp
+        m_MethodName: SetItemSlotInfo
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _slots:
+  - ItemType: 1
+    Item:
+      Type: 1
+      ModelIndex: 0
+      Stats: []
+      Modifiers: []
+  - ItemType: 2
+    Item:
+      Type: 2
+      ModelIndex: 0
+      Stats: []
+      Modifiers: []
+  - ItemType: 3
+    Item:
+      Type: 3
+      ModelIndex: 0
+      Stats: []
+      Modifiers: []
 --- !u!65 &9188988575492285302
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -241,7 +441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsAlive: 1
-  _playerCharacter: {fileID: 3136509552585743474}
+  _playerCharacter: {fileID: 0}
   _playerInput: {fileID: 3460752904285419920}
 --- !u!114 &7201205767863043294
 MonoBehaviour:
@@ -444,6 +644,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2288961478465930996}
   - {fileID: 3460752904285419921}
   - {fileID: 3419178958206217025}
   - {fileID: 3460752903685383899}
@@ -735,10 +936,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2822502159852287524}
-  - component: {fileID: 3136509552585743474}
-  - component: {fileID: 870295584749433049}
-  - component: {fileID: 2811451906033006502}
-  - component: {fileID: 4978474258493989150}
+  - component: {fileID: 358829574412342875}
   m_Layer: 0
   m_Name: --PlayerStatsLogic--
   m_TagString: Untagged
@@ -758,10 +956,12 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2642223308142772006}
+  - {fileID: 9040617063439698081}
   m_Father: {fileID: 3460752904684803772}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3136509552585743474
+--- !u!114 &358829574412342875
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -770,118 +970,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 8015262854104906033}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 724e9ba28baab9248971805cfd40226c, type: 3}
+  m_Script: {fileID: 11500000, guid: 7584beea9f41c9445b2d0fbc378ba93a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CharacterVisual: {fileID: 870295584749433049}
-  CharacterInventory: {fileID: 2811451906033006502}
-  CharacterAttributes: {fileID: 4978474258493989150}
---- !u!114 &870295584749433049
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8015262854104906033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c06c216f62183e247bb56db07cd3b15c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _characterVisualConfig:
-    SkinColor: {r: 0, g: 0, b: 0, a: 0}
-    HairColor: {r: 0, g: 0, b: 0, a: 0}
-    HaistyleIndex: 0
-    EyebrowIndex: 0
-    BeardIndex: 0
---- !u!114 &2811451906033006502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8015262854104906033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65c33404605275e45a7ef4d748a4b1c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnItemSlotUpdated:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2597221973144854497}
-        m_TargetAssemblyTypeName: DungeonAndDemons.Items.ItemSlotVisualizer, Assembly-CSharp
-        m_MethodName: SetItemSlotInfo
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 4384280857576455622}
-        m_TargetAssemblyTypeName: DungeonAndDemons.Items.ItemSlotVisualizer, Assembly-CSharp
-        m_MethodName: SetItemSlotInfo
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 886957441422990694}
-        m_TargetAssemblyTypeName: DungeonAndDemons.Items.ItemSlotVisualizer, Assembly-CSharp
-        m_MethodName: SetItemSlotInfo
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _slots:
-  - ItemType: 1
-    Item:
-      Type: 1
-      ModelIndex: 0
-      Stats: []
-      Modifiers: []
-  - ItemType: 2
-    Item:
-      Type: 2
-      ModelIndex: 0
-      Stats: []
-      Modifiers: []
-  - ItemType: 3
-    Item:
-      Type: 3
-      ModelIndex: 0
-      Stats: []
-      Modifiers: []
---- !u!114 &4978474258493989150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8015262854104906033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b31c13de4c2cfb445bcbf8769bc7696a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Name: Lead
-  Level: 0
-  CurrentXP: 0
-  Strength: 0
-  Dexterity: 0
-  Intelligence: 0
+  _playerCharacter: {fileID: 9191686270786917247}
+  AttackDamage: 0
+  ArmorValue: 0
+  StatsCalculators:
+  - {fileID: 6499893732035992260}
+  - {fileID: 5299889740061615354}
 --- !u!1 &8103488541168354005
 GameObject:
   m_ObjectHideFlags: 0
@@ -949,6 +1046,50 @@ MonoBehaviour:
   m_YawDamping: 0
   m_RollDamping: 0
   m_AngularDamping: 0
+--- !u!1 &8347636864839324111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 9040617063439698081}
+  - component: {fileID: 5299889740061615354}
+  m_Layer: 0
+  m_Name: ArmorCalculator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &9040617063439698081
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8347636864839324111}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2822502159852287524}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5299889740061615354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8347636864839324111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6f04b869b6b00b49a8902b39805d85f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5225818744272683797
 PrefabInstance:
   m_ObjectHideFlags: 0

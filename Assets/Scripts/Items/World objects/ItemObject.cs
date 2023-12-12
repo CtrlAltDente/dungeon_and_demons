@@ -12,7 +12,7 @@ namespace DungeonAndDemons.Items
 {
     public class ItemObject : MonoBehaviour
     {
-        public virtual SlotType Type => _item.Type;
+        public virtual SlotType Type => _item.SlotType;
 
         public bool IsInitializeAtStart = true;
 
@@ -70,7 +70,7 @@ namespace DungeonAndDemons.Items
 
         public void Initialize()
         {
-            ItemModel itemModel = GetModelContainer(Item.Type).Items[Item.ModelIndex];
+            ItemModel itemModel = GetModelContainer(Item.SlotType).Items[Item.ModelIndex];
 
             if (itemModel != null)
             {
@@ -94,7 +94,7 @@ namespace DungeonAndDemons.Items
 
         private void InitializeAtStart()
         {
-            ItemModel itemModel = GetModelContainer(Item.Type).Items[Item.ModelIndex];
+            ItemModel itemModel = GetModelContainer(Item.SlotType).Items[Item.ModelIndex];
 
             if (itemModel != null)
             {

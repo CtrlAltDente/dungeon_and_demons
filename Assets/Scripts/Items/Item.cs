@@ -9,14 +9,14 @@ namespace DungeonAndDemons.Items
     [Serializable]
     public struct Item
     {
-        public SlotType Type;
+        public SlotType SlotType;
         public int ModelIndex;
         public List<ItemStats> Stats;
         public List<Modifier> Modifiers;
 
         public Item(SlotType type, int modelIndex, List<ItemStats> stats, List<Modifier> modifiers)
         {
-            Type = type;
+            SlotType = type;
             ModelIndex = modelIndex;
             Stats = stats;
             Modifiers = modifiers;

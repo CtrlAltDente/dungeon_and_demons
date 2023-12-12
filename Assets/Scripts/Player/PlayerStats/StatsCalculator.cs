@@ -9,22 +9,22 @@ namespace DungeonAndDemons.Player
     {
         public abstract void CalculateStats(PlayerStats playerStats, PlayerCharacter playerCharacter);
 
-        protected int GetStatsValueInItems(PlayerCharacter playerCharacter, ItemStatsName itemStatsName)
+        protected int GetStatsValueInItems(PlayerCharacter playerCharacter, ItemStat itemStatsName)
         {
-            int statsValue = 0;
+            int statValue = 0;
 
             foreach (ItemSlot slot in playerCharacter.CharacterInventory.Slots)
             {
                 foreach (ItemStats itemStats in slot.Item.Stats)
                 {
-                    if (itemStats.StatsName == itemStatsName)
+                    if (itemStats.Stat == itemStatsName)
                     {
-                        statsValue += itemStats.StatsValue;
+                        statValue += itemStats.StatValue;
                     }
                 }
             }
 
-            return statsValue;
+            return statValue;
         }
     }
 }

@@ -8,7 +8,7 @@ namespace DungeonAndDemons.Player
     {
         public override void CalculateStats(PlayerStats playerStats, PlayerCharacter playerCharacter)
         {
-            int armorDamageStats = GetStatsValueInItems(playerCharacter, ItemStatsName.Armor);
+            int armorDamageStats = GetStatsValueInItems(playerCharacter, ItemStat.Armor);
             playerStats.ArmorValue = armorDamageStats;
         }
     }

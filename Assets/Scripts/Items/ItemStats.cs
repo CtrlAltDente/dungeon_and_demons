@@ -8,13 +8,13 @@ namespace DungeonAndDemons.Items
     [Serializable]
     public struct ItemStats
     {
-        public ItemStatsName StatsName;
-        public int StatsValue;
+        public ItemStat Stat;
+        public int StatValue;
 
-        public ItemStats(ItemStatsName statsName, int itemValue)
+        public ItemStats(ItemStat stat, int statValue)
         {
-            StatsName = statsName;
-            StatsValue = itemValue;
+            Stat = stat;
+            StatValue = statValue;
         }
     }
 }

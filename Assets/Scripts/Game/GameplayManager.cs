@@ -3,6 +3,7 @@ using DungeonAndDemons.Input;
 using DungeonAndDemons.Network;
 using DungeonAndDemons.Player;
 using DungeonAndDemons.ScriptableObjects;
+using DungeonAndDemons.ScriptableObjects.Containers;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
@@ -18,9 +19,6 @@ public class GameplayManager : MonoBehaviour
     private MapsContainer _mapsContainer;
     [SerializeField]
     private Map _currentMap;
-
-    [SerializeField]
-    private PlayersInput _playersInput;
 
     private void Start()
     {
@@ -44,7 +42,7 @@ public class GameplayManager : MonoBehaviour
     {
         if (NetworkManager.Singleton.IsHost || !NetworkManager.Singleton.IsClient)
         {
-            _currentMap = Instantiate(_mapsContainer.Maps[0], Vector3.zero, Quaternion.identity, null);
+            _currentMap = Instantiate(_mapsContainer.Items[0], Vector3.zero, Quaternion.identity, null);
         }
     }
 
@@ -63,14 +61,11 @@ public class GameplayManager : MonoBehaviour
     private void InitializeNetworkPlayer(ulong playerId, Vector3 position)
     {
         PlayerState newPlayer = Instantiate(_playerPrefab, position, Quaternion.identity, null);
-        newPlayer.NetworkObject.SpawnWithOwnership(playerId);
-        newPlayer.SetCharacterClientRpc(0);
-        _playersInput.AddPlayersState(newPlayer);
+        newPlayer.NetworkObject.SpawnAsPlayerObject(playerId);
     }
 
     private void InitializeLocalPlayer()
     {
         PlayerState newPlayer = Instantiate(_playerPrefab, Vector3.zero, Quaternion.identity, null);
-        _playersInput.AddPlayersState(newPlayer);
     }
 }

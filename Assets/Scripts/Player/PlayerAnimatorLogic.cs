@@ -1,6 +1,5 @@
 using DungeonAndDemons.Animations;
 using DungeonAndDemons.Interfaces;
-using DungeonAndDemons.Weapons;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -21,11 +20,6 @@ namespace DungeonAndDemons.Player
             _animator.SetBool("IsPrimaryAttack", playerInputData.IsPrimaryAttack);
             _animator.SetBool("IsSecondaryAttack", playerInputData.IsSecondaryAttack);
             _animator.SetBool("IsRoll", playerInputData.IsRoll);
-        }
-
-        public void SetCharacterAnimator(PlayerCharacter playerCharacter)
-        {
-            _animator = playerCharacter.Animator;
         }
     }
 }

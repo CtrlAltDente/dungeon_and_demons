@@ -1,6 +1,8 @@
 using DungeonAndDemons.Input;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
+using System.Linq;
 using Unity.Netcode;
 using UnityEngine;
 
@@ -11,36 +13,24 @@ namespace DungeonAndDemons.Player
         public bool IsAlive = true;
 
         [SerializeField]
-        private PlayerCharacter[] _characters;
-
+        private PlayerCharacter _playerCharacter;
         [SerializeField]
         private PlayerInput _playerInput;
-        [SerializeField]
-        private PlayerAnimatorLogic _playerAnimatorLogic;
-
-        public void UpdateInput(PlayerInputData playerInputData)
+        
+        public override void OnNetworkSpawn()
         {
-            if (IsAlive)
-            {
-                _playerInput.SetPlayerInputData(playerInputData);
-            }
+            base.OnNetworkSpawn();
         }
 
-        [ClientRpc]
-        public void SetCharacterClientRpc(int characterIndex)
+        [ServerRpc]
+        public void SetInputServerRpc(PlayerInputData playerInputData)
         {
-            PlayerCharacter currentCharacter = _characters[characterIndex];
+            _playerInput.SetPlayerInputData(playerInputData);
+        }
 
-            foreach (PlayerCharacter character in _characters)
-            {
-                if (character != currentCharacter)
-                {
-                    character.gameObject.SetActive(false);
-                }
-            }
-
-            _playerInput.SetCharacterAnimator(currentCharacter);
-            _playerAnimatorLogic.SetCharacterAnimator(currentCharacter);
+        public void SetInput(PlayerInputData playerInputData)
+        {
+            _playerInput.SetPlayerInputData(playerInputData);
         }
     }
 }

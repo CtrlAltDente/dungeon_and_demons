@@ -12,7 +12,7 @@ namespace DungeonAndDemons.UI
         
         [SerializeField]
         private CanvasGroup _canvasGroup;
-        
+
         public void SetPosition(Vector2 position, bool instantly,TweenCallback OnEndAction = null)
         {
             if(instantly)

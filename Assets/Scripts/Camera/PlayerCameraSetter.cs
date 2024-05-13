@@ -17,10 +17,29 @@ namespace DungeonAndDemons.Camera
 
         private void Start()
         {
-            CheckOwnPlayer();
+            SetupCamera();
         }
 
-        private void CheckOwnPlayer()
+        private void SetupCamera()
+        {
+            if (NetworkManager.Singleton)
+            {
+                SetupNetworkCamera();
+            }
+            else
+            {
+                SetupLocalCamera();
+            }
+        }
+
+        public void SetPlayerTargetAndFollow(PlayerState playerState)
+        {
+            _cinemachineVirtualCamera.Follow = playerState.transform;
+            _cinemachineVirtualCamera.LookAt = playerState.transform;
+            transform.parent = null;
+        }
+
+        private void SetupNetworkCamera()
         {
             if (_playerState.OwnerClientId == NetworkManager.Singleton.LocalClientId)
             {
@@ -32,11 +51,9 @@ namespace DungeonAndDemons.Camera
             }
         }
 
-        public void SetPlayerTargetAndFollow(PlayerState playerState)
+        private void SetupLocalCamera()
         {
-            _cinemachineVirtualCamera.Follow = playerState.transform;
-            _cinemachineVirtualCamera.LookAt = playerState.transform;
-            transform.parent = null;
+            SetPlayerTargetAndFollow(_playerState);
         }
     }
 }

@@ -94,7 +94,7 @@ namespace DungeonAndDemons.Items
 
         private void InitializeAtStart()
         {
-            ItemModel itemModel = GetModelContainer(Item.SlotType).Items[Item.ModelIndex];
+            ItemModel itemModel = GetModelContainer(Item.SlotType)?.Items[Item.ModelIndex];
 
             if (itemModel != null)
             {

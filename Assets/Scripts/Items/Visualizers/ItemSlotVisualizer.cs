@@ -1,8 +1,4 @@
-using DungeonAndDemons.Interfaces;
-using DungeonAndDemons.ScriptableObjects.Containers;
-using UnityEditor.Rendering;
 using UnityEngine;
-using UnityEngine.Events;
 
 namespace DungeonAndDemons.Items
 {
@@ -25,7 +21,7 @@ namespace DungeonAndDemons.Items
         {
             Debug.Log("Visualize");
             _itemObject.Item = itemSlot.Item;
-            _itemObject.Initialize();
+            _itemObject.Initialize(Vector3.zero, Vector3.zero);
         }
     }
 }

@@ -62,26 +62,26 @@ namespace DungeonAndDemons.Items
         {
             if (IsInitializeAtStart)
             {
-                InitializeAtStart();
+                Initialize(transform.position, transform.rotation.eulerAngles);
             }
 
             _itemUI.SetDescription(this);
         }
 
-        public void Initialize()
+        public void Initialize(Vector3 position, Vector3 rotation, bool doNothingIfNull = false)
         {
-            ItemModel itemModel = GetModelContainer(Item.SlotType).Items[Item.ModelIndex];
+            ItemModel itemModel = GetModelContainer(Item.SlotType)?.Items[Item.ModelIndex];
 
             if (itemModel != null)
             {
                 SetItemData(
                     itemModel.Mesh,
                     itemModel.Model.GetComponent<MeshRenderer>().sharedMaterials,
-                    itemModel.PositionOffset,
-                    itemModel.RotationOffset
+                    position + itemModel.PositionOffset,
+                    rotation + itemModel.RotationOffset
                     );
             }
-            else
+            else if (!doNothingIfNull)
             {
                 SetItemData(null, null, Vector3.zero, Vector3.zero);
             }
@@ -90,21 +90,6 @@ namespace DungeonAndDemons.Items
         public void SetActiveUI(bool isActive)
         {
             _itemUI.gameObject.SetActive(isActive);
-        }
-
-        private void InitializeAtStart()
-        {
-            ItemModel itemModel = GetModelContainer(Item.SlotType)?.Items[Item.ModelIndex];
-
-            if (itemModel != null)
-            {
-                SetItemData(
-                        itemModel.Mesh,
-                        itemModel.Model.GetComponent<MeshRenderer>().sharedMaterials,
-                        transform.position + itemModel.PositionOffset,
-                        transform.rotation.eulerAngles + itemModel.RotationOffset
-                        );
-            }
         }
 
         private void SetItemData(Mesh mesh, Material[] materials, Vector3 positionOffset, Vector3 rotationOffset)
@@ -121,9 +106,9 @@ namespace DungeonAndDemons.Items
 
         private ItemModelsContainer GetModelContainer(SlotType itemType)
         {
-            foreach(ItemModelsContainer modelsContainer in _modelContainers)
+            foreach (ItemModelsContainer modelsContainer in _modelContainers)
             {
-                if(modelsContainer.ItemsType == itemType)
+                if (modelsContainer.ItemsType == itemType)
                 {
                     return modelsContainer;
                 }

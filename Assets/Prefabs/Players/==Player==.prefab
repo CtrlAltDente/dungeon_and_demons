@@ -185,6 +185,8 @@ GameObject:
   m_Component:
   - component: {fileID: 3315382192881429769}
   - component: {fileID: 4229923750717292689}
+  - component: {fileID: 7333672522308168433}
+  - component: {fileID: 499490224758465647}
   - component: {fileID: 2456502127711876399}
   - component: {fileID: 9188988575492285302}
   m_Layer: 0
@@ -221,9 +223,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b25c57487fb8d4489f00ed10d1c24df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _playerItemsPicker: {fileID: 7333672522308168433}
+  _playerItemsDropper: {fileID: 499490224758465647}
+--- !u!114 &7333672522308168433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3318390464120859681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55609d632be565347ba4a83d375cb6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   _characterInventory: {fileID: 2456502127711876399}
+  _playerItemsDropper: {fileID: 499490224758465647}
   _itemObjectPrefab: {fileID: 7754017824268446998, guid: 8e390f80551d7e74c8d586d2dd911570, type: 3}
   _availableItems: []
+--- !u!114 &499490224758465647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3318390464120859681}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 869e0111512011d44beeb396ef83884f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _characterInventory: {fileID: 2456502127711876399}
+  _itemObjectPrefab: {fileID: 7754017824268446998, guid: 8e390f80551d7e74c8d586d2dd911570, type: 3}
 --- !u!114 &2456502127711876399
 MonoBehaviour:
   m_ObjectHideFlags: 0

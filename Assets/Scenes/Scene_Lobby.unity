@@ -711,83 +711,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b075d11fe5306ad449bec6842baf7022, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &404741330
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1469659537}
-    m_Modifications:
-    - target: {fileID: 1846331105389316611, guid: 40ead2ae85809df4f87ed84c0a2b2ef6, type: 3}
-      propertyPath: m_Name
-      value: ==PlayersGameplayLogic==
-      objectReference: {fileID: 0}
-    - target: {fileID: 3407466602772327823, guid: 40ead2ae85809df4f87ed84c0a2b2ef6, type: 3}
-      propertyPath: GlobalObjectIdHash
-      value: 1706797698
-      objectReference: {fileID: 0}
-    - target: {fileID: 8284340186250425421, guid: 40ead2ae85809df4f87ed84c0a2b2ef6, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8284340186250425421, guid: 40ead2ae85809df4f87ed84c0a2b2ef6, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8284340186250425421, guid: 40ead2ae85809df4f87ed84c0a2b2ef6, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8284340186250425421, guid: 40ead2ae85809df4f87ed84c0a2b2ef6, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8284340186250425421, guid: 40ead2ae85809df4f87ed84c0a2b2ef6, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8284340186250425421, guid: 40ead2ae85809df4f87ed84c0a2b2ef6, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8284340186250425421, guid: 40ead2ae85809df4f87ed84c0a2b2ef6, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8284340186250425421, guid: 40ead2ae85809df4f87ed84c0a2b2ef6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8284340186250425421, guid: 40ead2ae85809df4f87ed84c0a2b2ef6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8284340186250425421, guid: 40ead2ae85809df4f87ed84c0a2b2ef6, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 40ead2ae85809df4f87ed84c0a2b2ef6, type: 3}
---- !u!4 &404741331 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8284340186250425421, guid: 40ead2ae85809df4f87ed84c0a2b2ef6, type: 3}
-  m_PrefabInstance: {fileID: 404741330}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &404741332 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3953115053519053452, guid: 40ead2ae85809df4f87ed84c0a2b2ef6, type: 3}
-  m_PrefabInstance: {fileID: 404741330}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d407a71a5e37054ebbc5e9244b2813b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &473019449
 GameObject:
   m_ObjectHideFlags: 0
@@ -1537,7 +1460,6 @@ Transform:
   - {fileID: 398228262}
   - {fileID: 4826031797946872802}
   - {fileID: 1108566638366921953}
-  - {fileID: 404741331}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1636340714
@@ -1802,6 +1724,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3db6fdf77a4544ea9975eba992b780, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  OnNetworkStop:
+    m_PersistentCalls:
+      m_Calls: []
   _clientsPings: []
 --- !u!1 &2070780988
 GameObject:
@@ -2170,7 +2095,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e795ee2b2c316948ab69d61ca46f853, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameplayManager: {fileID: 404741332}
+  _gameplayManager: {fileID: 0}
 --- !u!4 &4826031797946872802
 Transform:
   m_ObjectHideFlags: 0

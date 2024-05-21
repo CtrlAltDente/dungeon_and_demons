@@ -1,3 +1,4 @@
+using DungeonAndDemons.Enums;
 using UnityEngine;
 
 namespace DungeonAndDemons.Items

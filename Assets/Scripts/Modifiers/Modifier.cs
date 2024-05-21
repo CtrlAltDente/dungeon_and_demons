@@ -1,6 +1,7 @@
+using DungeonAndDemons.Enums;
 using System;
 
-namespace DungeonAndDemons.Items
+namespace DungeonAndDemons.ModifiersLogic
 {
     [Serializable]
     public class Modifier

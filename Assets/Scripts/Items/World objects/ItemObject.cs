@@ -1,5 +1,4 @@
-using DungeonAndDemons.Interfaces;
-using DungeonAndDemons.Player;
+using DungeonAndDemons.Enums;
 using DungeonAndDemons.ScriptableObjects;
 using DungeonAndDemons.ScriptableObjects.Containers;
 using DungeonAndDemons.UI;

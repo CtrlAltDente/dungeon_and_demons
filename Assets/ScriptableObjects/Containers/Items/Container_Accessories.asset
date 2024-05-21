@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: Container_Accessories
   m_EditorClassIdentifier: 
   Items:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: f8921f1d46cbdf34bab6bd485864c84a, type: 2}
   - {fileID: 11400000, guid: f8921f1d46cbdf34bab6bd485864c84a, type: 2}
   ItemsType: 1

@@ -1,3 +1,4 @@
+using DungeonAndDemons.Character;
 using DungeonAndDemons.Items;
 using System.Collections;
 using System.Collections.Generic;
@@ -7,13 +8,13 @@ namespace DungeonAndDemons.Player
 {
     public abstract class StatsCalculator : MonoBehaviour
     {
-        public abstract void CalculateStats(PlayerStats playerStats, PlayerCharacter playerCharacter);
+        public abstract void CalculateStats(PlayerStats playerStats, CharacterComponents characterComponents);
 
-        protected int GetStatsValueInItems(PlayerCharacter playerCharacter, ItemStat itemStatsName)
+        protected int GetStatsValueInItems(CharacterComponents characterComponents, ItemStat itemStatsName)
         {
             int statValue = 0;
 
-            foreach (ItemSlot slot in playerCharacter.CharacterInventory.Slots)
+            foreach (ItemSlot slot in characterComponents.CharacterInventory.Slots)
             {
                 foreach (ItemStats itemStats in slot.Item.Stats)
                 {

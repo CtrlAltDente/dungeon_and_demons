@@ -1,3 +1,4 @@
+using DungeonAndDemons.Character;
 using DungeonAndDemons.Items;
 using JetBrains.Annotations;
 using System.Collections;
@@ -8,7 +9,7 @@ namespace DungeonAndDemons.Player
 {
     public class PlayerStats : MonoBehaviour
     {
-        public PlayerCharacter _playerCharacter;
+        public CharacterComponents _characterComponents;
 
         public int AttackDamage;
         public int ArmorValue;
@@ -24,7 +25,7 @@ namespace DungeonAndDemons.Player
         {
             foreach (StatsCalculator statsCalculator in StatsCalculators)
             {
-                statsCalculator.CalculateStats(this, _playerCharacter);
+                statsCalculator.CalculateStats(this, _characterComponents);
             }
         }
     }

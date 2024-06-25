@@ -1,3 +1,4 @@
+using DungeonAndDemons.Character;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,10 @@ namespace DungeonAndDemons.Player
 {
     public class AttackCalculator : StatsCalculator
     {
-        public override void CalculateStats(PlayerStats playerStats, PlayerCharacter playerCharacter)
+        public override void CalculateStats(PlayerStats playerStats, CharacterComponents characterComponents)
         {
-            int attackDamageStats = GetStatsValueInItems(playerCharacter, ItemStat.Attack);
-            playerStats.AttackDamage = attackDamageStats + playerCharacter.CharacterAttributes.Strength * 2;
+            int attackDamageStats = GetStatsValueInItems(characterComponents, ItemStat.Attack);
+            playerStats.AttackDamage = attackDamageStats + characterComponents.CharacterAttributes.Strength * 2;
         }
     }
 }

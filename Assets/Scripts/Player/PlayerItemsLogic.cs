@@ -46,7 +46,7 @@ namespace DungeonAndDemons.Player
         public void DropFromSlot(ItemSlot slot)
         {
             DropItem(slot.Item);
-            _characterInventory.SetItem(new Item(slot.ItemType, 0, null, null));
+            _characterInventory.SetItem(new Item(slot.Type, 0, null, null));
         }
 
         private void DropItem(Item item)

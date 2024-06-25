@@ -1,3 +1,4 @@
+using DungeonAndDemons.Character;
 using DungeonAndDemons.Input;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,7 +14,7 @@ namespace DungeonAndDemons.Player
         public bool IsAlive = true;
 
         [SerializeField]
-        private PlayerCharacter _playerCharacter;
+        private CharacterComponents _characterComponents;
         [SerializeField]
         private PlayerInput _playerInput;
         

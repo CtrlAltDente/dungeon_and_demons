@@ -24,7 +24,7 @@ namespace DungeonAndDemons.Character
         {
             foreach (ItemSlot slot in _slots)
             {
-                if(slot.ItemType == item.SlotType)
+                if(slot.Type == item.SlotType)
                 {
                     slot.Item = item;
                     OnItemSlotUpdated?.Invoke(slot);
@@ -36,7 +36,7 @@ namespace DungeonAndDemons.Character
         {
             foreach (ItemSlot slot in _slots)
             {
-                if (slot.ItemType == item.SlotType)
+                if (slot.Type == item.SlotType)
                 {
                     return slot;
                 }

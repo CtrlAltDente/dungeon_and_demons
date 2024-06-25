@@ -15,7 +15,7 @@ namespace DungeonAndDemons.Items
 
         public void SetItemSlotInfo(ItemSlot itemSlot)
         {
-            if (itemSlot.ItemType == _slotType)
+            if (itemSlot.Type == _slotType)
             {
                 VisualizeItemFromSlot(itemSlot);
             }

@@ -14,22 +14,16 @@ namespace DungeonAndDemons.UI
         [SerializeField]
         private List<Menu> _menus = new List<Menu>();
 
+        private Menu _currentMenu;
+
         private void Start()
         {
             SetStartMenusPositions();
         }
 
-        public void EnableMenuByIndex(int index)
+        public void EnableMenu(Menu menu)
         {
-            int currentMenuIndex = _menus.IndexOf(_menus.Find((menu) => menu.gameObject.activeInHierarchy));
-            _menus[currentMenuIndex].SetPosition(HidePosition, false, () => ActivateNewMenuAndDisableOld(_menus[index], _menus[currentMenuIndex]));
-        }
-
-        private void ActivateNewMenuAndDisableOld(Menu activateMenu, Menu disableMenu)
-        {
-            activateMenu.gameObject.SetActive(true);
-            activateMenu.SetPosition(ShowPosition, false);
-            disableMenu.gameObject.SetActive(false);
+            _currentMenu.SetPosition(HidePosition, false, () => { _currentMenu = menu; _currentMenu.SetPosition(ShowPosition, false); });
         }
 
         private void SetStartMenusPositions()
@@ -38,11 +32,11 @@ namespace DungeonAndDemons.UI
             {
                 menu.gameObject.SetActive(true);
                 menu.SetPosition(HidePosition, true);
-                menu.gameObject.SetActive(false);
             }
 
             _menus[0].gameObject.SetActive(true);
             _menus[0].SetPosition(ShowPosition, true);
+            _currentMenu = _menus[0];
         }
     }
 }

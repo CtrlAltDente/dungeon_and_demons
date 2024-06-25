@@ -278,19 +278,19 @@ MonoBehaviour:
   _slots:
   - ItemType: 1
     Item:
-      Type: 1
+      SlotType: 1
       ModelIndex: 0
       Stats: []
       Modifiers: []
   - ItemType: 2
     Item:
-      Type: 2
+      SlotType: 2
       ModelIndex: 0
       Stats: []
       Modifiers: []
   - ItemType: 3
     Item:
-      Type: 3
+      SlotType: 3
       ModelIndex: 0
       Stats: []
       Modifiers: []
@@ -1150,9 +1150,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2354902065810936650, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
+      propertyPath: _item.SlotType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5493424638232756441, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
       propertyPath: m_Name
       value: Character
+      objectReference: {fileID: 0}
+    - target: {fileID: 6590935278756701527, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
+      propertyPath: _item.SlotType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6840629123864474585, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
+      propertyPath: _item.SlotType
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6997840841043160010, guid: 55d9e917d37b4064a83f614f58b5c040, type: 3}
       propertyPath: m_LocalPosition.x

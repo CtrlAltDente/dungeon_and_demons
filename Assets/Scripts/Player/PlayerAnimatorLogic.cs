@@ -16,10 +16,10 @@ namespace DungeonAndDemons.Player
 
         public void SetPlayerInputData(PlayerInputData playerInputData)
         {
-            _animator.SetBool("IsMoving", playerInputData.MovementVector.magnitude > 0.5f);
-            _animator.SetBool("IsPrimaryAttack", playerInputData.IsPrimaryAttack);
-            _animator.SetBool("IsSecondaryAttack", playerInputData.IsSecondaryAttack);
-            _animator.SetBool("IsRoll", playerInputData.IsRoll);
+            //_animator.SetBool("IsMoving", playerInputData.MovementVector.magnitude > 0.5f);
+            //_animator.SetBool("IsPrimaryAttack", playerInputData.IsPrimaryAttack);
+            //_animator.SetBool("IsSecondaryAttack", playerInputData.IsSecondaryAttack);
+            //_animator.SetBool("IsRoll", playerInputData.IsRoll);
         }
     }
 }

@@ -9,7 +9,7 @@ namespace DungeonAndDemons.Player
     {
         public abstract void CalculateStats(PlayerStats playerStats, CharacterComponents characterComponents);
 
-        protected int GetStatsValueInItems(CharacterComponents characterComponents, ItemStatsType itemStatsType)
+        protected int GetStatsValueInItems(CharacterComponents characterComponents, StatsType itemStatsType)
         {
             int statValue = 0;
 

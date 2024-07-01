@@ -1,4 +1,4 @@
-namespace DungeonAndDemons.Items
+namespace DungeonAndDemons.Enums
 {
     public enum ModifierType
     {

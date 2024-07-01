@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace DungeonAndDemons.Enums
 {
-    public enum ItemStatsType
+    public enum StatsType
     {
         Attack,
         Armor,

@@ -1,4 +1,5 @@
 using DungeonAndDemons.Enums;
+using DungeonAndDemons.Modifiers;
 using System;
 using System.Collections;
 using System.Collections.Generic;

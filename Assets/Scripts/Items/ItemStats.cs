@@ -9,10 +9,10 @@ namespace DungeonAndDemons.Items
     [Serializable]
     public struct ItemStats
     {
-        public ItemStatsType Type;
+        public StatsType Type;
         public int Value;
 
-        public ItemStats(ItemStatsType type, int value)
+        public ItemStats(StatsType type, int value)
         {
             Type = type;
             Value = value;

@@ -276,20 +276,17 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _slots:
-  - ItemType: 1
-    Item:
+  - Item:
       SlotType: 1
       ModelIndex: 0
       Stats: []
       Modifiers: []
-  - ItemType: 2
-    Item:
+  - Item:
       SlotType: 2
       ModelIndex: 0
       Stats: []
       Modifiers: []
-  - ItemType: 3
-    Item:
+  - Item:
       SlotType: 3
       ModelIndex: 0
       Stats: []
@@ -441,7 +438,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsAlive: 1
-  _playerCharacter: {fileID: 0}
+  _characterComponents: {fileID: 0}
   _playerInput: {fileID: 3460752904285419920}
 --- !u!114 &7201205767863043294
 MonoBehaviour:
@@ -973,7 +970,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7584beea9f41c9445b2d0fbc378ba93a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _playerCharacter: {fileID: 9191686270786917247}
+  _characterComponents: {fileID: 9191686270786917247}
   AttackDamage: 0
   ArmorValue: 0
   StatsCalculators:

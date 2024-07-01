@@ -6,7 +6,7 @@ using UnityEngine.Events;
 
 namespace DungeonAndDemons.Character
 {
-    public class CharacterInventory : MonoBehaviour
+    public class CharacterItems : MonoBehaviour
     {
         public UnityEvent<ItemSlot> OnItemSlotUpdated;
 

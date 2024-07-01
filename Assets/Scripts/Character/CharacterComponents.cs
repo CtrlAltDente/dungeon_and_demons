@@ -8,7 +8,7 @@ namespace DungeonAndDemons.Character
     public class CharacterComponents : MonoBehaviour
     {
         public CharacterVisual CharacterVisual;
-        public CharacterInventory CharacterInventory;
+        public CharacterItems CharacterItems;
         public CharacterAttributes CharacterAttributes;
     }
 }

@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CharacterVisual: {fileID: 8223827798900354461}
-  CharacterInventory: {fileID: 2456502127711876399}
+  CharacterItems: {fileID: 2456502127711876399}
   CharacterAttributes: {fileID: 9137183527698648356}
 --- !u!114 &8223827798900354461
 MonoBehaviour:
@@ -221,7 +221,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b25c57487fb8d4489f00ed10d1c24df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterInventory: {fileID: 2456502127711876399}
+  _characterItems: {fileID: 2456502127711876399}
   _itemObjectPrefab: {fileID: 7754017824268446998, guid: 8e390f80551d7e74c8d586d2dd911570, type: 3}
   _availableItems: []
 --- !u!114 &2456502127711876399

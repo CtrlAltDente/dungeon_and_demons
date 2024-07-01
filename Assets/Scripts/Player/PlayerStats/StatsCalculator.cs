@@ -13,7 +13,7 @@ namespace DungeonAndDemons.Player
         {
             int statValue = 0;
 
-            foreach (ItemSlot slot in characterComponents.CharacterInventory.Slots)
+            foreach (ItemSlot slot in characterComponents.CharacterItems.Slots)
             {
                 foreach (ItemStats itemStats in slot.Item.Stats)
                 {

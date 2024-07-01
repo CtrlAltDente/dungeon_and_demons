@@ -14,7 +14,7 @@ namespace DungeonAndDemons.Player
     public class PlayerItemsLogic : MonoBehaviour, IPlayerLogicPart
     {
         [SerializeField]
-        private CharacterInventory _characterInventory;
+        private CharacterItems _characterItems;
 
         [SerializeField]
         private ItemObject _itemObjectPrefab;
@@ -35,9 +35,9 @@ namespace DungeonAndDemons.Player
             if (_availableItems.Count > 0)
             {
                 ItemObject itemObject = _availableItems[0];
-                ItemSlot slot = _characterInventory.GetSlotForItem(itemObject.Item);
+                ItemSlot slot = _characterItems.GetSlotForItem(itemObject.Item);
                 DropFromSlot(slot);
-                _characterInventory.SetItem(itemObject.Item);
+                _characterItems.SetItem(itemObject.Item);
                 RemoveItemFromItemList(itemObject);
                 Destroy(itemObject.gameObject);
             }
@@ -46,7 +46,7 @@ namespace DungeonAndDemons.Player
         public void DropFromSlot(ItemSlot slot)
         {
             DropItem(slot.Item);
-            _characterInventory.SetItem(new Item(slot.Type, 0, null, null));
+            _characterItems.SetItem(new Item(slot.Type, 0, null, null));
         }
 
         private void DropItem(Item item)

@@ -1,6 +1,4 @@
-using DungeonAndDemons.Items;
-using System.Collections;
-using System.Collections.Generic;
+using DungeonAndDemons.Enums;
 using UnityEngine;
 
 namespace DungeonAndDemons.ScriptableObjects

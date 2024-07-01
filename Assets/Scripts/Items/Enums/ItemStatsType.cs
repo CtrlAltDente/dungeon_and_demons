@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace DungeonAndDemons.Enums
 {
-    public enum ItemType
+    public enum ItemStatsType
     {
-        OneHandedWeapon,
-        StaffWeapon,
-        Bow,
-        Suit,
-        Shield
+        Attack,
+        Armor,
+        Strength,
+        Dexterity,
+        Intelligence
     }
 }

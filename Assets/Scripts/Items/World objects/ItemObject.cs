@@ -1,10 +1,7 @@
-using DungeonAndDemons.Interfaces;
-using DungeonAndDemons.Player;
+using DungeonAndDemons.Enums;
 using DungeonAndDemons.ScriptableObjects;
 using DungeonAndDemons.ScriptableObjects.Containers;
 using DungeonAndDemons.UI;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Zenject;
 

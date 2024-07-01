@@ -1,7 +1,6 @@
 using DungeonAndDemons.Character;
+using DungeonAndDemons.Enums;
 using DungeonAndDemons.Items;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace DungeonAndDemons.Player
@@ -10,7 +9,7 @@ namespace DungeonAndDemons.Player
     {
         public abstract void CalculateStats(PlayerStats playerStats, CharacterComponents characterComponents);
 
-        protected int GetStatsValueInItems(CharacterComponents characterComponents, ItemStat itemStatsName)
+        protected int GetStatsValueInItems(CharacterComponents characterComponents, ItemStatsType itemStatsType)
         {
             int statValue = 0;
 
@@ -18,9 +17,9 @@ namespace DungeonAndDemons.Player
             {
                 foreach (ItemStats itemStats in slot.Item.Stats)
                 {
-                    if (itemStats.Stat == itemStatsName)
+                    if (itemStats.Type == itemStatsType)
                     {
-                        statValue += itemStats.StatValue;
+                        statValue += itemStats.Value;
                     }
                 }
             }

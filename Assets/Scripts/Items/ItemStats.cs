@@ -1,3 +1,4 @@
+using DungeonAndDemons.Enums;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -8,13 +9,13 @@ namespace DungeonAndDemons.Items
     [Serializable]
     public struct ItemStats
     {
-        public ItemStat Stat;
-        public int StatValue;
+        public ItemStatsType Type;
+        public int Value;
 
-        public ItemStats(ItemStat stat, int statValue)
+        public ItemStats(ItemStatsType type, int value)
         {
-            Stat = stat;
-            StatValue = statValue;
+            Type = type;
+            Value = value;
         }
     }
 }

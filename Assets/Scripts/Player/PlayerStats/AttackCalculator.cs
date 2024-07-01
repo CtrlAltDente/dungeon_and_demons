@@ -1,6 +1,5 @@
 using DungeonAndDemons.Character;
-using System.Collections;
-using System.Collections.Generic;
+using DungeonAndDemons.Enums;
 using UnityEngine;
 
 namespace DungeonAndDemons.Player
@@ -9,7 +8,7 @@ namespace DungeonAndDemons.Player
     {
         public override void CalculateStats(PlayerStats playerStats, CharacterComponents characterComponents)
         {
-            int attackDamageStats = GetStatsValueInItems(characterComponents, ItemStat.Attack);
+            int attackDamageStats = GetStatsValueInItems(characterComponents, ItemStatsType.Attack);
             playerStats.AttackDamage = attackDamageStats + characterComponents.CharacterAttributes.Strength * 2;
         }
     }

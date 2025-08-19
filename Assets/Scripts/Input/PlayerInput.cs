@@ -18,6 +18,7 @@ namespace DungeonAndDemons.Input
         public void SetPlayerInputData(PlayerInputData playerInputData)
         {
             OnPlayerInputDataReady?.Invoke(playerInputData);
+            OnFixedPlayerInputDataReady?.Invoke(playerInputData);
         }
     }
 }

@@ -29,6 +29,18 @@ namespace DungeonAndDemons.Input
             StartCoroutine(UpdateInputForPlayer());
         }
 
+        /*private void Update()
+        {
+            if (NetworkManager.Singleton)
+            {
+                SetNetworkInput();
+            }
+            else
+            {
+                SetLocalInput();
+            }
+        }*/
+
         private void InitializeInput()
         {
             if (NetworkManager.Singleton)
@@ -70,6 +82,7 @@ namespace DungeonAndDemons.Input
             if (_playerState.IsAlive)
             {
                 _playerState.SetInputServerRpc(_currentInputType.GetPlayerInputData());
+                Debug.Log($"Send data input network");
             }
             else
             {
@@ -81,6 +94,7 @@ namespace DungeonAndDemons.Input
             if (_playerState.IsAlive)
             {
                 _playerState.SetInput(_currentInputType.GetPlayerInputData());
+                Debug.Log($"Send data input local");
             }
             else
             {

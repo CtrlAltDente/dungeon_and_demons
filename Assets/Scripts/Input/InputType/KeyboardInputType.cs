@@ -11,6 +11,9 @@ namespace DungeonAndDemons.Input
     public class KeyboardInputType : MonoBehaviour, IInputType
     {
         [SerializeField]
+        private PlayerInputData _playerInputData;
+
+        [SerializeField]
         private InputActionReference _movementPlayerInput;
         [SerializeField]
         private InputActionReference _primaryAttackPlayerInput;
@@ -34,9 +37,9 @@ namespace DungeonAndDemons.Input
 
             ulong id = GetPlayerId();
 
-            PlayerInputData playerInputData = new PlayerInputData(id, movementVector, isPrimaryAttack, isSecondaryAttack, isRoll, scrollValue, isPickupItem);
+            _playerInputData = new PlayerInputData(id, movementVector, isPrimaryAttack, isSecondaryAttack, isRoll, scrollValue, isPickupItem);
 
-            return playerInputData;
+            return _playerInputData;
         }
 
         private ulong GetPlayerId()

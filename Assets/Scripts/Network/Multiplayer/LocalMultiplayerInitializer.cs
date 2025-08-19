@@ -24,6 +24,11 @@ namespace DungeonAndDemons.Network
         [SerializeField]
         private TMP_InputField _ipAddressField;
 
+        private void Start()
+        {
+            _ipAddressField.text = GetLocalIpAddress();
+        }
+
         public void InitializeHost()
         {
             if (StartHostWithUnityTransport(GetLocalIpAddress()))
